@@ -22,12 +22,11 @@ Square UI is a Sine-compatible CSS mod that removes rounded corners from browser
 
 Zen-specific defaults:
 - `zen.theme.content-element-separation`: Recommended default of `0` to remove spacing padding from Zen content surfaces.
+- `zen.theme.border-radius`: Recommended default of `0` while square browser chrome is enabled. Set it to `-1` if you disable square browser chrome and want native Zen radius behavior back.
 - `zen.view.experimental-no-window-controls`: Recommended default of `true` for the intended Zen window treatment.
-- `zen.theme.essentials-favicon-bg`: Recommended default of `false` for cleaner essentials tab animations.
 
 Cross-browser defaults:
-- `extensions.webextensions.restrictedDomains`: Recommended Mozilla domain override to help Stylus reach Mozilla-owned sites.
-- `widget.prefer_windows_on_current_virtual_desktop`: Recommended default of `false` to avoid new-window link behavior issues on some tiling window manager setups.
+- `widget.prefer_windows_on_current_virtual_desktop`: Recommended default of `false` to open windows outside the current virtual desktop and avoid new-window link behavior issues on some tiling window manager setups.
 
 ## Browser Support
 

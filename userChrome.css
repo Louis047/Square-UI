@@ -19,9 +19,7 @@
 /* ── A: NO ROUNDED CORNERS ── */
 
 :root {
-  --zen-border-radius: 0px !important;
   --zen-webview-border-radius: 0px !important;
-  --zen-element-separation: 0px !important;
   --zen-browser-border-radius: 0px !important;
   --tab-border-radius: 0px !important;
   --toolbarbutton-border-radius: 0px !important;
