@@ -24,7 +24,7 @@
     "size": "13px"
   },
   {
-    "property": "mod.squareui.zen.content-element-separation",
+    "property": "zen.theme.content-element-separation",
     "label": "Content element separation",
     "type": "string",
     "value": "number",
@@ -32,7 +32,7 @@
     "placeholder": 0
   },
   {
-    "property": "mod.squareui.zen.no-window-controls",
+    "property": "zen.view.experimental-no-window-controls",
     "label": "No Window Controls",
     "type": "checkbox",
     "defaultValue": true

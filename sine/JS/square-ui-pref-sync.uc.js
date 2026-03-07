@@ -13,13 +13,13 @@
 
   const MANAGED_PREFS = [
     {
-      source: "mod.squareui.zen.content-element-separation",
+      source: "zen.theme.content-element-separation",
       target: "zen.theme.content-element-separation",
       type: "int",
       defaultValue: 0,
     },
     {
-      source: "mod.squareui.zen.no-window-controls",
+      source: "zen.view.experimental-no-window-controls",
       target: "zen.view.experimental-no-window-controls",
       type: "bool",
       defaultValue: true,
