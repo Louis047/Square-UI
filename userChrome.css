@@ -390,6 +390,8 @@ textbox {
   filter: saturate(100%) brightness(100%) !important;
 }
 
+}
+
 
 /* ── J: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
 
@@ -400,7 +402,7 @@ textbox {
 }
 
 #statuspanel-label {
-  border-radius: 0px !important;
+  border-radius: var(--arrowpanel-border-radius, 8px) !important;
   padding: 6px 12px !important;
   border: 1px solid rgba(160, 160, 175, 0.35) !important;
   background: var(--squareui-arrowpanel-background) !important;
@@ -425,7 +427,7 @@ findbar {
   width: max-content !important;
   min-width: 520px !important;
   contain: initial !important;
-  border-radius: 0px !important;
+  border-radius: var(--arrowpanel-border-radius, 8px) !important;
   border: 1px solid rgba(160, 160, 175, 0.35) !important;
   background: var(--squareui-arrowpanel-background) !important;
   padding: 6px !important;
@@ -440,7 +442,7 @@ findbar {
 }
 
 .findbar-textbox {
-  border-radius: 0px !important;
+  border-radius: var(--toolbarbutton-border-radius, 6px) !important;
   padding: 8px 12px !important;
   box-shadow: none !important;
   border: 1px solid rgba(130, 130, 145, 0.12) !important;
@@ -455,7 +457,7 @@ findbar {
   padding: 0 !important;
   width: 38px !important;
   height: 38px !important;
-  border-radius: 0px !important;
+  border-radius: var(--toolbarbutton-border-radius, 6px) !important;
   margin: 0 !important;
 }
 
@@ -499,7 +501,7 @@ button[part="dialog-button"] {
   padding-right: 1.2em !important;
   color: var(--squareui-button-text) !important;
   background: var(--squareui-button-background) !important;
-  border-radius: 0 !important;
+  border-radius: var(--toolbarbutton-border-radius, 6px) !important;
 }
 
 button[part="dialog-button"][default="true"],
@@ -532,6 +534,8 @@ button[part="dialog-button"][default="false"]:hover:active {
 }
 
 }
+
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
 
 /* ── N: PINNED TAB SEPARATOR (Thanks to @qumeqa) ── */

@@ -49,9 +49,46 @@
 
   function getPrefValue(pref) {
     if (pref.type === "int") {
-      return Services.prefs.getIntPref(pref.source, pref.defaultValue);
+      const prefType = Services.prefs.getPrefType(pref.source);
+
+      if (prefType === Services.prefs.PREF_INT) {
+        return Services.prefs.getIntPref(pref.source, pref.defaultValue);
+      }
+
+      if (prefType === Services.prefs.PREF_STRING) {
+        const parsed = Number.parseInt(
+          Services.prefs.getStringPref(pref.source, String(pref.defaultValue)),
+          10
+        );
+
+        return Number.isNaN(parsed) ? pref.defaultValue : parsed;
+      }
+
+      return pref.defaultValue;
     }
-    return Services.prefs.getBoolPref(pref.source, pref.defaultValue);
+
+    const prefType = Services.prefs.getPrefType(pref.source);
+
+    if (prefType === Services.prefs.PREF_BOOL) {
+      return Services.prefs.getBoolPref(pref.source, pref.defaultValue);
+    }
+
+    if (prefType === Services.prefs.PREF_STRING) {
+      const normalized = Services.prefs
+        .getStringPref(pref.source, String(pref.defaultValue))
+        .trim()
+        .toLowerCase();
+
+      if (normalized === "true" || normalized === "1") {
+        return true;
+      }
+
+      if (normalized === "false" || normalized === "0") {
+        return false;
+      }
+    }
+
+    return pref.defaultValue;
   }
 
   function captureBackup(pref) {
