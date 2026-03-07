@@ -10,7 +10,7 @@
   "scripts": {
     "sine/JS/square-ui-pref-sync.uc.js": {
       "name": "Square UI Preference Sync",
-      "description": "Applies and restores browser preferences owned by Square UI while the mod is active.",
+      "description": "Applies and restores browser preferences and browser UI font resources owned by Square UI while the mod is active.",
       "include": [
         "chrome://browser/content/browser.xhtml"
       ]
@@ -19,7 +19,7 @@
   "preferences": "preferences.json",
   "readme": "https://raw.githubusercontent.com/Louis047/Square-UI/main/README.md",
   "author": "Lone",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "tags": [
     "ui",
     "minimal",

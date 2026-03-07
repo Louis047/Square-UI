@@ -68,6 +68,32 @@
     "size": "13px"
   },
   {
+    "property": "mod.squareui.crossbrowser.custom-browser-ui-font.enabled",
+    "label": "Custom Browser UI Font",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "type": "text",
+    "label": "Leave the stylesheet URL blank to use locally installed fonts only.",
+    "margin": "0 0 12px 0",
+    "size": "13px"
+  },
+  {
+    "property": "mod.squareui.crossbrowser.custom-browser-ui-font.stylesheet-url",
+    "label": "Online font stylesheet URL",
+    "type": "string",
+    "defaultValue": "",
+    "placeholder": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
+  },
+  {
+    "property": "mod.squareui.crossbrowser.custom-browser-ui-font.font-family",
+    "label": "UI font-family stack",
+    "type": "string",
+    "defaultValue": "",
+    "placeholder": "\"Instrument Sans\", system-ui, sans-serif"
+  },
+  {
     "property": "mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop",
     "label": "Open window outside the current virtual desktop (Fix for Tiling Window Managers)",
     "type": "checkbox",
