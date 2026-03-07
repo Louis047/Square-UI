@@ -1,5 +1,18 @@
 /* ZEN BROWSER — FULL CUSTOMIZATION SUITE */
 
+:root {
+  --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
+  --squareui-button-background: var(--button-background-color, color-mix(in srgb, currentColor 8%, transparent)) !important;
+  --squareui-button-text: var(--button-text-color, currentColor) !important;
+  --squareui-accent: var(--color-accent-primary, AccentColor) !important;
+  --squareui-accent-hover: var(--color-accent-primary-hover, color-mix(in srgb, var(--color-accent-primary, AccentColor) 85%, #fff)) !important;
+  --squareui-accent-active: var(--color-accent-primary-active, color-mix(in srgb, var(--color-accent-primary, AccentColor) 70%, #000)) !important;
+  --squareui-shadow-level-3: var(--box-shadow-level-3, 0 8px 32px rgba(0, 0, 0, 0.45)) !important;
+  --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
+  --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
+  --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
+}
+
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 :root {
@@ -43,19 +56,6 @@ browser,
 }
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
-
-:root {
-  --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
-  --squareui-button-background: var(--button-background-color, color-mix(in srgb, currentColor 8%, transparent)) !important;
-  --squareui-button-text: var(--button-text-color, currentColor) !important;
-  --squareui-accent: var(--color-accent-primary, AccentColor) !important;
-  --squareui-accent-hover: var(--color-accent-primary-hover, color-mix(in srgb, var(--color-accent-primary, AccentColor) 85%, #fff)) !important;
-  --squareui-accent-active: var(--color-accent-primary-active, color-mix(in srgb, var(--color-accent-primary, AccentColor) 70%, #000)) !important;
-  --squareui-shadow-level-3: var(--box-shadow-level-3, 0 8px 32px rgba(0, 0, 0, 0.45)) !important;
-  --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
-  --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
-  --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
-}
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -499,6 +499,7 @@ button[part="dialog-button"] {
   padding-right: 1.2em !important;
   color: var(--squareui-button-text) !important;
   background: var(--squareui-button-background) !important;
+  border-radius: 0 !important;
 }
 
 button[part="dialog-button"][default="true"],
