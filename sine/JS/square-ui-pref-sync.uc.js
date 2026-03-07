@@ -10,6 +10,7 @@
   "use strict";
 
   const STATE_KEY = "__squareUIPrefSync";
+  const MOD_PREF_PREFIX = "mod.squareui.";
   const FONT_ENABLED_PREF = "mod.squareui.crossbrowser.custom-browser-ui-font.enabled";
   const FONT_STYLESHEET_URL_PREF = "mod.squareui.crossbrowser.custom-browser-ui-font.stylesheet-url";
   const FONT_FAMILY_PREF = "mod.squareui.crossbrowser.custom-browser-ui-font.font-family";
@@ -332,6 +333,18 @@
     state.backups.clear();
   }
 
+  function clearModPrefs() {
+    const modPrefs = Services.prefs.getChildList(MOD_PREF_PREFIX);
+
+    for (const prefName of modPrefs) {
+      if (!Services.prefs.prefHasUserValue(prefName)) {
+        continue;
+      }
+
+      Services.prefs.clearUserPref(prefName);
+    }
+  }
+
   if (!state.initialized) {
     state.observer = {
       observe(_subject, topic, data) {
@@ -387,6 +400,7 @@
       }
 
       restoreManagedPrefs();
+      clearModPrefs();
       delete Services[STATE_KEY];
     },
     { once: true }
