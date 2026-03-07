@@ -393,6 +393,8 @@ textbox {
 
 /* ── J: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
 
+@media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
+
 #statuspanel {
   margin: 10px !important;
 }
@@ -404,8 +406,12 @@ textbox {
   background: var(--squareui-arrowpanel-background) !important;
 }
 
+}
+
 
 /* ── K: FLOATING FINDBAR (Thanks to @qumeqa) ── */
+
+@media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
 
 .browserStack {
   position: relative !important;
@@ -478,17 +484,11 @@ findbar {
   display: none !important;
 }
 
-
-/* ── L: URL BAR POPUP — NO SHADOW ── */
-
-#urlbar[open] .urlbarView,
-.urlbarView              { box-shadow: none !important; filter: none !important; }
-#urlbar-background       { box-shadow: none !important; }
-.urlbarView-body-outer,
-.urlbarView-body-inner   { box-shadow: none !important; }
-
+}
 
 /* ── M: DIALOG FIXES (Thanks to @qumeqa) ── */
+
+@media (-moz-bool-pref: "mod.squareui.dialog-fixes.enabled") {
 
 :root {
   --zen-dialog-background: var(--squareui-arrowpanel-background) !important;
@@ -528,6 +528,8 @@ button[part="dialog-button"]:hover:active {
 button[part="dialog-button"][default="true"]:hover:active,
 button[part="dialog-button"][default="false"]:hover:active {
   background: var(--squareui-accent-active) !important;
+}
+
 }
 
 

@@ -33,7 +33,25 @@
   },
   {
     "property": "zen.view.experimental-no-window-controls",
-    "label": "Enable experimental no window controls",
+    "label": "No Window Controls",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.floating-statusbar.enabled",
+    "label": "Floating Statusbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.floating-findbar.enabled",
+    "label": "Floating Findbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.dialog-fixes.enabled",
+    "label": "Dialog Fixes",
     "type": "checkbox",
     "defaultValue": true
   },
@@ -45,7 +63,7 @@
   },
   {
     "type": "text",
-    "label": "These preferences are intended to improve behavior across Firefox-based browsers supported by Sine.",
+    "label": "These preferences are intended to improve behavior across firefox-based browsers",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
