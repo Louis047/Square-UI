@@ -33,7 +33,7 @@ This mod declares support for Zen, Firefox, Floorp, LibreWolf, Mullvad Browser, 
 
 Zen-specific selectors are included for the best result in Zen Browser. Other Firefox-based browsers will ignore unsupported selectors and still apply the generic square-corner rules where they match.
 
-`Square Website Content UI` only targets website documents. Firefox internal pages and browser-owned content stay under `Square Browser UI`.
+`Square Website Content UI` covers website documents and Firefox internal content pages. `Square Browser UI` remains responsible for browser chrome only.
 
 ## Installation
 
