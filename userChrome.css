@@ -1,32 +1,9 @@
 /* ZEN BROWSER — FULL CUSTOMIZATION SUITE */
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+@media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 :root {
-  --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
-  --squareui-button-background: var(--button-background-color, color-mix(in srgb, currentColor 8%, transparent)) !important;
-  --squareui-button-text: var(--button-text-color, currentColor) !important;
-  --squareui-accent: var(--color-accent-primary, AccentColor) !important;
-  --squareui-accent-hover: var(--color-accent-primary-hover, color-mix(in srgb, var(--color-accent-primary, AccentColor) 85%, #fff)) !important;
-  --squareui-accent-active: var(--color-accent-primary-active, color-mix(in srgb, var(--color-accent-primary, AccentColor) 70%, #000)) !important;
-  --squareui-shadow-level-3: var(--box-shadow-level-3, 0 8px 32px rgba(0, 0, 0, 0.45)) !important;
-  --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
-  --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
-  --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
-}
-
-
-/* ── A: NO ROUNDED CORNERS ── */
-
-:root {
-  --zen-border-radius: 0px !important;
   --zen-webview-border-radius: 0px !important;
-  --zen-browser-border-radius: 0px !important;
-  --tab-border-radius: 0px !important;
-  --toolbarbutton-border-radius: 0px !important;
-  --arrowpanel-border-radius: 0px !important;
-  --panel-border-radius: 0px !important;
-  --urlbar-icon-border-radius: 0px !important;
 }
 
 :root:not([inDOMFullscreen="true"])
@@ -48,8 +25,49 @@
 #tabbrowser-tabpanels,
 .browserSidebarContainer,
 .browserContainer,
-browser {
+browser,
+#appcontent,
+#zen-appcontent-wrapper {
   border-radius: 0px !important;
+}
+
+}
+
+@media not (-moz-bool-pref: "mod.squareui.browser.enabled") {
+
+:root {
+  --zen-border-radius: -1px !important;
+  --zen-browser-border-radius: -1px !important;
+}
+
+}
+
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+
+:root {
+  --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
+  --squareui-button-background: var(--button-background-color, color-mix(in srgb, currentColor 8%, transparent)) !important;
+  --squareui-button-text: var(--button-text-color, currentColor) !important;
+  --squareui-accent: var(--color-accent-primary, AccentColor) !important;
+  --squareui-accent-hover: var(--color-accent-primary-hover, color-mix(in srgb, var(--color-accent-primary, AccentColor) 85%, #fff)) !important;
+  --squareui-accent-active: var(--color-accent-primary-active, color-mix(in srgb, var(--color-accent-primary, AccentColor) 70%, #000)) !important;
+  --squareui-shadow-level-3: var(--box-shadow-level-3, 0 8px 32px rgba(0, 0, 0, 0.45)) !important;
+  --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
+  --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
+  --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
+}
+
+
+/* ── A: NO ROUNDED CORNERS ── */
+
+:root {
+  --zen-border-radius: 0px !important;
+  --zen-browser-border-radius: 0px !important;
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --panel-border-radius: 0px !important;
+  --urlbar-icon-border-radius: 0px !important;
 }
 
 #urlbar,
@@ -105,7 +123,6 @@ notification,
   border-radius: 0px !important;
 }
 
-#zen-appcontent-wrapper,
 #zen-main-app-wrapper,
 .zen-workspace-tabs-section,
 #zen-browser-tabs-container,
