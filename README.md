@@ -17,12 +17,11 @@ Square UI is a Sine-compatible CSS mod that removes rounded corners from browser
 
 ## Preferences
 
-- `mod.squareui.browser.enabled`: Enables square browser chrome.
-- `mod.squareui.content.enabled`: Enables square website content.
+- `mod.squareui.browser.enabled`: Toggles `Square Browser UI`.
+- `mod.squareui.content.enabled`: Toggles `Square Website Content UI`.
 
 Zen-specific defaults:
 - `zen.theme.content-element-separation`: Recommended default of `0` to remove spacing padding from Zen content surfaces.
-- `zen.theme.border-radius`: Recommended default of `0` while square browser chrome is enabled. Set it to `-1` if you disable square browser chrome and want native Zen radius behavior back.
 - `zen.view.experimental-no-window-controls`: Recommended default of `true` for the intended Zen window treatment.
 
 Cross-browser defaults:
@@ -34,7 +33,7 @@ This mod declares support for Zen, Firefox, Floorp, LibreWolf, Mullvad Browser, 
 
 Zen-specific selectors are included for the best result in Zen Browser. Other Firefox-based browsers will ignore unsupported selectors and still apply the generic square-corner rules where they match.
 
-The Zen-specific preferences listed above are included in Sine so the original Zen tuning can be applied from the same mod UI. On non-Zen browsers, only the cross-browser defaults are generally relevant, and unsupported Zen preferences will have no effect.
+`Square Website Content UI` only targets website documents. Firefox internal pages and browser-owned content stay under `Square Browser UI`.
 
 ## Installation
 

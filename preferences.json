@@ -1,13 +1,13 @@
 [
   {
     "property": "mod.squareui.browser.enabled",
-    "label": "Enable square browser chrome",
+    "label": "Square Browser UI",
     "type": "checkbox",
     "defaultValue": true
   },
   {
     "property": "mod.squareui.content.enabled",
-    "label": "Enable square website content",
+    "label": "Square Website Content UI",
     "type": "checkbox",
     "defaultValue": true
   },
@@ -19,21 +19,13 @@
   },
   {
     "type": "text",
-    "label": "These settings reflect the original Zen-focused base of Square UI and only take effect in browsers that expose the matching Zen preferences. If you disable square browser chrome, set Zen border radius back to -1 for native Zen behavior.",
+    "label": "Zen-only defaults used by Square UI.",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
   {
     "property": "zen.theme.content-element-separation",
     "label": "Content element separation",
-    "type": "string",
-    "value": "number",
-    "defaultValue": 0,
-    "placeholder": 0
-  },
-  {
-    "property": "zen.theme.border-radius",
-    "label": "Zen border radius (use 0 with square browser chrome, -1 for native Zen)",
     "type": "string",
     "value": "number",
     "defaultValue": 0,

@@ -4,7 +4,7 @@
 
 /* ══ WEBSITES ══════════════════════════════════════════════════════════════ */
 
-@-moz-document regexp(".*") {
+@-moz-document regexp("^(https?|ftp|file)://.*") {
   *, *::before, *::after { border-radius: 0 !important; }
 }
 
@@ -356,6 +356,17 @@
   * { border-radius: 0 !important; }
 }
 
+/* PiP toggle */
+.pip-wrapper,
+.pip-wrapper > *,
+.pip-wrapper > * > * {
+  border-radius: 0 !important;
+}
+
+}
+
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+
 /* ══ FIREFOX INTERNAL ═══════════════════════════════════════════════════════ */
 
 /* about: pages */
@@ -622,13 +633,6 @@
     -moz-appearance: none !important;
     border-radius: 0 !important;
   }
-}
-
-/* PiP toggle */
-.pip-wrapper,
-.pip-wrapper > *,
-.pip-wrapper > * > * {
-  border-radius: 0 !important;
 }
 
 }
