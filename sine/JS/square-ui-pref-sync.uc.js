@@ -11,6 +11,8 @@
 
   const STATE_KEY = "__squareUIPrefSync";
   const MOD_PREF_PREFIX = "mod.squareui.";
+  const BACKUP_STATE_PREF = "mod.squareui.state.managed-pref-backups";
+  const SHUTDOWN_TOPICS = ["quit-application-granted", "profile-before-change"];
   const FONT_ENABLED_PREF = "mod.squareui.crossbrowser.custom-browser-ui-font.enabled";
   const FONT_STYLESHEET_URL_PREF = "mod.squareui.crossbrowser.custom-browser-ui-font.stylesheet-url";
   const FONT_FAMILY_PREF = "mod.squareui.crossbrowser.custom-browser-ui-font.font-family";
@@ -50,17 +52,52 @@
       Services[STATE_KEY] = {
         windowCount: 0,
         initialized: false,
-        backups: new Map(),
+        backups: null,
         observer: null,
+        shutdownObserver: null,
         windows: new Set(),
+        cleanedUp: false,
       };
     }
     return Services[STATE_KEY];
   }
 
+  function loadStoredBackups() {
+    const raw = Services.prefs.getStringPref(BACKUP_STATE_PREF, "").trim();
+    if (!raw) {
+      return new Map();
+    }
+
+    try {
+      const parsed = JSON.parse(raw);
+      if (!parsed || typeof parsed !== "object") {
+        return new Map();
+      }
+
+      return new Map(Object.entries(parsed));
+    } catch {
+      return new Map();
+    }
+  }
+
   const state = getRootState();
+  if (!(state.backups instanceof Map)) {
+    state.backups = loadStoredBackups();
+  }
   state.windowCount += 1;
   state.windows.add(window);
+
+  function persistBackups() {
+    if (state.backups.size === 0) {
+      if (Services.prefs.prefHasUserValue(BACKUP_STATE_PREF)) {
+        Services.prefs.clearUserPref(BACKUP_STATE_PREF);
+      }
+      return;
+    }
+
+    const serialized = JSON.stringify(Object.fromEntries(state.backups.entries()));
+    Services.prefs.setStringPref(BACKUP_STATE_PREF, serialized);
+  }
 
   function getStringPref(prefName, defaultValue = "") {
     const prefType = Services.prefs.getPrefType(prefName);
@@ -139,6 +176,7 @@
     }
 
     state.backups.set(pref.target, { hadUserValue, value, type: pref.type });
+    persistBackups();
   }
 
   function applyManagedPref(pref) {
@@ -331,6 +369,7 @@
     }
 
     state.backups.clear();
+    persistBackups();
   }
 
   function clearModPrefs() {
@@ -343,6 +382,47 @@
 
       Services.prefs.clearUserPref(prefName);
     }
+  }
+
+  function removeAllFontStyles() {
+    for (const win of state.windows) {
+      if (!win || win.closed) {
+        continue;
+      }
+
+      removeFontStylesFromWindow(win);
+    }
+  }
+
+  function removeAllObservers() {
+    if (state.observer) {
+      for (const pref of MANAGED_PREFS) {
+        Services.prefs.removeObserver(pref.source, state.observer);
+      }
+
+      for (const prefName of FONT_PREFS) {
+        Services.prefs.removeObserver(prefName, state.observer);
+      }
+    }
+
+    if (state.shutdownObserver) {
+      for (const topic of SHUTDOWN_TOPICS) {
+        Services.obs.removeObserver(state.shutdownObserver, topic);
+      }
+    }
+  }
+
+  function finalizeCleanup() {
+    if (state.cleanedUp) {
+      return;
+    }
+
+    state.cleanedUp = true;
+    removeAllFontStyles();
+    removeAllObservers();
+    restoreManagedPrefs();
+    clearModPrefs();
+    delete Services[STATE_KEY];
   }
 
   if (!state.initialized) {
@@ -366,12 +446,26 @@
       },
     };
 
+    state.shutdownObserver = {
+      observe(_subject, topic) {
+        if (!SHUTDOWN_TOPICS.includes(topic)) {
+          return;
+        }
+
+        finalizeCleanup();
+      },
+    };
+
     for (const pref of MANAGED_PREFS) {
       Services.prefs.addObserver(pref.source, state.observer);
     }
 
     for (const prefName of FONT_PREFS) {
       Services.prefs.addObserver(prefName, state.observer);
+    }
+
+    for (const topic of SHUTDOWN_TOPICS) {
+      Services.obs.addObserver(state.shutdownObserver, topic);
     }
 
     applyAllManagedPrefs();
@@ -391,17 +485,7 @@
         return;
       }
 
-      for (const pref of MANAGED_PREFS) {
-        Services.prefs.removeObserver(pref.source, state.observer);
-      }
-
-      for (const prefName of FONT_PREFS) {
-        Services.prefs.removeObserver(prefName, state.observer);
-      }
-
-      restoreManagedPrefs();
-      clearModPrefs();
-      delete Services[STATE_KEY];
+      finalizeCleanup();
     },
     { once: true }
   );
