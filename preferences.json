@@ -19,12 +19,12 @@
   },
   {
     "type": "text",
-    "label": "Zen-only defaults used by Square UI.",
+    "label": "Mod-managed defaults that reset when Square UI unloads.",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
   {
-    "property": "zen.theme.content-element-separation",
+    "property": "mod.squareui.zen.content-element-separation",
     "label": "Content element separation",
     "type": "string",
     "value": "number",
@@ -32,7 +32,7 @@
     "placeholder": 0
   },
   {
-    "property": "zen.view.experimental-no-window-controls",
+    "property": "mod.squareui.zen.no-window-controls",
     "label": "No Window Controls",
     "type": "checkbox",
     "defaultValue": true
@@ -63,12 +63,12 @@
   },
   {
     "type": "text",
-    "label": "These preferences are intended to improve behavior across firefox-based browsers",
+    "label": "Mod-managed defaults that reset when Square UI unloads.",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
   {
-    "property": "widget.prefer_windows_on_current_virtual_desktop",
+    "property": "mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop",
     "label": "Open window outside the current virtual desktop (Fix for Tiling Window Managers)",
     "type": "checkbox",
     "defaultValue": false

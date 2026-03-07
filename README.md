@@ -21,14 +21,16 @@ Square UI is a Sine-compatible CSS mod that removes rounded corners from browser
 - `mod.squareui.content.enabled`: Toggles `Square Website Content UI`.
 
 Zen-specific defaults:
-- `zen.theme.content-element-separation`: Recommended default of `0` to remove spacing padding from Zen content surfaces.
-- `zen.view.experimental-no-window-controls`: Recommended default of `true` for the intended Zen window treatment.
+- `mod.squareui.zen.content-element-separation`: Applies `zen.theme.content-element-separation` while the mod is active.
+- `mod.squareui.zen.no-window-controls`: Applies `zen.view.experimental-no-window-controls` while the mod is active.
 - `mod.squareui.floating-statusbar.enabled`: Enables the floating statusbar styling.
 - `mod.squareui.floating-findbar.enabled`: Enables the floating findbar styling.
 - `mod.squareui.dialog-fixes.enabled`: Enables the custom dialog styling fixes.
 
-Cross-browser defaults:
-- `widget.prefer_windows_on_current_virtual_desktop`: Recommended default of `false` to open windows outside the current virtual desktop and avoid new-window link behavior issues on some tiling window manager setups.
+Recommended manual browser prefs:
+- `mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop`: Applies `widget.prefer_windows_on_current_virtual_desktop` while the mod is active.
+
+These browser-level settings are now managed through a Square UI sync script so they reset when the mod unloads instead of leaving stale Firefox preferences behind.
 
 ## Browser Support
 
