@@ -2,6 +2,19 @@
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
+:root {
+  --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
+  --squareui-button-background: var(--button-background-color, color-mix(in srgb, currentColor 8%, transparent)) !important;
+  --squareui-button-text: var(--button-text-color, currentColor) !important;
+  --squareui-accent: var(--color-accent-primary, AccentColor) !important;
+  --squareui-accent-hover: var(--color-accent-primary-hover, color-mix(in srgb, var(--color-accent-primary, AccentColor) 85%, #fff)) !important;
+  --squareui-accent-active: var(--color-accent-primary-active, color-mix(in srgb, var(--color-accent-primary, AccentColor) 70%, #000)) !important;
+  --squareui-shadow-level-3: var(--box-shadow-level-3, 0 8px 32px rgba(0, 0, 0, 0.45)) !important;
+  --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
+  --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
+  --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
+}
+
 
 /* ── A: NO ROUNDED CORNERS ── */
 
@@ -372,7 +385,7 @@ textbox {
   border-radius: 0px !important;
   padding: 6px 12px !important;
   border: 1px solid rgba(160, 160, 175, 0.35) !important;
-  background: var(--arrowpanel-background) !important;
+  background: var(--squareui-arrowpanel-background) !important;
 }
 
 
@@ -392,9 +405,9 @@ findbar {
   contain: initial !important;
   border-radius: 0px !important;
   border: 1px solid rgba(160, 160, 175, 0.35) !important;
-  background: var(--arrowpanel-background) !important;
+  background: var(--squareui-arrowpanel-background) !important;
   padding: 6px !important;
-  box-shadow: var(--box-shadow-level-3) !important;
+  box-shadow: var(--squareui-shadow-level-3) !important;
   opacity: 1 !important;
 }
 
@@ -410,7 +423,7 @@ findbar {
   box-shadow: none !important;
   border: 1px solid rgba(130, 130, 145, 0.12) !important;
   outline: none !important;
-  background: var(--toolbar-field-focus-background-color) !important;
+  background: var(--squareui-findbar-background) !important;
 }
 
 .findbar-find-previous,
@@ -422,13 +435,15 @@ findbar {
   height: 38px !important;
   border-radius: 0px !important;
   margin: 0 !important;
+}
 
-  .toolbarbutton-icon {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-  }
+.findbar-find-previous .toolbarbutton-icon,
+.findbar-find-next .toolbarbutton-icon,
+.findbar-closebutton .toolbarbutton-icon {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 .findbar-find-previous {
@@ -460,41 +475,43 @@ findbar {
 /* ── M: DIALOG FIXES (Thanks to @qumeqa) ── */
 
 :root {
-  --zen-dialog-background: var(--arrowpanel-background) !important;
+  --zen-dialog-background: var(--squareui-arrowpanel-background) !important;
 }
 
 button[part="dialog-button"] {
   padding-left: 1.2em !important;
   padding-right: 1.2em !important;
-  color: var(--button-text-color) !important;
-  background: var(--button-background-color) !important;
+  color: var(--squareui-button-text) !important;
+  background: var(--squareui-button-background) !important;
+}
 
-  &[default="true"],
-  &[default="false"] {
-    color: light-dark(var(--zen-branding-paper), var(--zen-branding-dark)) !important;
-    background: var(--color-accent-primary) !important;
-  }
+button[part="dialog-button"][default="true"],
+button[part="dialog-button"][default="false"] {
+  color: light-dark(var(--squareui-brand-light), var(--squareui-brand-dark)) !important;
+  background: var(--squareui-accent) !important;
+}
 
-  &::after {
-    display: none !important;
-  }
+button[part="dialog-button"]::after {
+  display: none !important;
 }
 
 button[part="dialog-button"]:hover {
   background: color-mix(in srgb, currentColor 5%, transparent) !important;
+}
 
-  &[default="true"] {
-    background: var(--color-accent-primary-hover) !important;
-  }
+button[part="dialog-button"][default="true"]:hover,
+button[part="dialog-button"][default="false"]:hover {
+  background: var(--squareui-accent-hover) !important;
 }
 
 button[part="dialog-button"]:hover:active {
   scale: 0.98;
   background: color-mix(in srgb, currentColor 10%, transparent) !important;
+}
 
-  &[default="true"] {
-    background: var(--color-accent-primary-active) !important;
-  }
+button[part="dialog-button"][default="true"]:hover:active,
+button[part="dialog-button"][default="false"]:hover:active {
+  background: var(--squareui-accent-active) !important;
 }
 
 

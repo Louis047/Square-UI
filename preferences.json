@@ -10,5 +10,61 @@
     "label": "Enable square website content",
     "type": "checkbox",
     "defaultValue": true
+  },
+  {
+    "type": "separator",
+    "label": "Zen-Specific Defaults",
+    "margin": "20px 0 20px 0",
+    "size": "18px"
+  },
+  {
+    "type": "text",
+    "label": "These settings reflect the original Zen-focused base of Square UI and only take effect in browsers that expose the matching Zen preferences.",
+    "margin": "0 0 12px 0",
+    "size": "13px"
+  },
+  {
+    "property": "zen.theme.content-element-separation",
+    "label": "Content element separation",
+    "type": "string",
+    "value": "number",
+    "defaultValue": 0,
+    "placeholder": 0
+  },
+  {
+    "property": "zen.view.experimental-no-window-controls",
+    "label": "Enable experimental no window controls",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "zen.theme.essentials-favicon-bg",
+    "label": "Disable essentials favicon background for proper essentials tab animations",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "type": "separator",
+    "label": "Cross-Browser Defaults",
+    "margin": "20px 0 20px 0",
+    "size": "18px"
+  },
+  {
+    "type": "text",
+    "label": "These preferences are intended to improve behavior across Firefox-based browsers supported by Sine.",
+    "margin": "0 0 12px 0",
+    "size": "13px"
+  },
+  {
+    "property": "extensions.webextensions.restrictedDomains",
+    "label": "Restricted domains override for Stylus coverage on Mozilla services",
+    "type": "string",
+    "defaultValue": "accounts-static.cdn.mozilla.net,addons.cdn.mozilla.net,api.accounts.firefox.com,content.cdn.mozilla.net,discovery.addons.mozilla.org,oauth.accounts.firefox.com,profile.accounts.firefox.com,sync.services.mozilla.com"
+  },
+  {
+    "property": "widget.prefer_windows_on_current_virtual_desktop",
+    "label": "Prefer opening windows outside the current virtual desktop",
+    "type": "checkbox",
+    "defaultValue": false
   }
 ]
