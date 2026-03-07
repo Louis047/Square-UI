@@ -1,0 +1,14 @@
+[
+  {
+    "property": "mod.squareui.browser.enabled",
+    "label": "Enable square browser chrome",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.content.enabled",
+    "label": "Enable square website content",
+    "type": "checkbox",
+    "defaultValue": true
+  }
+]

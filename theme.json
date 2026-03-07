@@ -1,0 +1,31 @@
+{
+  "id": "square-ui",
+  "name": "Square UI",
+  "description": "Removes rounded corners across browser chrome and website content with separate Sine toggles for each area.",
+  "homepage": "https://github.com/Louis047/Square-UI",
+  "style": {
+    "chrome": "userChrome.css",
+    "content": "userContent.css"
+  },
+  "preferences": "preferences.json",
+  "readme": "https://raw.githubusercontent.com/Louis047/Square-UI/main/README.md",
+  "author": "Lone",
+  "version": "1.0.0",
+  "tags": [
+    "ui",
+    "minimal",
+    "squared",
+    "corners",
+    "customization"
+  ],
+  "createdAt": "2026-03-07",
+  "updatedAt": "2026-03-07",
+  "fork": [
+    "zen",
+    "firefox",
+    "floorp",
+    "librewolf",
+    "mullvad",
+    "waterfox"
+  ]
+}
