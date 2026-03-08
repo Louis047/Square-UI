@@ -11,53 +11,12 @@
   --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
   --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
   --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
-  --squareui-custom-browser-font: system-ui !important;
-  --squareui-custom-browser-font-fallback: system-ui, -apple-system, "Segoe UI", sans-serif !important;
 }
 
-@media (-moz-bool-pref: "mod.squareui.crossbrowser.custom-browser-ui-font.enabled") {
-
-:root[squareui-custom-browser-font-active="true"],
-:root[squareui-custom-browser-font-active="true"] toolbar,
-:root[squareui-custom-browser-font-active="true"] toolbaritem,
-:root[squareui-custom-browser-font-active="true"] #TabsToolbar,
-:root[squareui-custom-browser-font-active="true"] #nav-bar,
-:root[squareui-custom-browser-font-active="true"] #PersonalToolbar,
-:root[squareui-custom-browser-font-active="true"] #sidebar-box,
-:root[squareui-custom-browser-font-active="true"] #sidebar-header,
-:root[squareui-custom-browser-font-active="true"] #sidebar,
-:root[squareui-custom-browser-font-active="true"] #urlbar,
-:root[squareui-custom-browser-font-active="true"] #urlbar-input,
-:root[squareui-custom-browser-font-active="true"] #searchbar,
-:root[squareui-custom-browser-font-active="true"] .urlbar-input-box,
-:root[squareui-custom-browser-font-active="true"] .urlbarView,
-:root[squareui-custom-browser-font-active="true"] .urlbarView-row,
-:root[squareui-custom-browser-font-active="true"] .urlbarView-title,
-:root[squareui-custom-browser-font-active="true"] .urlbarView-url,
-:root[squareui-custom-browser-font-active="true"] .tabbrowser-tab,
-:root[squareui-custom-browser-font-active="true"] .tab-text,
-:root[squareui-custom-browser-font-active="true"] .tab-label,
-:root[squareui-custom-browser-font-active="true"] menupopup,
-:root[squareui-custom-browser-font-active="true"] menu,
-:root[squareui-custom-browser-font-active="true"] menuitem,
-:root[squareui-custom-browser-font-active="true"] panel,
-:root[squareui-custom-browser-font-active="true"] panelview,
-:root[squareui-custom-browser-font-active="true"] richlistbox,
-:root[squareui-custom-browser-font-active="true"] richlistitem,
-:root[squareui-custom-browser-font-active="true"] dialog,
-:root[squareui-custom-browser-font-active="true"] button:not(.titlebar-button),
-:root[squareui-custom-browser-font-active="true"] toolbarbutton:not(.titlebar-button),
-:root[squareui-custom-browser-font-active="true"] label,
-:root[squareui-custom-browser-font-active="true"] description,
-:root[squareui-custom-browser-font-active="true"] textbox,
-:root[squareui-custom-browser-font-active="true"] input,
-:root[squareui-custom-browser-font-active="true"] textarea,
-:root[squareui-custom-browser-font-active="true"] findbar,
-:root[squareui-custom-browser-font-active="true"] #statuspanel-label,
-:root[squareui-custom-browser-font-active="true"] .zen-current-workspace-indicator-name {
-  font-family: var(--squareui-custom-browser-font, var(--squareui-custom-browser-font-fallback)) !important;
-}
-
+:root:has(#theme-Square-UI[theme-squareui_uifont-default="Custom"]) {
+  *:not(.titlebar-buttonbox-container *) {
+    font-family: var(--theme-squareui_uifont-custom) !important;
+  }
 }
 
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {

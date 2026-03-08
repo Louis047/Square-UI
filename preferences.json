@@ -68,30 +68,33 @@
     "size": "13px"
   },
   {
-    "property": "mod.squareui.crossbrowser.custom-browser-ui-font.enabled",
+    "property": "theme.squareui_uifont.default",
     "label": "Custom Browser UI Font",
-    "type": "checkbox",
-    "defaultValue": false
+    "type": "dropdown",
+    "defaultValue": "Default",
+    "options": [
+      {
+        "label": "Default",
+        "value": "Default"
+      },
+      {
+        "label": "Custom",
+        "value": "Custom"
+      }
+    ]
   },
   {
     "type": "text",
-    "label": "Leave the stylesheet URL blank to use locally installed fonts only.",
+    "label": "Use the custom option with a locally installed font-family stack.",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
   {
-    "property": "mod.squareui.crossbrowser.custom-browser-ui-font.stylesheet-url",
-    "label": "Online font stylesheet URL",
+    "property": "theme.squareui_uifont.custom",
+    "label": "font-family:",
     "type": "string",
-    "defaultValue": "",
-    "placeholder": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
-  },
-  {
-    "property": "mod.squareui.crossbrowser.custom-browser-ui-font.font-family",
-    "label": "UI font-family stack",
-    "type": "string",
-    "defaultValue": "",
-    "placeholder": "\"Instrument Sans\", system-ui, sans-serif"
+    "defaultValue": "sans-serif",
+    "placeholder": "\"Aptos\", \"Segoe UI\", system-ui, sans-serif"
   },
   {
     "property": "mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop",

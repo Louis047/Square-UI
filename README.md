@@ -28,16 +28,14 @@ Zen-specific defaults:
 - `mod.squareui.dialog-fixes.enabled`: Enables the custom dialog styling fixes.
 
 Cross-browser defaults:
-- `mod.squareui.crossbrowser.custom-browser-ui-font.enabled`: Enables the browser chrome font override.
-- `mod.squareui.crossbrowser.custom-browser-ui-font.stylesheet-url`: Loads an optional HTTPS font stylesheet for hosted fonts such as Google Fonts or Bunny Fonts.
-- `mod.squareui.crossbrowser.custom-browser-ui-font.font-family`: Sets the browser chrome `font-family` stack. Leave the stylesheet URL blank when using locally installed fonts only.
+- `theme.squareui_uifont.default`: Switches the browser UI font mode between `Default` and `Custom`.
+- `theme.squareui_uifont.custom`: Sets the local `font-family` stack used when the font mode is `Custom`.
 - `mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop`: Applies `widget.prefer_windows_on_current_virtual_desktop` while the mod is active.
 
 These browser-level settings are now managed through a Square UI sync script so they reset when the mod unloads instead of leaving stale Firefox preferences behind.
 
-Custom Browser UI Font examples:
-- Local installed fonts only: leave `stylesheet-url` empty and set `font-family` to `"Aptos", "Segoe UI", system-ui, sans-serif`.
-- Hosted fonts: set `stylesheet-url` to something like `https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap` and set `font-family` to `"Instrument Sans", system-ui, sans-serif`.
+Custom Browser UI Font example:
+- Set `theme.squareui_uifont.default` to `Custom` and set `theme.squareui_uifont.custom` to `"Aptos", "Segoe UI", system-ui, sans-serif`.
 
 ## Browser Support
 
