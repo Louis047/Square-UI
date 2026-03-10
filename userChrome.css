@@ -411,6 +411,13 @@ textbox {
 
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   padding-inline-end: calc(var(--size-item-medium, 24px) + 12px) !important;
+  overflow: hidden !important;
+}
+
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) .urlbar-input-box,
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
 
 #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
