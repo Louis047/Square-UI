@@ -1,53 +1,36 @@
 # Square UI
 
-Square UI is a Sine-compatible CSS mod that removes rounded corners from browser chrome and website content across Firefox-based browsers.
+Square UI is a compact Sine-compatible CSS mod that removes rounded corners from browser chrome and web content for Firefox-based browsers.
 
-## Features
+Why this mod
+- Small, focused tweaks to give a crisp, square UI across browser chrome and page content.
+- Zen-aware but safe on other Sine-supported forks.
 
-- Independent toggle for browser chrome styling.
-- Independent toggle for website content styling.
-- Works best in Zen Browser while remaining safe to install on other Sine-supported Firefox forks.
+What’s included
+- `userChrome.css` — browser chrome rules
+- `userContent.css` — website/internal page rules
+- `preferences.json` — Sine toggles
+- `theme.json` — mod metadata
 
-## Included Files
+Quick start
+- Preferred: Install from the Sine Marketplace — Square UI is published and available. Open Sine, search for "Square UI", and enable the mod.
+- Alternative: Add this repository as a Sine mod source if you prefer manual installation.
+- After install: toggle the features in Sine using the provided preferences.
 
-- `userChrome.css` for browser UI styling.
-- `userContent.css` for website and internal page styling.
-- `preferences.json` for Sine toggles.
-- `theme.json` for Sine metadata.
+Key preferences
+- `mod.squareui.browser.enabled` — Square Browser UI
+- `mod.squareui.content.enabled` — Square Website Content UI
+- `mod.squareui.extension-tools.enabled` — show URL-bar extension tools on hover (Zen-specific behavior)
 
-## Preferences
+Browser support
+- Targeted for Zen with fallbacks for Firefox, Floorp, LibreWolf, Mullvad Browser, and Waterfox.
 
-- `mod.squareui.browser.enabled`: Toggles `Square Browser UI`.
-- `mod.squareui.content.enabled`: Toggles `Square Website Content UI`.
+Notes
+- Zen-specific selectors are included to match Zen's UI when available; other browsers ignore those selectors.
+- Preference-managed browser settings are synced so they reset when the mod unloads.
 
-Zen-specific defaults:
-- `zen.theme.content-element-separation`: Applies Zen's native content element separation preference while the mod is active.
-- `zen.view.experimental-no-window-controls`: Applies Zen's native no-window-controls preference while the mod is active.
-- `mod.squareui.floating-statusbar.enabled`: Enables the floating statusbar styling.
-- `mod.squareui.floating-findbar.enabled`: Enables the floating findbar styling.
-- `mod.squareui.dialog-fixes.enabled`: Enables the custom dialog styling fixes.
-- `mod.squareui.extension-tools.enabled`: Shows URL bar extension tools on URL bar hover/focus instead of hiding them permanently.
+Contributing
+- Bug reports and small patches welcome. Keep changes focused and minimal.
 
-Cross-browser defaults:
-- `theme.squareui_uifont.default`: Switches the browser UI font mode between `Default` and `Custom`.
-- `theme.squareui_uifont.custom`: Sets the local `font-family` stack used when the font mode is `Custom`.
-- `mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop`: Applies `widget.prefer_windows_on_current_virtual_desktop` while the mod is active.
-
-These browser-level settings are now managed through a Square UI sync script so they reset when the mod unloads instead of leaving stale Firefox preferences behind.
-
-Custom Browser UI Font example:
-- Set `theme.squareui_uifont.default` to `Custom` and set `theme.squareui_uifont.custom` to `"Aptos", "Segoe UI", system-ui, sans-serif`.
-
-## Browser Support
-
-This mod declares support for Zen, Firefox, Floorp, LibreWolf, Mullvad Browser, and Waterfox.
-
-Zen-specific selectors are included for the best result in Zen Browser. Other Firefox-based browsers will ignore unsupported selectors and still apply the generic square-corner rules where they match.
-
-`Square Website Content UI` covers website documents and Firefox internal content pages. `Square Browser UI` remains responsible for browser chrome only.
-
-## Installation
-
-1. Install Sine in a supported Firefox-based browser.
-2. Add this repository as a Sine mod source or publish it through the Sine store workflow.
-3. Enable or disable the Square UI preferences in Sine depending on which parts of Square UI you want active.
+License
+- MIT — see the `LICENSE` file for the full text.
