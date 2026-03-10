@@ -12,6 +12,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.extension-tools.enabled",
+    "label": "URL-bar Extension Tools (Square UI)",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "type": "separator",
     "label": "Zen-Specific Defaults",
     "margin": "20px 0 20px 0",
@@ -55,12 +61,7 @@
     "type": "checkbox",
     "defaultValue": true
   },
-  {
-    "property": "mod.squareui.extension-tools.enabled",
-    "label": "Extension Tools Visibility",
-    "type": "checkbox",
-    "defaultValue": true
-  },
+  
   {
     "type": "separator",
     "label": "Cross-Browser Defaults",
