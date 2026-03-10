@@ -413,19 +413,6 @@ textbox {
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #identity-box::before {
-  content: "" !important;
-  position: absolute !important;
-  inset-inline-end: 0 !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  width: calc(var(--size-item-medium, 24px) + (2 * var(--toolbarbutton-inner-padding, 6px)) + (2 * var(--toolbarbutton-outer-padding, 1px)) + 8px) !important;
-  height: calc(var(--size-item-medium, 24px) + (2 * var(--toolbarbutton-outer-padding, 1px)) + 8px) !important;
-  background: var(--toolbar-field-background-color, var(--toolbar-bgcolor, var(--zen-toolbar-element-bg))) !important;
-  pointer-events: none !important;
-  z-index: -1 !important;
-}
-
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
 }
@@ -433,6 +420,7 @@ textbox {
 #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
+  background: var(--toolbarbutton-hover-background, color-mix(in srgb, currentColor 10%, transparent)) !important;
 }
 
 }
