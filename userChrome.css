@@ -159,7 +159,8 @@ textbox {
 /*
   Popup anchor elements (#identity-box, #tracking-protection-icon-container)
   must use opacity/pointer-events — NOT display:none — so permission popups
-  can still anchor to them. #zen-urlbar-actions is intentionally kept visible.
+  can still anchor to them. Zen's URL bar extensions anchor also lives inside
+  #identity-box, so the parent itself cannot be visually collapsed.
 */
 
 #identity-icon-box,
@@ -170,10 +171,7 @@ textbox {
 }
 
 #identity-box {
-  opacity: 0 !important;
-  pointer-events: none !important;
   min-width: 0 !important;
-  max-width: 1px !important;
   overflow: visible !important;
 }
 
@@ -189,7 +187,7 @@ textbox {
 #pocket-button,
 #urlbar-zoom-button,
 #pageActionSeparator,
-#zen-urlbar-copy-button,
+#zen-copy-url-button,
 #reader-mode-button {
   display: none !important;
   width: 0 !important;
@@ -392,9 +390,9 @@ textbox {
   display: none !important;
 }
 
-#nav-bar #unified-extensions-button {
+#identity-box #zen-site-data-icon-button {
   opacity: 0 !important;
-  pointer-events: auto !important;
+  pointer-events: none !important;
   transition: opacity 0.15s ease !important;
 }
 
@@ -402,7 +400,9 @@ textbox {
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-#nav-bar #unified-extensions-button:is(:hover, :focus, :focus-visible, [open]) {
+#identity-box:hover #zen-site-data-icon-button,
+#identity-box:focus-within #zen-site-data-icon-button,
+#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
 }
