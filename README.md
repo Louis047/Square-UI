@@ -26,6 +26,7 @@ Zen-specific defaults:
 - `mod.squareui.floating-statusbar.enabled`: Enables the floating statusbar styling.
 - `mod.squareui.floating-findbar.enabled`: Enables the floating findbar styling.
 - `mod.squareui.dialog-fixes.enabled`: Enables the custom dialog styling fixes.
+- `mod.squareui.extension-tools.enabled`: Shows URL bar extension tools on URL bar hover/focus instead of hiding them permanently.
 
 Cross-browser defaults:
 - `theme.squareui_uifont.default`: Switches the browser UI font mode between `Default` and `Custom`.

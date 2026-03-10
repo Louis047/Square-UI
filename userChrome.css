@@ -185,16 +185,13 @@ textbox {
 }
 
 #page-action-buttons,
-#pageActionButton,
 #star-button-box,
 #star-button,
 #pocket-button,
 #urlbar-zoom-button,
 #pageActionSeparator,
 #zen-urlbar-copy-button,
-#reader-mode-button,
-#urlbar-container .urlbar-page-action,
-.urlbar-page-action {
+#reader-mode-button {
   display: none !important;
   width: 0 !important;
   padding: 0 !important;
@@ -209,16 +206,6 @@ textbox {
   max-width: 1px !important;
   overflow: visible !important;
 }
-
-/* Scoped to #nav-bar to avoid hiding the sidebar's extensions button */
-#nav-bar #unified-extensions-button {
-  display: none !important;
-  width: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-}
-
 
 /* ── C: CENTER URL TEXT ── */
 
@@ -394,6 +381,33 @@ textbox {
 #zen-workspaces-button toolbarbutton:hover .zen-workspace-icon,
 #zen-workspaces-button toolbarbutton:hover img.zen-workspace-icon {
   filter: saturate(100%) brightness(100%) !important;
+}
+
+}
+
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+
+#urlbar #page-action-buttons,
+#urlbar #pageActionButton,
+#urlbar-container .urlbar-page-action,
+.urlbar-page-action,
+#nav-bar #unified-extensions-button {
+  visibility: collapse !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+}
+
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
+
+#urlbar:is(:hover, [focused], [open]) #page-action-buttons,
+#urlbar:is(:hover, [focused], [open]) #pageActionButton,
+#urlbar:is(:hover, [focused], [open]) .urlbar-page-action,
+#nav-bar:has(#urlbar:is(:hover, [focused], [open])) #unified-extensions-button {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 }

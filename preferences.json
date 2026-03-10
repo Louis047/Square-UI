@@ -56,6 +56,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.extension-tools.enabled",
+    "label": "Extension Tools Visibility",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "type": "separator",
     "label": "Cross-Browser Defaults",
     "margin": "20px 0 20px 0",
