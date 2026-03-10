@@ -184,7 +184,6 @@ textbox {
   display: none !important;
 }
 
-#page-action-buttons,
 #star-button-box,
 #star-button,
 #pocket-button,
@@ -387,25 +386,23 @@ textbox {
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
-#urlbar #page-action-buttons,
 #urlbar #pageActionButton,
 #urlbar-container .urlbar-page-action,
-.urlbar-page-action,
+.urlbar-page-action {
+  display: none !important;
+}
+
 #nav-bar #unified-extensions-button {
-  visibility: collapse !important;
   opacity: 0 !important;
-  pointer-events: none !important;
+  pointer-events: auto !important;
+  transition: opacity 0.15s ease !important;
 }
 
 }
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-#urlbar:is(:hover, [focused], [open]) #page-action-buttons,
-#urlbar:is(:hover, [focused], [open]) #pageActionButton,
-#urlbar:is(:hover, [focused], [open]) .urlbar-page-action,
-#nav-bar:has(#urlbar:is(:hover, [focused], [open])) #unified-extensions-button {
-  visibility: visible !important;
+#nav-bar #unified-extensions-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
 }
