@@ -409,6 +409,10 @@ textbox {
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+  padding-inline-end: calc(var(--size-item-medium, 24px) + 12px) !important;
+}
+
 #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
