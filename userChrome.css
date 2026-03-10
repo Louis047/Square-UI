@@ -409,11 +409,13 @@ textbox {
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
-  padding-inline-end: calc(var(--size-item-medium, 24px) + 12px) !important;
-  overflow: hidden !important;
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #identity-box {
+  width: calc(var(--size-item-medium, 24px) + (2 * var(--toolbarbutton-inner-padding, 6px)) + (2 * var(--toolbarbutton-outer-padding, 1px))) !important;
+  min-width: calc(var(--size-item-medium, 24px) + (2 * var(--toolbarbutton-inner-padding, 6px)) + (2 * var(--toolbarbutton-outer-padding, 1px))) !important;
+  max-width: calc(var(--size-item-medium, 24px) + (2 * var(--toolbarbutton-inner-padding, 6px)) + (2 * var(--toolbarbutton-outer-padding, 1px))) !important;
 }
 
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container,
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) .urlbar-input-box,
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input {
   overflow: hidden !important;
