@@ -38,6 +38,12 @@
     "placeholder": 0
   },
   {
+    "property": "zen.theme.essentials-favicon-bg",
+    "label": "Essentials background",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "property": "zen.view.experimental-no-window-controls",
     "label": "No Window Controls",
     "type": "checkbox",

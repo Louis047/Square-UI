@@ -22,6 +22,12 @@
       defaultValue: 0,
     },
     {
+      source: "zen.theme.essentials-favicon-bg",
+      target: "zen.theme.essentials-favicon-bg",
+      type: "bool",
+      defaultValue: true,
+    },
+    {
       source: "zen.view.experimental-no-window-controls",
       target: "zen.view.experimental-no-window-controls",
       type: "bool",
