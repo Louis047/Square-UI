@@ -25,7 +25,7 @@
   },
   {
     "type": "text",
-    "label": "Mod-managed defaults that reset when Square UI unloads.",
+    "label": "Defaults applied for Zen Browser specific configurations",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
@@ -76,7 +76,7 @@
   },
   {
     "type": "text",
-    "label": "Mod-managed defaults that reset when Square UI unloads.",
+    "label": "Defaults applied across all browsers",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
@@ -110,8 +110,8 @@
     "placeholder": "\"Aptos\", \"Segoe UI\", system-ui, sans-serif"
   },
   {
-    "property": "mod.squareui.crossbrowser.open-window-outside-current-virtual-desktop",
-    "label": "Open window outside the current virtual desktop (Fix for Tiling Window Managers)",
+    "property": "widget.prefer_windows_on_current_virtual_desktop",
+    "label": "Prefer windows on current virtual desktop",
     "type": "checkbox",
     "defaultValue": false
   }
