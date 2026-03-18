@@ -62,6 +62,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.floating-sidebar-margin.enabled",
+    "label": "Floating Compact Sidebar Margin",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "property": "mod.squareui.dialog-fixes.enabled",
     "label": "Dialog Fixes",
     "type": "checkbox",

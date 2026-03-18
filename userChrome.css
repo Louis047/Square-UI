@@ -521,6 +521,20 @@ findbar {
 
 }
 
+/* ── L: FLOATING COMPACT SIDEBAR MARGIN ── */
+
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.floating-sidebar-margin.enabled") {
+
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
+  margin-left: 20px !important;
+}
+
+:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
+  margin-right: 20px !important;
+}
+
+}
+
 /* ── M: DIALOG FIXES (Thanks to @qumeqa) ── */
 
 @media (-moz-bool-pref: "mod.squareui.dialog-fixes.enabled") {
