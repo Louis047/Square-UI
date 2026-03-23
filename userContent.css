@@ -1,5 +1,10 @@
 /* ZEN BROWSER — userContent.css */
 
+/* Baseline fallback for forks where pref-gated media rules are not active on first run. */
+@-moz-document regexp("^(https?|ftp|file)://.*") {
+  *, *::before, *::after { border-radius: 0 !important; }
+}
+
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 /* ══ WEBSITES ══════════════════════════════════════════════════════════════ */

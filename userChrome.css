@@ -19,6 +19,36 @@
   }
 }
 
+/* Cross-browser fallback for non-Zen Firefox forks. */
+:root:not(:has(#zen-main-app-wrapper)) {
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --panel-border-radius: 0px !important;
+  --urlbar-icon-border-radius: 0px !important;
+}
+
+:root:not(:has(#zen-main-app-wrapper)) #urlbar,
+:root:not(:has(#zen-main-app-wrapper)) #urlbar-background,
+:root:not(:has(#zen-main-app-wrapper)) #urlbar-input-container,
+:root:not(:has(#zen-main-app-wrapper)) #searchbar,
+:root:not(:has(#zen-main-app-wrapper)) .urlbar-input-box,
+:root:not(:has(#zen-main-app-wrapper)) toolbarbutton,
+:root:not(:has(#zen-main-app-wrapper)) .toolbarbutton-1,
+:root:not(:has(#zen-main-app-wrapper)) .subviewbutton,
+:root:not(:has(#zen-main-app-wrapper)) panel,
+:root:not(:has(#zen-main-app-wrapper)) menupopup,
+:root:not(:has(#zen-main-app-wrapper)) .panel-arrowcontent,
+:root:not(:has(#zen-main-app-wrapper)) .arrowpanel-inner-box,
+:root:not(:has(#zen-main-app-wrapper)) tooltip,
+:root:not(:has(#zen-main-app-wrapper)) input,
+:root:not(:has(#zen-main-app-wrapper)) button,
+:root:not(:has(#zen-main-app-wrapper)) textbox,
+:root:not(:has(#zen-main-app-wrapper)) * {
+  --border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 :root {
