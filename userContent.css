@@ -1,11 +1,18 @@
 /* ZEN BROWSER — userContent.css */
 
-/*
-  Some non-Zen forks do not evaluate the bool-pref gate in userContent.css.
-  This fallback guarantees visible square content styling on those browsers.
-*/
-@media not (-moz-bool-pref: "zen.view.experimental-no-window-controls") {
-  *, *::before, *::after { border-radius: 0 !important; }
+/* Fallback for forks that expose content toggle as a document/root attribute. */
+:root[mod-squareui-content-enabled="true"],
+:root[mod.squareui.content.enabled="true"] {
+  --squareui-content-enabled-fallback: 1;
+}
+
+:root[mod-squareui-content-enabled="true"] *,
+:root[mod-squareui-content-enabled="true"] *::before,
+:root[mod-squareui-content-enabled="true"] *::after,
+:root[mod.squareui.content.enabled="true"] *,
+:root[mod.squareui.content.enabled="true"] *::before,
+:root[mod.squareui.content.enabled="true"] *::after {
+  border-radius: 0 !important;
 }
 
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {

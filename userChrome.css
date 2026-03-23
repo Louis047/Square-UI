@@ -52,6 +52,26 @@ browser,
 
 }
 
+/*
+  Cross-browser fallback path for content squaring when custom bool-pref
+  media queries are not evaluated by a fork.
+*/
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
+  --zen-webview-border-radius: 0px !important;
+}
+
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]):not([inDOMFullscreen="true"]) #tabbrowser-tabbox #tabbrowser-tabpanels .browserSidebarContainer,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]):not([inDOMFullscreen="true"]) #tabbrowser-tabbox #tabbrowser-tabpanels[zen-split-view="true"] .browserSidebarContainer,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) #tabbrowser-tabpanels,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) .browserSidebarContainer,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) .browserContainer,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) browser,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) #appcontent,
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) #zen-appcontent-wrapper {
+  border-radius: 0px !important;
+  margin: 0px !important;
+}
+
 @media not (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
 :root {
@@ -65,7 +85,7 @@ browser,
    GENERIC: Square Browser UI for all Firefox-based browsers (non-Zen)
    ════════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):not(:has(#zen-main-app-wrapper)) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):not(:has(#zen-main-app-wrapper)):not(:has(#zen-appcontent-wrapper)):not(:has(#zen-sidebar-panel-wrapper)) {
 
 /* ── A: NO ROUNDED CORNERS ── */
 
@@ -149,7 +169,7 @@ textbox {
    ZEN BROWSER: Full customization suite (Zen-specific features only)
    ════════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -502,23 +522,27 @@ textbox {
 
 /* ── J: URL-BAR EXTENSION TOOLS (Zen-specific, independent) ── */
 
-:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="true"]):has(#zen-main-app-wrapper) {
+:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
 #identity-box {
-  width: 18px !important;
-  min-width: 18px !important;
-  max-width: 18px !important;
-  margin-inline-end: 4px !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
   overflow: visible !important;
 }
 
 #identity-box #zen-site-data-icon-button {
   position: absolute !important;
-  inset-inline-end: 0 !important;
+  inset-inline-end: -2px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
+  display: inline-flex !important;
   opacity: 0 !important;
-  pointer-events: auto !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
   transition: opacity 0.15s ease !important;
 }
 
@@ -535,18 +559,14 @@ textbox {
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="false"]):has(#zen-main-app-wrapper) #identity-box #zen-site-data-icon-button {
+:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="false"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #identity-box #zen-site-data-icon-button {
   display: none !important;
 }
 
 /* ── K: FLOATING COMPACT SIDEBAR MARGIN (Zen-specific, independent) ── */
 
-:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"]):has(#zen-main-app-wrapper)[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
-  margin-left: 20px !important;
-}
-
-:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"]):has(#zen-main-app-wrapper)[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
-  margin-right: 20px !important;
+:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper))[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) #titlebar {
+  margin-inline: 12px !important;
 }
 
 /* ════════════════════════════════════════════════════════════════════════════
