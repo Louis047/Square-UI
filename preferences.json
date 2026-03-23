@@ -49,7 +49,7 @@
   },
   {
     "property": "mod.squareui.extension-tools.enabled",
-    "label": "URL-Bar Extension Tool (Only works when 'Square Browser UI' is enabled)",
+    "label": "URL-Bar Extension Tool",
     "type": "dropdown",
     "defaultValue": "true",
     "options": [

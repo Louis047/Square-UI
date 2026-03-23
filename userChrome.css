@@ -503,9 +503,15 @@ textbox {
   background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
 }
 
-/* ── J: URL-BAR EXTENSION TOOLS ── */
+}
 
-:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="true"]) {
+/* ════════════════════════════════════════════════════════════════════════════
+   ZEN INDEPENDENT TOGGLES (Not dependent on Square Browser UI toggle)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ── J: URL-BAR EXTENSION TOOLS (Zen-specific, independent) ── */
+
+:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="true"]):has(#zen-main-app-wrapper) {
 
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
@@ -519,20 +525,21 @@ textbox {
 
 }
 
-/* ── K: FLOATING COMPACT SIDEBAR MARGIN ── */
+/* ── K: FLOATING COMPACT SIDEBAR MARGIN (Zen-specific, independent) ── */
 
-:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
+:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"]):has(#zen-main-app-wrapper)[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
   margin-left: 20px !important;
 }
 
-:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
+:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"]):has(#zen-main-app-wrapper)[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
   margin-right: 20px !important;
 }
 
-}
+/* ════════════════════════════════════════════════════════════════════════════
+   CROSS-BROWSER FLOATING FEATURES (All browsers)
+   ════════════════════════════════════════════════════════════════════════════ */
 
-
-/* ── J: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
+/* ── M: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
 
 :root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled="true"]) {
 
@@ -674,16 +681,9 @@ button[part="dialog-button"][default="false"]:hover:active {
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+/* ── L: ZEN FOLDERS — TRANSPARENT HOVER (Zen-specific, independent) ── */
 
-
-/* ── N: PINNED TAB SEPARATOR (Thanks to @qumeqa) ── */
-.pinned-tabs-container-separator {
-  display: none !important;
-}
-
-
-/* ── O: ZEN FOLDERS — TRANSPARENT HOVER ── */
+:root:has(#zen-main-app-wrapper) {
 
 zen-folder .tab-group-label-container,
 zen-folder .tab-group-label-container:hover,
@@ -702,6 +702,11 @@ zen-folder .tab-group-label-container::after {
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;
+  display: none !important;
+}
+
+/* ── M: PINNED TAB SEPARATOR (Zen-specific, independent) ── */
+.pinned-tabs-container-separator {
   display: none !important;
 }
 
