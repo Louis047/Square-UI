@@ -7,15 +7,6 @@
     "chrome": "userChrome.css",
     "content": "userContent.css"
   },
-  "scripts": {
-    "sine/JS/square-ui-pref-bootstrap.uc.js": {
-      "name": "Square UI Preference Bootstrap",
-      "description": "Initializes missing Square UI preferences so toggle-based CSS works on first startup.",
-      "include": [
-        "chrome://browser/content/browser.xhtml"
-      ]
-    }
-  },
   "preferences": "preferences.json",
   "readme": "https://raw.githubusercontent.com/Louis047/Square-UI/main/README.md",
   "author": "Lone",
