@@ -24,7 +24,7 @@
 }
 
 /* Cross-browser fallback for non-Zen Firefox forks. */
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 :root {
   --tab-border-radius: 0px !important;
@@ -57,7 +57,7 @@
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.content.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
 
 :root {
   --zen-webview-border-radius: 0px !important;
@@ -90,7 +90,7 @@ browser,
 
 }
 
-@media not (-moz-bool-pref: "mod.squareui.browser.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="false"]) {
 
 :root {
   --zen-border-radius: -1px !important;
@@ -99,7 +99,7 @@ browser,
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -425,7 +425,7 @@ textbox {
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 #urlbar #pageActionButton,
 #urlbar-container .urlbar-page-action,
@@ -449,13 +449,13 @@ textbox {
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
+@media (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
 }
 
-#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
   background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
@@ -466,7 +466,7 @@ textbox {
 
 /* ── J: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
 
-@media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled="true"]) {
 
 #statuspanel {
   margin: 0 !important;
@@ -495,7 +495,7 @@ textbox {
 
 /* ── K: FLOATING FINDBAR (Thanks to @qumeqa) ── */
 
-@media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-floating-findbar-enabled="true"]) {
 
 #tabbrowser-tabbox,
 #appcontent,
@@ -577,7 +577,7 @@ findbar,
 }
 
 /* Fallback for non-Zen forks where pref-gated media rules may not be active on first run. */
-@media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled="true"]) {
 
 :root #statuspanel {
   margin: 0 !important;
@@ -603,7 +603,7 @@ findbar,
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-floating-findbar-enabled="true"]) {
 
 :root #tabbrowser-tabbox,
 :root #appcontent,
@@ -686,13 +686,13 @@ findbar,
 
 /* ── L: FLOATING COMPACT SIDEBAR MARGIN ── */
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.floating-sidebar-margin.enabled") {
+@media (-moz-bool-pref: "mod.squareui.floating-sidebar-margin.enabled") {
 
-:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
   margin: 12px 0 12px 12px !important;
 }
 
-:root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
   margin: 12px 12px 12px 0 !important;
 }
 
@@ -745,7 +745,7 @@ button[part="dialog-button"][default="false"]:hover:active {
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 
 /* ── N: PINNED TAB SEPARATOR (Thanks to @qumeqa) ── */
