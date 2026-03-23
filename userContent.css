@@ -1,17 +1,13 @@
 /* ZEN BROWSER — userContent.css */
 
 /* Fallback for forks that expose content toggle as a document/root attribute. */
-:root[mod-squareui-content-enabled="true"],
-:root[mod.squareui.content.enabled="true"] {
+:root[mod-squareui-content-enabled="true"] {
   --squareui-content-enabled-fallback: 1;
 }
 
 :root[mod-squareui-content-enabled="true"] *,
 :root[mod-squareui-content-enabled="true"] *::before,
-:root[mod-squareui-content-enabled="true"] *::after,
-:root[mod.squareui.content.enabled="true"] *,
-:root[mod.squareui.content.enabled="true"] *::before,
-:root[mod.squareui.content.enabled="true"] *::after {
+:root[mod-squareui-content-enabled="true"] *::after {
   border-radius: 0 !important;
 }
 
@@ -395,8 +391,8 @@
   }
 
   .checkbox-check {
-    appearance: none !important;
     -moz-appearance: none !important;
+    appearance: none !important;
     border-radius: 0 !important;
     border: 1.5px solid color-mix(in srgb, currentColor 55%, transparent) !important;
     background-color: transparent !important;
@@ -428,8 +424,8 @@
   }
 
   input[type="checkbox"] {
-    appearance: none !important;
     -moz-appearance: none !important;
+    appearance: none !important;
     border-radius: 0 !important;
     width: 14px !important; height: 14px !important;
     min-width: 14px !important; min-height: 14px !important;
@@ -531,8 +527,8 @@
   button::after { display: none !important; }
 
   .checkbox-check {
-    appearance: none !important;
     -moz-appearance: none !important;
+    appearance: none !important;
     border-radius: 0 !important;
     border: 1.5px solid color-mix(in srgb, currentColor 55%, transparent) !important;
     background-color: transparent !important;
@@ -564,8 +560,8 @@
   }
 
   input[type="checkbox"] {
-    appearance: none !important;
     -moz-appearance: none !important;
+    appearance: none !important;
     border-radius: 0 !important;
     width: 14px !important; height: 14px !important;
     min-width: 14px !important; min-height: 14px !important;
@@ -615,8 +611,8 @@
   }
 
   .checkbox-check {
-    appearance: none !important;
     -moz-appearance: none !important;
+    appearance: none !important;
     border-radius: 0 !important;
     border: 1.5px solid color-mix(in srgb, currentColor 55%, transparent) !important;
     background-color: transparent !important;
@@ -640,8 +636,8 @@
   }
 
   input[type="checkbox"] {
-    appearance: none !important;
     -moz-appearance: none !important;
+    appearance: none !important;
     border-radius: 0 !important;
   }
 }
