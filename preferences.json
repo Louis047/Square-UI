@@ -50,18 +50,6 @@
     "defaultValue": true
   },
   {
-    "property": "mod.squareui.floating-statusbar.enabled",
-    "label": "Floating Statusbar",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
-    "property": "mod.squareui.floating-findbar.enabled",
-    "label": "Floating Findbar",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
     "property": "mod.squareui.floating-sidebar-margin.enabled",
     "label": "Floating Compact Sidebar Margin",
     "type": "checkbox",
@@ -85,6 +73,18 @@
     "label": "Defaults applied across all browsers",
     "margin": "0 0 12px 0",
     "size": "13px"
+  },
+  {
+    "property": "mod.squareui.floating-statusbar.enabled",
+    "label": "Floating Statusbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.floating-findbar.enabled",
+    "label": "Floating Findbar",
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "theme.squareui_uifont.default",

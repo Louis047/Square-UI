@@ -5,6 +5,19 @@
   *, *::before, *::after { border-radius: 0 !important; }
 }
 
+@-moz-document url-prefix("about:"), url-prefix("chrome://browser/content/preferences/"), url-prefix("chrome://global/content/") {
+  *, *::before, *::after { border-radius: 0 !important; }
+
+  :root {
+    --card-border-radius:       0px !important;
+    --border-radius-small:      0px !important;
+    --border-radius-medium:     0px !important;
+    --border-radius-large:      0px !important;
+    --button-border-radius:     0px !important;
+    --in-content-border-radius: 0px !important;
+  }
+}
+
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 /* ══ WEBSITES ══════════════════════════════════════════════════════════════ */

@@ -11,6 +11,10 @@
   --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
   --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
   --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
+  --squareui-floating-surface-bg: light-dark(rgba(250, 250, 252, 0.95), rgba(32, 32, 36, 0.95)) !important;
+  --squareui-floating-surface-field-bg: light-dark(rgba(255, 255, 255, 0.95), rgba(22, 22, 26, 0.95)) !important;
+  --squareui-floating-surface-border: light-dark(rgba(20, 20, 25, 0.22), rgba(230, 230, 238, 0.2)) !important;
+  --squareui-floating-surface-fg: light-dark(rgb(20, 20, 25), rgb(238, 238, 243)) !important;
 }
 
 :root:has(#theme-Square-UI[theme-squareui_uifont-default="Custom"]) {
@@ -467,8 +471,10 @@ textbox {
 #statuspanel-label {
   border-radius: var(--arrowpanel-border-radius, 8px) !important;
   padding: 6px 12px !important;
-  border: 1px solid rgba(160, 160, 175, 0.35) !important;
-  background: var(--squareui-arrowpanel-background) !important;
+  border: 1px solid var(--squareui-floating-surface-border) !important;
+  background: var(--squareui-floating-surface-bg) !important;
+  color: var(--squareui-floating-surface-fg) !important;
+  color-scheme: light dark !important;
 }
 
 }
@@ -491,11 +497,13 @@ findbar {
   min-width: 520px !important;
   contain: initial !important;
   border-radius: var(--arrowpanel-border-radius, 8px) !important;
-  border: 1px solid rgba(160, 160, 175, 0.35) !important;
-  background: var(--squareui-arrowpanel-background) !important;
+  border: 1px solid var(--squareui-floating-surface-border) !important;
+  background: var(--squareui-floating-surface-bg) !important;
   padding: 6px !important;
   box-shadow: var(--squareui-shadow-level-3) !important;
   opacity: 1 !important;
+  color: var(--squareui-floating-surface-fg) !important;
+  color-scheme: light dark !important;
 }
 
 .findbar-container {
@@ -508,9 +516,10 @@ findbar {
   border-radius: var(--toolbarbutton-border-radius, 6px) !important;
   padding: 8px 12px !important;
   box-shadow: none !important;
-  border: 1px solid rgba(130, 130, 145, 0.12) !important;
+  border: 1px solid var(--squareui-floating-surface-border) !important;
   outline: none !important;
-  background: var(--squareui-findbar-background) !important;
+  background: var(--squareui-floating-surface-field-bg) !important;
+  color: var(--squareui-floating-surface-fg) !important;
 }
 
 .findbar-find-previous,
