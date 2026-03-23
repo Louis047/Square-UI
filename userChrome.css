@@ -11,50 +11,12 @@
   --squareui-findbar-background: var(--toolbar-field-focus-background-color, var(--toolbar-field-background-color, Field)) !important;
   --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
   --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
-  --squareui-floating-surface-bg: light-dark(rgba(250, 250, 252, 0.95), rgba(32, 32, 36, 0.95)) !important;
-  --squareui-floating-surface-field-bg: light-dark(rgba(255, 255, 255, 0.95), rgba(22, 22, 26, 0.95)) !important;
-  --squareui-floating-surface-border: light-dark(rgba(20, 20, 25, 0.22), rgba(230, 230, 238, 0.2)) !important;
-  --squareui-floating-surface-fg: light-dark(rgb(20, 20, 25), rgb(238, 238, 243)) !important;
 }
 
 :root:has(#theme-Square-UI[theme-squareui_uifont-default="Custom"]) {
   *:not(.titlebar-buttonbox-container *) {
     font-family: var(--theme-squareui_uifont-custom) !important;
   }
-}
-
-/* Cross-browser fallback for non-Zen Firefox forks. */
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):not(:has(#zen-main-app-wrapper)) {
-
-:root {
-  --tab-border-radius: 0px !important;
-  --toolbarbutton-border-radius: 0px !important;
-  --arrowpanel-border-radius: 0px !important;
-  --panel-border-radius: 0px !important;
-  --urlbar-icon-border-radius: 0px !important;
-}
-
-:root #urlbar,
-:root #urlbar-background,
-:root #urlbar-input-container,
-:root #searchbar,
-:root .urlbar-input-box,
-:root toolbarbutton,
-:root .toolbarbutton-1,
-:root .subviewbutton,
-:root panel,
-:root menupopup,
-:root .panel-arrowcontent,
-:root .arrowpanel-inner-box,
-:root tooltip,
-:root input,
-:root button,
-:root textbox,
-:root * {
-  --border-radius: 0px !important;
-  border-radius: 0px !important;
-}
-
 }
 
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
@@ -90,7 +52,7 @@ browser,
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="false"]):has(#zen-main-app-wrapper) {
+@media not (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
 :root {
   --zen-border-radius: -1px !important;
@@ -99,7 +61,7 @@ browser,
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -425,7 +387,7 @@ textbox {
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
 #urlbar #pageActionButton,
 #urlbar-container .urlbar-page-action,
@@ -449,13 +411,13 @@ textbox {
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
+#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
   background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
@@ -466,28 +428,17 @@ textbox {
 
 /* ── J: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
 
-:root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled="true"]) {
+@media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
 
 #statuspanel {
-  margin: 0 !important;
-  left: auto !important;
-  right: 12px !important;
-  bottom: 12px !important;
-}
-
-#statuspanel[mirror] {
-  left: 12px !important;
-  right: auto !important;
+  margin: 10px !important;
 }
 
 #statuspanel-label {
   border-radius: var(--arrowpanel-border-radius, 8px) !important;
   padding: 6px 12px !important;
-  border: 1px solid var(--squareui-floating-surface-border) !important;
-  background: var(--squareui-floating-surface-bg) !important;
-  color: var(--squareui-floating-surface-fg) !important;
-  color-scheme: light dark !important;
-  margin: 0 !important;
+  border: 1px solid rgba(160, 160, 175, 0.35) !important;
+  background: var(--squareui-arrowpanel-background) !important;
 }
 
 }
@@ -495,16 +446,13 @@ textbox {
 
 /* ── K: FLOATING FINDBAR (Thanks to @qumeqa) ── */
 
-:root:has(#theme-Square-UI[mod-squareui-floating-findbar-enabled="true"]) {
+@media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
 
-#tabbrowser-tabbox,
-#appcontent,
 .browserStack {
   position: relative !important;
 }
 
-findbar,
-#FindToolbar {
+findbar {
   position: absolute !important;
   top: 20px !important;
   left: 50% !important;
@@ -513,13 +461,11 @@ findbar,
   min-width: 520px !important;
   contain: initial !important;
   border-radius: var(--arrowpanel-border-radius, 8px) !important;
-  border: 1px solid var(--squareui-floating-surface-border) !important;
-  background: var(--squareui-floating-surface-bg) !important;
+  border: 1px solid rgba(160, 160, 175, 0.35) !important;
+  background: var(--squareui-arrowpanel-background) !important;
   padding: 6px !important;
   box-shadow: var(--squareui-shadow-level-3) !important;
   opacity: 1 !important;
-  color: var(--squareui-floating-surface-fg) !important;
-  color-scheme: light dark !important;
 }
 
 .findbar-container {
@@ -532,10 +478,9 @@ findbar,
   border-radius: var(--toolbarbutton-border-radius, 6px) !important;
   padding: 8px 12px !important;
   box-shadow: none !important;
-  border: 1px solid var(--squareui-floating-surface-border) !important;
+  border: 1px solid rgba(130, 130, 145, 0.12) !important;
   outline: none !important;
-  background: var(--squareui-floating-surface-field-bg) !important;
-  color: var(--squareui-floating-surface-fg) !important;
+  background: var(--squareui-findbar-background) !important;
 }
 
 .findbar-find-previous,
@@ -572,20 +517,6 @@ findbar,
 .findbar-entire-word,
 .findbar-find-status {
   display: none !important;
-}
-
-}
-
-/* ── L: FLOATING COMPACT SIDEBAR MARGIN ── */
-
-@media (-moz-bool-pref: "mod.squareui.floating-sidebar-margin.enabled") {
-
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
-  margin: 12px 0 12px 12px !important;
-}
-
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
-  margin: 12px 12px 12px 0 !important;
 }
 
 }
@@ -637,7 +568,7 @@ button[part="dialog-button"][default="false"]:hover:active {
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
 
 /* ── N: PINNED TAB SEPARATOR (Thanks to @qumeqa) ── */

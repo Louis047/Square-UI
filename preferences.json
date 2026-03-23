@@ -2,18 +2,8 @@
   {
     "property": "mod.squareui.browser.enabled",
     "label": "Square Browser UI",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {
-        "label": "Enabled",
-        "value": "true"
-      },
-      {
-        "label": "Disabled",
-        "value": "false"
-      }
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "mod.squareui.content.enabled",
@@ -87,34 +77,14 @@
   {
     "property": "mod.squareui.floating-statusbar.enabled",
     "label": "Floating Statusbar",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {
-        "label": "Enabled",
-        "value": "true"
-      },
-      {
-        "label": "Disabled",
-        "value": "false"
-      }
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "mod.squareui.floating-findbar.enabled",
     "label": "Floating Findbar",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {
-        "label": "Enabled",
-        "value": "true"
-      },
-      {
-        "label": "Disabled",
-        "value": "false"
-      }
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "theme.squareui_uifont.default",
