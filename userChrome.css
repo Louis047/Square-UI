@@ -26,7 +26,7 @@
 /* Cross-browser fallback for non-Zen Firefox forks. */
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
-:root:not(:has(#zen-main-app-wrapper)) {
+:root {
   --tab-border-radius: 0px !important;
   --toolbarbutton-border-radius: 0px !important;
   --arrowpanel-border-radius: 0px !important;
@@ -34,23 +34,23 @@
   --urlbar-icon-border-radius: 0px !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) #urlbar,
-:root:not(:has(#zen-main-app-wrapper)) #urlbar-background,
-:root:not(:has(#zen-main-app-wrapper)) #urlbar-input-container,
-:root:not(:has(#zen-main-app-wrapper)) #searchbar,
-:root:not(:has(#zen-main-app-wrapper)) .urlbar-input-box,
-:root:not(:has(#zen-main-app-wrapper)) toolbarbutton,
-:root:not(:has(#zen-main-app-wrapper)) .toolbarbutton-1,
-:root:not(:has(#zen-main-app-wrapper)) .subviewbutton,
-:root:not(:has(#zen-main-app-wrapper)) panel,
-:root:not(:has(#zen-main-app-wrapper)) menupopup,
-:root:not(:has(#zen-main-app-wrapper)) .panel-arrowcontent,
-:root:not(:has(#zen-main-app-wrapper)) .arrowpanel-inner-box,
-:root:not(:has(#zen-main-app-wrapper)) tooltip,
-:root:not(:has(#zen-main-app-wrapper)) input,
-:root:not(:has(#zen-main-app-wrapper)) button,
-:root:not(:has(#zen-main-app-wrapper)) textbox,
-:root:not(:has(#zen-main-app-wrapper)) * {
+:root #urlbar,
+:root #urlbar-background,
+:root #urlbar-input-container,
+:root #searchbar,
+:root .urlbar-input-box,
+:root toolbarbutton,
+:root .toolbarbutton-1,
+:root .subviewbutton,
+:root panel,
+:root menupopup,
+:root .panel-arrowcontent,
+:root .arrowpanel-inner-box,
+:root tooltip,
+:root input,
+:root button,
+:root textbox,
+:root * {
   --border-radius: 0px !important;
   border-radius: 0px !important;
 }
@@ -579,19 +579,19 @@ findbar,
 /* Fallback for non-Zen forks where pref-gated media rules may not be active on first run. */
 @media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
 
-:root:not(:has(#zen-main-app-wrapper)) #statuspanel {
+:root #statuspanel {
   margin: 0 !important;
   left: auto !important;
   right: 12px !important;
   bottom: 12px !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) #statuspanel[mirror] {
+:root #statuspanel[mirror] {
   left: 12px !important;
   right: auto !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) #statuspanel-label {
+:root #statuspanel-label {
   border-radius: var(--arrowpanel-border-radius, 8px) !important;
   padding: 6px 12px !important;
   border: 1px solid var(--squareui-floating-surface-border) !important;
@@ -605,14 +605,14 @@ findbar,
 
 @media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
 
-:root:not(:has(#zen-main-app-wrapper)) #tabbrowser-tabbox,
-:root:not(:has(#zen-main-app-wrapper)) #appcontent,
-:root:not(:has(#zen-main-app-wrapper)) .browserStack {
+:root #tabbrowser-tabbox,
+:root #appcontent,
+:root .browserStack {
   position: relative !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) findbar,
-:root:not(:has(#zen-main-app-wrapper)) #FindToolbar {
+:root findbar,
+:root #FindToolbar {
   position: absolute !important;
   top: 20px !important;
   left: 50% !important;
@@ -630,13 +630,13 @@ findbar,
   color-scheme: light dark !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .findbar-container {
+:root .findbar-container {
   height: max-content !important;
   width: 100% !important;
   margin: 0 !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .findbar-textbox {
+:root .findbar-textbox {
   border-radius: var(--toolbarbutton-border-radius, 6px) !important;
   padding: 8px 12px !important;
   box-shadow: none !important;
@@ -646,9 +646,9 @@ findbar,
   color: var(--squareui-floating-surface-fg) !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .findbar-find-previous,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-find-next,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-closebutton {
+:root .findbar-find-previous,
+:root .findbar-find-next,
+:root .findbar-closebutton {
   position: relative !important;
   padding: 0 !important;
   width: 38px !important;
@@ -657,28 +657,28 @@ findbar,
   margin: 0 !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .findbar-find-previous .toolbarbutton-icon,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-find-next .toolbarbutton-icon,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-closebutton .toolbarbutton-icon {
+:root .findbar-find-previous .toolbarbutton-icon,
+:root .findbar-find-next .toolbarbutton-icon,
+:root .findbar-closebutton .toolbarbutton-icon {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .findbar-find-previous {
+:root .findbar-find-previous {
   margin-left: 6px !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .found-matches {
+:root .found-matches {
   margin: 0 6px !important;
 }
 
-:root:not(:has(#zen-main-app-wrapper)) .findbar-highlight,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-case-sensitive,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-match-diacritics,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-entire-word,
-:root:not(:has(#zen-main-app-wrapper)) .findbar-find-status {
+:root .findbar-highlight,
+:root .findbar-case-sensitive,
+:root .findbar-match-diacritics,
+:root .findbar-entire-word,
+:root .findbar-find-status {
   display: none !important;
 }
 
