@@ -12,12 +12,8 @@
   {
     "property": "mod.squareui.content.enabled",
     "label": "Square Website Content UI",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {"label": "Enabled", "value": "true"},
-      {"label": "Disabled", "value": "false"}
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "type": "separator",
@@ -54,14 +50,22 @@
   {
     "property": "mod.squareui.extension-tools.enabled",
     "label": "URL-Bar Extension Tool (Only works when 'Square Browser UI' is enabled)",
-    "type": "checkbox",
-    "defaultValue": true
+    "type": "dropdown",
+    "defaultValue": "true",
+    "options": [
+      {"label": "Enabled", "value": "true"},
+      {"label": "Disabled", "value": "false"}
+    ]
   },
   {
     "property": "mod.squareui.floating-sidebar-margin.enabled",
     "label": "Floating Compact Sidebar Margin",
-    "type": "checkbox",
-    "defaultValue": true
+    "type": "dropdown",
+    "defaultValue": "true",
+    "options": [
+      {"label": "Enabled", "value": "true"},
+      {"label": "Disabled", "value": "false"}
+    ]
   },
   {
     "property": "mod.squareui.dialog-fixes.enabled",

@@ -503,6 +503,32 @@ textbox {
   background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
 }
 
+/* ── J: URL-BAR EXTENSION TOOLS ── */
+
+:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled="true"]) {
+
+#urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+  overflow: hidden !important;
+}
+
+#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
+}
+
+}
+
+/* ── K: FLOATING COMPACT SIDEBAR MARGIN ── */
+
+:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):not([zen-right-side]) #titlebar {
+  margin-left: 20px !important;
+}
+
+:root:has(#theme-Square-UI[mod-squareui-floating-sidebar-margin-enabled="true"])[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"])[zen-right-side] #titlebar {
+  margin-right: 20px !important;
+}
+
 }
 
 
