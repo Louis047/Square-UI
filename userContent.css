@@ -1,6 +1,6 @@
 /* ZEN BROWSER — userContent.css */
 
-@media (-moz-bool-pref: "mod.squareui.content.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
 
 /* ══ WEBSITES ══════════════════════════════════════════════════════════════ */
 

@@ -12,8 +12,12 @@
   {
     "property": "mod.squareui.content.enabled",
     "label": "Square Website Content UI",
-    "type": "checkbox",
-    "defaultValue": true
+    "type": "dropdown",
+    "defaultValue": "true",
+    "options": [
+      {"label": "Enabled", "value": "true"},
+      {"label": "Disabled", "value": "false"}
+    ]
   },
   {
     "type": "separator",

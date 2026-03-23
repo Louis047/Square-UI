@@ -61,7 +61,95 @@ browser,
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
+/* ════════════════════════════════════════════════════════════════════════════
+   GENERIC: Square Browser UI for all Firefox-based browsers (non-Zen)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):not(:has(#zen-main-app-wrapper)) {
+
+/* ── A: NO ROUNDED CORNERS ── */
+
+:root {
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
+  --arrowpanel-border-radius: 0px !important;
+  --panel-border-radius: 0px !important;
+  --urlbar-icon-border-radius: 0px !important;
+}
+
+#urlbar,
+#urlbar-background,
+#urlbar-input-container,
+#searchbar,
+.urlbar-input-box,
+#urlbar-results,
+.urlbarView,
+.urlbarView-body-inner {
+  border-radius: 0px !important;
+}
+
+.tab-background,
+.tabbrowser-tab,
+tab,
+.tab-stack,
+.tab-content,
+.tabbrowser-tab[pinned] .tab-background {
+  border-radius: 0px !important;
+}
+
+#sidebar-box,
+#sidebar,
+#appcontent {
+  border-radius: 0px !important;
+}
+
+toolbarbutton,
+.toolbarbutton-1,
+.subviewbutton,
+#PanelUI-button,
+#nav-bar toolbarbutton {
+  border-radius: 0px !important;
+}
+
+panel,
+menupopup,
+.panel-arrowcontent,
+.arrowpanel-inner-box,
+#appMenu-popup,
+#contentAreaContextMenu,
+#tabContextMenu,
+#sidebarMenu-popup,
+.autocomplete-richlistbox,
+tooltip,
+.popup-notification-panel,
+notification,
+.notificationbox-stack,
+#notification-popup {
+  border-radius: 0px !important;
+}
+
+#FindToolbar,
+.findbar-container,
+.infobar,
+#reader-mode-button,
+input,
+button,
+textbox {
+  border-radius: 0px !important;
+}
+
+* {
+  --border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ZEN BROWSER: Full customization suite (Zen-specific features only)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -385,10 +473,6 @@ textbox {
   filter: saturate(100%) brightness(100%) !important;
 }
 
-}
-
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
-
 #urlbar #pageActionButton,
 #urlbar-container .urlbar-page-action,
 .urlbar-page-action {
@@ -408,10 +492,6 @@ textbox {
   pointer-events: auto !important;
   transition: opacity 0.15s ease !important;
 }
-
-}
-
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
