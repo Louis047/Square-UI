@@ -1,7 +1,7 @@
 /* ZEN BROWSER — userContent.css */
 
 /* Baseline fallback for forks where pref-gated media rules are not active on first run. */
-:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
+@media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 @-moz-document regexp("^(https?|ftp|file)://.*") {
   *, *::before, *::after { border-radius: 0 !important; }
@@ -109,7 +109,7 @@
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
+@media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 /* ══ WEBSITES ══════════════════════════════════════════════════════════════ */
 

@@ -18,18 +18,8 @@
   {
     "property": "mod.squareui.content.enabled",
     "label": "Square Website Content UI",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {
-        "label": "Enabled",
-        "value": "true"
-      },
-      {
-        "label": "Disabled",
-        "value": "false"
-      }
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "type": "separator",

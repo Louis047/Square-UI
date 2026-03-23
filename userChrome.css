@@ -24,7 +24,7 @@
 }
 
 /* Cross-browser fallback for non-Zen Firefox forks. */
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):not(:has(#zen-main-app-wrapper)) {
 
 :root {
   --tab-border-radius: 0px !important;
@@ -57,7 +57,7 @@
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
+@media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 :root {
   --zen-webview-border-radius: 0px !important;
@@ -90,7 +90,7 @@ browser,
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="false"]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="false"]):has(#zen-main-app-wrapper) {
 
 :root {
   --zen-border-radius: -1px !important;
@@ -99,7 +99,7 @@ browser,
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -425,7 +425,7 @@ textbox {
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
 
 #urlbar #pageActionButton,
 #urlbar-container .urlbar-page-action,
@@ -451,11 +451,11 @@ textbox {
 
 @media (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
   opacity: 1 !important;
   pointer-events: auto !important;
   background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
@@ -576,114 +576,6 @@ findbar,
 
 }
 
-/* Fallback for non-Zen forks where pref-gated media rules may not be active on first run. */
-:root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled="true"]) {
-
-:root #statuspanel {
-  margin: 0 !important;
-  left: auto !important;
-  right: 12px !important;
-  bottom: 12px !important;
-}
-
-:root #statuspanel[mirror] {
-  left: 12px !important;
-  right: auto !important;
-}
-
-:root #statuspanel-label {
-  border-radius: var(--arrowpanel-border-radius, 8px) !important;
-  padding: 6px 12px !important;
-  border: 1px solid var(--squareui-floating-surface-border) !important;
-  background: var(--squareui-floating-surface-bg) !important;
-  color: var(--squareui-floating-surface-fg) !important;
-  color-scheme: light dark !important;
-  margin: 0 !important;
-}
-
-}
-
-:root:has(#theme-Square-UI[mod-squareui-floating-findbar-enabled="true"]) {
-
-:root #tabbrowser-tabbox,
-:root #appcontent,
-:root .browserStack {
-  position: relative !important;
-}
-
-:root findbar,
-:root #FindToolbar {
-  position: absolute !important;
-  top: 20px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: max-content !important;
-  min-width: 520px !important;
-  contain: initial !important;
-  border-radius: var(--arrowpanel-border-radius, 8px) !important;
-  border: 1px solid var(--squareui-floating-surface-border) !important;
-  background: var(--squareui-floating-surface-bg) !important;
-  padding: 6px !important;
-  box-shadow: var(--squareui-shadow-level-3) !important;
-  opacity: 1 !important;
-  color: var(--squareui-floating-surface-fg) !important;
-  color-scheme: light dark !important;
-}
-
-:root .findbar-container {
-  height: max-content !important;
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-:root .findbar-textbox {
-  border-radius: var(--toolbarbutton-border-radius, 6px) !important;
-  padding: 8px 12px !important;
-  box-shadow: none !important;
-  border: 1px solid var(--squareui-floating-surface-border) !important;
-  outline: none !important;
-  background: var(--squareui-floating-surface-field-bg) !important;
-  color: var(--squareui-floating-surface-fg) !important;
-}
-
-:root .findbar-find-previous,
-:root .findbar-find-next,
-:root .findbar-closebutton {
-  position: relative !important;
-  padding: 0 !important;
-  width: 38px !important;
-  height: 38px !important;
-  border-radius: var(--toolbarbutton-border-radius, 6px) !important;
-  margin: 0 !important;
-}
-
-:root .findbar-find-previous .toolbarbutton-icon,
-:root .findbar-find-next .toolbarbutton-icon,
-:root .findbar-closebutton .toolbarbutton-icon {
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-}
-
-:root .findbar-find-previous {
-  margin-left: 6px !important;
-}
-
-:root .found-matches {
-  margin: 0 6px !important;
-}
-
-:root .findbar-highlight,
-:root .findbar-case-sensitive,
-:root .findbar-match-diacritics,
-:root .findbar-entire-word,
-:root .findbar-find-status {
-  display: none !important;
-}
-
-}
-
 /* ── L: FLOATING COMPACT SIDEBAR MARGIN ── */
 
 @media (-moz-bool-pref: "mod.squareui.floating-sidebar-margin.enabled") {
@@ -745,7 +637,7 @@ button[part="dialog-button"][default="false"]:hover:active {
 
 }
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]):has(#zen-main-app-wrapper) {
 
 
 /* ── N: PINNED TAB SEPARATOR (Thanks to @qumeqa) ── */
