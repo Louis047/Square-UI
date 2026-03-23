@@ -2,13 +2,17 @@
 
 /* Baseline fallback for forks where pref-gated media rules are not active on first run. */
 @-moz-document regexp("^(https?|ftp|file)://.*") {
-  *, *::before, *::after { border-radius: 0 !important; }
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) *,
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) *::before,
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) *::after { border-radius: 0 !important; }
 }
 
 @-moz-document url-prefix("about:"), url-prefix("chrome://browser/content/preferences/"), url-prefix("chrome://global/content/") {
-  *, *::before, *::after { border-radius: 0 !important; }
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) *,
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) *::before,
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) *::after { border-radius: 0 !important; }
 
-  :root {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) {
     --card-border-radius:       0px !important;
     --border-radius-small:      0px !important;
     --border-radius-medium:     0px !important;
@@ -17,7 +21,7 @@
     --in-content-border-radius: 0px !important;
   }
 
-  .checkbox-check {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) .checkbox-check {
     -moz-appearance: none !important;
     appearance: none !important;
     border-radius: 0 !important;
@@ -32,7 +36,7 @@
     box-shadow: none !important;
   }
 
-  checkbox[checked="true"] .checkbox-check {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) checkbox[checked="true"] .checkbox-check {
     background-color: var(--color-accent-primary, AccentColor) !important;
     border-color: var(--color-accent-primary, AccentColor) !important;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' width='14' height='14'%3E%3Cpath d='M2.5 7L5.5 10.5L11.5 4' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E") !important;
@@ -41,7 +45,7 @@
     background-size: 12px 12px !important;
   }
 
-  checkbox[indeterminate="true"] .checkbox-check {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) checkbox[indeterminate="true"] .checkbox-check {
     background-color: var(--color-accent-primary, AccentColor) !important;
     border-color: var(--color-accent-primary, AccentColor) !important;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' width='14' height='14'%3E%3Cpath d='M3 7H11' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") !important;
@@ -50,12 +54,12 @@
     background-size: 12px 12px !important;
   }
 
-  checkbox:not([checked="true"]):not([indeterminate="true"]) .checkbox-check {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) checkbox:not([checked="true"]):not([indeterminate="true"]) .checkbox-check {
     background-color: transparent !important;
     background-image: none !important;
   }
 
-  input[type="checkbox"] {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) input[type="checkbox"] {
     -moz-appearance: none !important;
     appearance: none !important;
     border-radius: 0 !important;
@@ -71,13 +75,13 @@
     flex-shrink: 0 !important;
   }
 
-  input[type="checkbox"]:checked,
-  input[type="checkbox"]:indeterminate {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) input[type="checkbox"]:checked,
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) input[type="checkbox"]:indeterminate {
     background: var(--color-accent-primary, AccentColor) !important;
     border-color: var(--color-accent-primary, AccentColor) !important;
   }
 
-  input[type="checkbox"]:checked::before {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) input[type="checkbox"]:checked::before {
     content: "" !important;
     display: block !important;
     position: absolute !important;
@@ -91,7 +95,7 @@
     transform: rotate(45deg) !important;
   }
 
-  input[type="checkbox"]:indeterminate::before {
+  :root:has(#theme-Square-UI[mod-squareui-content-enabled="true"]) input[type="checkbox"]:indeterminate::before {
     content: "" !important;
     display: block !important;
     position: absolute !important;
