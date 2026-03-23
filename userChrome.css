@@ -61,7 +61,7 @@ browser,
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 
 /* ── A: NO ROUNDED CORNERS ── */
@@ -411,7 +411,7 @@ textbox {
 
 }
 
-@media (-moz-bool-pref: "mod.squareui.browser.enabled") and (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-browser-enabled="true"]) {
 
 #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
   overflow: hidden !important;
@@ -428,7 +428,7 @@ textbox {
 
 /* ── J: FLOATING STATUSBAR  (Thanks to @qumeqa) ── */
 
-@media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled="true"]) {
 
 #statuspanel {
   margin: 10px !important;
@@ -446,7 +446,7 @@ textbox {
 
 /* ── K: FLOATING FINDBAR (Thanks to @qumeqa) ── */
 
-@media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
+:root:has(#theme-Square-UI[mod-squareui-floating-findbar-enabled="true"]) {
 
 .browserStack {
   position: relative !important;
