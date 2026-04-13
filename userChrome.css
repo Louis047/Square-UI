@@ -17,7 +17,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   B — CUSTOM FONT
+   B — CUSTOM FONT (dropdown type → uses Sine attribute selector)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 :root:has(#theme-Square-UI[theme-squareui_uifont-default="Custom"]) {
@@ -30,107 +30,115 @@
    C — CONTENT AREA SQUARING (chrome-side webview containers)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) {
-  --zen-webview-border-radius: 0px !important;
-}
+@media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]):not([inDOMFullscreen="true"])
-  #tabbrowser-tabbox
-  #tabbrowser-tabpanels
+  :root {
+    --zen-webview-border-radius: 0px !important;
+  }
+
+  :root:not([inDOMFullscreen="true"])
+    #tabbrowser-tabbox
+    #tabbrowser-tabpanels
+    .browserSidebarContainer,
+  :root:not([inDOMFullscreen="true"])
+    #tabbrowser-tabbox
+    #tabbrowser-tabpanels[zen-split-view="true"]
+    .browserSidebarContainer {
+    border-radius: 0px !important;
+    margin: 0px !important;
+  }
+
+  #tabbrowser-tabpanels,
   .browserSidebarContainer,
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]):not([inDOMFullscreen="true"])
-  #tabbrowser-tabbox
-  #tabbrowser-tabpanels[zen-split-view="true"]
-  .browserSidebarContainer {
-  border-radius: 0px !important;
-  margin: 0px !important;
-}
+  .browserContainer,
+  browser,
+  #appcontent,
+  #zen-appcontent-wrapper {
+    border-radius: 0px !important;
+  }
 
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) #tabbrowser-tabpanels,
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) .browserSidebarContainer,
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) .browserContainer,
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) browser,
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) #appcontent,
-:root:has(#theme-Square-UI[mod-squareui-content-enabled]) #zen-appcontent-wrapper {
-  border-radius: 0px !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    D — GENERIC BROWSER UI SQUARING (non-Zen Firefox forks)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled]):not(:has(#zen-main-app-wrapper)):not(:has(#zen-appcontent-wrapper)):not(:has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
-  --tab-border-radius: 0px !important;
-  --toolbarbutton-border-radius: 0px !important;
-  --arrowpanel-border-radius: 0px !important;
-  --panel-border-radius: 0px !important;
-  --urlbar-icon-border-radius: 0px !important;
+  :root:not(:has(#zen-main-app-wrapper)):not(:has(#zen-appcontent-wrapper)):not(:has(#zen-sidebar-panel-wrapper)) {
 
-  #urlbar,
-  #urlbar-background,
-  #urlbar-input-container,
-  #searchbar,
-  .urlbar-input-box,
-  #urlbar-results,
-  .urlbarView,
-  .urlbarView-body-inner {
-    border-radius: 0px !important;
-  }
+    --tab-border-radius: 0px !important;
+    --toolbarbutton-border-radius: 0px !important;
+    --arrowpanel-border-radius: 0px !important;
+    --panel-border-radius: 0px !important;
+    --urlbar-icon-border-radius: 0px !important;
 
-  .tab-background,
-  .tabbrowser-tab,
-  tab,
-  .tab-stack,
-  .tab-content,
-  .tabbrowser-tab[pinned] .tab-background {
-    border-radius: 0px !important;
-  }
+    #urlbar,
+    #urlbar-background,
+    #urlbar-input-container,
+    #searchbar,
+    .urlbar-input-box,
+    #urlbar-results,
+    .urlbarView,
+    .urlbarView-body-inner {
+      border-radius: 0px !important;
+    }
 
-  #sidebar-box,
-  #sidebar,
-  #appcontent {
-    border-radius: 0px !important;
-  }
+    .tab-background,
+    .tabbrowser-tab,
+    tab,
+    .tab-stack,
+    .tab-content,
+    .tabbrowser-tab[pinned] .tab-background {
+      border-radius: 0px !important;
+    }
 
-  toolbarbutton,
-  .toolbarbutton-1,
-  .subviewbutton,
-  #PanelUI-button,
-  #nav-bar toolbarbutton {
-    border-radius: 0px !important;
-  }
+    #sidebar-box,
+    #sidebar,
+    #appcontent {
+      border-radius: 0px !important;
+    }
 
-  panel,
-  menupopup,
-  .panel-arrowcontent,
-  .arrowpanel-inner-box,
-  #appMenu-popup,
-  #contentAreaContextMenu,
-  #tabContextMenu,
-  #sidebarMenu-popup,
-  .autocomplete-richlistbox,
-  tooltip,
-  .popup-notification-panel,
-  notification,
-  .notificationbox-stack,
-  #notification-popup {
-    border-radius: 0px !important;
-  }
+    toolbarbutton,
+    .toolbarbutton-1,
+    .subviewbutton,
+    #PanelUI-button,
+    #nav-bar toolbarbutton {
+      border-radius: 0px !important;
+    }
 
-  #FindToolbar,
-  .findbar-container,
-  .infobar,
-  #reader-mode-button,
-  input,
-  button,
-  textbox {
-    border-radius: 0px !important;
-  }
+    panel,
+    menupopup,
+    .panel-arrowcontent,
+    .arrowpanel-inner-box,
+    #appMenu-popup,
+    #contentAreaContextMenu,
+    #tabContextMenu,
+    #sidebarMenu-popup,
+    .autocomplete-richlistbox,
+    tooltip,
+    .popup-notification-panel,
+    notification,
+    .notificationbox-stack,
+    #notification-popup {
+      border-radius: 0px !important;
+    }
 
-  * {
-    --border-radius: 0px !important;
-    border-radius: 0px !important;
+    #FindToolbar,
+    .findbar-container,
+    .infobar,
+    #reader-mode-button,
+    input,
+    button,
+    textbox {
+      border-radius: 0px !important;
+    }
+
+    * {
+      --border-radius: 0px !important;
+      border-radius: 0px !important;
+    }
+
   }
 
 }
@@ -139,266 +147,270 @@
    E — ZEN BROWSER UI SQUARING
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-browser-enabled]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
-  --zen-border-radius: 0px !important;
-  --zen-browser-border-radius: 0px !important;
-  --tab-border-radius: 0px !important;
-  --toolbarbutton-border-radius: 0px !important;
-  --arrowpanel-border-radius: 0px !important;
-  --panel-border-radius: 0px !important;
-  --urlbar-icon-border-radius: 0px !important;
+  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
-  #urlbar,
-  #urlbar-background,
-  #urlbar-input-container,
-  #searchbar,
-  .urlbar-input-box,
-  #urlbar-results,
-  .urlbarView,
-  .urlbarView-body-inner {
-    border-radius: 0px !important;
-  }
+    --zen-border-radius: 0px !important;
+    --zen-browser-border-radius: 0px !important;
+    --tab-border-radius: 0px !important;
+    --toolbarbutton-border-radius: 0px !important;
+    --arrowpanel-border-radius: 0px !important;
+    --panel-border-radius: 0px !important;
+    --urlbar-icon-border-radius: 0px !important;
 
-  .tab-background,
-  .tabbrowser-tab,
-  tab,
-  .tab-stack,
-  .tab-content,
-  .tabbrowser-tab[pinned] .tab-background {
-    border-radius: 0px !important;
-  }
+    #urlbar,
+    #urlbar-background,
+    #urlbar-input-container,
+    #searchbar,
+    .urlbar-input-box,
+    #urlbar-results,
+    .urlbarView,
+    .urlbarView-body-inner {
+      border-radius: 0px !important;
+    }
 
-  #sidebar-box,
-  #sidebar,
-  #zen-sidebar-panel-wrapper,
-  #zen-sidebar-splitter,
-  #appcontent {
-    border-radius: 0px !important;
-  }
+    .tab-background,
+    .tabbrowser-tab,
+    tab,
+    .tab-stack,
+    .tab-content,
+    .tabbrowser-tab[pinned] .tab-background {
+      border-radius: 0px !important;
+    }
 
-  toolbarbutton,
-  .toolbarbutton-1,
-  .subviewbutton,
-  #PanelUI-button,
-  #nav-bar toolbarbutton {
-    border-radius: 0px !important;
-  }
+    #sidebar-box,
+    #sidebar,
+    #zen-sidebar-panel-wrapper,
+    #zen-sidebar-splitter,
+    #appcontent {
+      border-radius: 0px !important;
+    }
 
-  panel,
-  menupopup,
-  .panel-arrowcontent,
-  .arrowpanel-inner-box,
-  #appMenu-popup,
-  #contentAreaContextMenu,
-  #tabContextMenu,
-  #sidebarMenu-popup,
-  .autocomplete-richlistbox,
-  tooltip,
-  .popup-notification-panel,
-  notification,
-  .notificationbox-stack,
-  #notification-popup {
-    border-radius: 0px !important;
-  }
+    toolbarbutton,
+    .toolbarbutton-1,
+    .subviewbutton,
+    #PanelUI-button,
+    #nav-bar toolbarbutton {
+      border-radius: 0px !important;
+    }
 
-  #zen-main-app-wrapper,
-  .zen-workspace-tabs-section,
-  #zen-browser-tabs-container,
-  #zen-tabs-wrapper,
-  #zen-sidebar-top-buttons,
-  #zen-workspaces-button {
-    border-radius: 0px !important;
-  }
+    panel,
+    menupopup,
+    .panel-arrowcontent,
+    .arrowpanel-inner-box,
+    #appMenu-popup,
+    #contentAreaContextMenu,
+    #tabContextMenu,
+    #sidebarMenu-popup,
+    .autocomplete-richlistbox,
+    tooltip,
+    .popup-notification-panel,
+    notification,
+    .notificationbox-stack,
+    #notification-popup {
+      border-radius: 0px !important;
+    }
 
-  #FindToolbar,
-  .findbar-container,
-  .infobar,
-  #reader-mode-button,
-  input,
-  button,
-  textbox {
-    border-radius: 0px !important;
-  }
+    #zen-main-app-wrapper,
+    .zen-workspace-tabs-section,
+    #zen-browser-tabs-container,
+    #zen-tabs-wrapper,
+    #zen-sidebar-top-buttons,
+    #zen-workspaces-button {
+      border-radius: 0px !important;
+    }
 
-  * {
-    --border-radius: 0px !important;
-    border-radius: 0px !important;
-  }
+    #FindToolbar,
+    .findbar-container,
+    .infobar,
+    #reader-mode-button,
+    input,
+    button,
+    textbox {
+      border-radius: 0px !important;
+    }
 
-  /* — URL bar: center text — */
+    * {
+      --border-radius: 0px !important;
+      border-radius: 0px !important;
+    }
 
-  #urlbar-input {
-    text-align: center !important;
-  }
+    /* — URL bar: center text — */
 
-  #urlbar:not([focused]) #urlbar-input-container {
-    justify-content: center !important;
-  }
+    #urlbar-input {
+      text-align: center !important;
+    }
 
-  #urlbar[focused] #urlbar-input {
-    text-align: left !important;
-  }
+    #urlbar:not([focused]) #urlbar-input-container {
+      justify-content: center !important;
+    }
 
-  /* — URL bar popup: center search input — */
+    #urlbar[focused] #urlbar-input {
+      text-align: left !important;
+    }
 
-  #urlbar[open] #urlbar-input,
-  #urlbar[open] .urlbar-input-box input,
-  #urlbar[open] moz-input-box > input {
-    text-align: center !important;
-  }
+    /* — URL bar popup: center search input — */
 
-  /* — URL bar border — */
+    #urlbar[open] #urlbar-input,
+    #urlbar[open] .urlbar-input-box input,
+    #urlbar[open] moz-input-box > input {
+      text-align: center !important;
+    }
 
-  #urlbar-background {
-    border: 1px solid var(--zen-colors-border, rgba(255, 255, 255, 0.1)) !important;
-    outline: none !important;
-  }
+    /* — URL bar border — */
 
-  #urlbar[focused] #urlbar-background,
-  #urlbar[open] #urlbar-background {
-    border-color: var(--zen-colors-border, rgba(255, 255, 255, 0.18)) !important;
-  }
+    #urlbar-background {
+      border: 1px solid var(--zen-colors-border, rgba(255, 255, 255, 0.1)) !important;
+      outline: none !important;
+    }
 
-  /* — Tab loading animation — */
+    #urlbar[focused] #urlbar-background,
+    #urlbar[open] #urlbar-background {
+      border-color: var(--zen-colors-border, rgba(255, 255, 255, 0.18)) !important;
+    }
 
-  @keyframes tabFillAnim {
-    0%   { width: 0%; opacity: 0.5; }
-    95%  { width: 100%; opacity: 0.75; }
-    100% { width: 100%; opacity: 1; }
-  }
+    /* — Tab loading animation — */
 
-  .tabbrowser-tab[busy] .tab-stack {
-    overflow: hidden !important;
-  }
+    @keyframes tabFillAnim {
+      0%   { width: 0%; opacity: 0.5; }
+      95%  { width: 100%; opacity: 0.75; }
+      100% { width: 100%; opacity: 1; }
+    }
 
-  .tabbrowser-tab .tab-background {
-    position: relative !important;
-    overflow: hidden !important;
-  }
+    .tabbrowser-tab[busy] .tab-stack {
+      overflow: hidden !important;
+    }
 
-  .tabbrowser-tab[busy] .tab-background {
-    background: transparent !important;
-  }
+    .tabbrowser-tab .tab-background {
+      position: relative !important;
+      overflow: hidden !important;
+    }
 
-  .tabbrowser-tab[busy] .tab-background::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0%;
-    background: var(--tab-selected-bgcolor);
-    animation: tabFillAnim 1.6s linear infinite;
-    pointer-events: none;
-  }
+    .tabbrowser-tab[busy] .tab-background {
+      background: transparent !important;
+    }
 
-  /* — Workspace name label: transparent hover — */
+    .tabbrowser-tab[busy] .tab-background::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--tab-selected-bgcolor);
+      animation: tabFillAnim 1.6s linear infinite;
+      pointer-events: none;
+    }
 
-  #zen-current-workspace-indicator-container,
-  #zen-current-workspace-indicator-container:hover,
-  #zen-current-workspace-indicator-container:is(:hover, :active, [hover], [open]) {
-    --toolbarbutton-hover-background: transparent !important;
-    --toolbarbutton-active-background: transparent !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
+    /* — Workspace name label: transparent hover — */
 
-  .zen-current-workspace-indicator,
-  .zen-current-workspace-indicator:hover,
-  .zen-current-workspace-indicator:is(:hover, :active, [hover]) {
-    --toolbarbutton-hover-background: transparent !important;
-    --toolbarbutton-active-background: transparent !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
+    #zen-current-workspace-indicator-container,
+    #zen-current-workspace-indicator-container:hover,
+    #zen-current-workspace-indicator-container:is(:hover, :active, [hover], [open]) {
+      --toolbarbutton-hover-background: transparent !important;
+      --toolbarbutton-active-background: transparent !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
 
-  #zen-current-workspace-indicator-container::before,
-  #zen-current-workspace-indicator-container::after,
-  .zen-current-workspace-indicator::before,
-  .zen-current-workspace-indicator::after {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    display: none !important;
-  }
+    .zen-current-workspace-indicator,
+    .zen-current-workspace-indicator:hover,
+    .zen-current-workspace-indicator:is(:hover, :active, [hover]) {
+      --toolbarbutton-hover-background: transparent !important;
+      --toolbarbutton-active-background: transparent !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
 
-  #zen-current-workspace-indicator-container {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
+    #zen-current-workspace-indicator-container::before,
+    #zen-current-workspace-indicator-container::after,
+    .zen-current-workspace-indicator::before,
+    .zen-current-workspace-indicator::after {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      display: none !important;
+    }
 
-  .zen-current-workspace-indicator {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    text-align: center !important;
-  }
+    #zen-current-workspace-indicator-container {
+      display: flex !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
 
-  .zen-current-workspace-indicator-name {
-    text-align: center !important;
-  }
+    .zen-current-workspace-indicator {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
 
-  /* — Workspace buttons — */
+    .zen-current-workspace-indicator-name {
+      text-align: center !important;
+    }
 
-  #zen-workspaces-button toolbarbutton:hover,
-  #zen-workspaces-button toolbarbutton:hover:not([active="true"]),
-  #zen-workspaces-button toolbarbutton[active="true"]:hover {
-    background-color: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
-  }
+    /* — Workspace buttons — */
 
-  #zen-workspaces-button toolbarbutton .zen-workspace-icon,
-  #zen-workspaces-button toolbarbutton img.zen-workspace-icon {
-    filter: saturate(0%) brightness(60%) !important;
-    transition: filter 0.2s ease !important;
-  }
+    #zen-workspaces-button toolbarbutton:hover,
+    #zen-workspaces-button toolbarbutton:hover:not([active="true"]),
+    #zen-workspaces-button toolbarbutton[active="true"]:hover {
+      background-color: transparent !important;
+      background-image: none !important;
+      box-shadow: none !important;
+    }
 
-  #zen-workspaces-button toolbarbutton[active="true"] .zen-workspace-icon,
-  #zen-workspaces-button toolbarbutton[active="true"] img.zen-workspace-icon {
-    filter: saturate(100%) brightness(100%) !important;
-  }
+    #zen-workspaces-button toolbarbutton .zen-workspace-icon,
+    #zen-workspaces-button toolbarbutton img.zen-workspace-icon {
+      filter: saturate(0%) brightness(60%) !important;
+      transition: filter 0.2s ease !important;
+    }
 
-  #zen-workspaces-button toolbarbutton:hover .zen-workspace-icon,
-  #zen-workspaces-button toolbarbutton:hover img.zen-workspace-icon {
-    filter: saturate(100%) brightness(100%) !important;
-  }
+    #zen-workspaces-button toolbarbutton[active="true"] .zen-workspace-icon,
+    #zen-workspaces-button toolbarbutton[active="true"] img.zen-workspace-icon {
+      filter: saturate(100%) brightness(100%) !important;
+    }
 
-  /* — Zen folders: transparent hover — */
+    #zen-workspaces-button toolbarbutton:hover .zen-workspace-icon,
+    #zen-workspaces-button toolbarbutton:hover img.zen-workspace-icon {
+      filter: saturate(100%) brightness(100%) !important;
+    }
 
-  zen-folder .tab-group-label-container,
-  zen-folder .tab-group-label-container:hover,
-  zen-folder .tab-group-label-container:is(:hover, :active, [hover], [open]) {
-    --toolbarbutton-hover-background: transparent !important;
-    --toolbarbutton-active-background: transparent !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
+    /* — Zen folders: transparent hover — */
 
-  zen-folder .tab-group-label-container::before,
-  zen-folder .tab-group-label-container::after {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    display: none !important;
-  }
+    zen-folder .tab-group-label-container,
+    zen-folder .tab-group-label-container:hover,
+    zen-folder .tab-group-label-container:is(:hover, :active, [hover], [open]) {
+      --toolbarbutton-hover-background: transparent !important;
+      --toolbarbutton-active-background: transparent !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
 
-  /* — Pinned tab separator — */
+    zen-folder .tab-group-label-container::before,
+    zen-folder .tab-group-label-container::after {
+      background: transparent !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      display: none !important;
+    }
 
-  .pinned-tabs-container-separator {
-    display: none !important;
+    /* — Pinned tab separator — */
+
+    .pinned-tabs-container-separator {
+      display: none !important;
+    }
+
   }
 
 }
@@ -407,55 +419,59 @@
    F — URL BAR MINIMALISM (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-urlbar-minimalism-enabled]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.urlbar-minimalism.enabled") {
 
-  #identity-icon-box,
-  #identity-permission-box,
-  #identity-icon,
-  #permissions-granted-icon {
-    display: none !important;
-  }
+  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
-  #identity-box {
-    position: relative !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    max-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    z-index: 1 !important;
-  }
+    #identity-icon-box,
+    #identity-permission-box,
+    #identity-icon,
+    #permissions-granted-icon {
+      display: none !important;
+    }
 
-  #urlbar-search-button,
-  .urlbar-go-button,
-  #urlbar-label-box,
-  .urlbar-input-jumping-icon {
-    display: none !important;
-  }
+    #identity-box {
+      position: relative !important;
+      width: 0 !important;
+      min-width: 0 !important;
+      max-width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: visible !important;
+      z-index: 1 !important;
+    }
 
-  #star-button-box,
-  #star-button,
-  #pocket-button,
-  #urlbar-zoom-button,
-  #pageActionSeparator,
-  #zen-copy-url-button,
-  #reader-mode-button {
-    display: none !important;
-  }
+    #urlbar-search-button,
+    .urlbar-go-button,
+    #urlbar-label-box,
+    .urlbar-input-jumping-icon {
+      display: none !important;
+    }
 
-  #tracking-protection-icon-container {
-    opacity: 0 !important;
-    pointer-events: none !important;
-    min-width: 0 !important;
-    max-width: 1px !important;
-    overflow: visible !important;
-  }
+    #star-button-box,
+    #star-button,
+    #pocket-button,
+    #urlbar-zoom-button,
+    #pageActionSeparator,
+    #zen-copy-url-button,
+    #reader-mode-button {
+      display: none !important;
+    }
 
-  #urlbar #pageActionButton,
-  #urlbar-container .urlbar-page-action,
-  .urlbar-page-action {
-    display: none !important;
+    #tracking-protection-icon-container {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      min-width: 0 !important;
+      max-width: 1px !important;
+      overflow: visible !important;
+    }
+
+    #urlbar #pageActionButton,
+    #urlbar-container .urlbar-page-action,
+    .urlbar-page-action {
+      display: none !important;
+    }
+
   }
 
 }
@@ -464,59 +480,65 @@
    G — EXTENSION TOOLS (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-extension-tools-enabled]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-  #identity-box {
-    width: 0 !important;
-    min-width: 0 !important;
-    max-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-  }
+  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
-  #identity-box #zen-site-data-icon-button {
-    position: absolute !important;
-    inset-inline-end: -2px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    display: inline-flex !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    transition: opacity 0.15s ease !important;
-  }
+    #identity-box {
+      width: 0 !important;
+      min-width: 0 !important;
+      max-width: 0 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: visible !important;
+    }
 
-  #identity-box:hover #zen-site-data-icon-button,
-  #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
-  }
+    #identity-box #zen-site-data-icon-button {
+      position: absolute !important;
+      inset-inline-end: -2px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      display: inline-flex !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      transition: opacity 0.15s ease !important;
+    }
 
-  #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
-    overflow: hidden !important;
+    #identity-box:hover #zen-site-data-icon-button,
+    #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+      background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
+    }
+
+    #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+      overflow: hidden !important;
+    }
+
   }
 
 }
 
-:root:has(#theme-Square-UI:not([mod-squareui-extension-tools-enabled])):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #identity-box #zen-site-data-icon-button {
-  display: none !important;
+@media not (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
+  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #identity-box #zen-site-data-icon-button {
+    display: none !important;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    H — SIDEBAR BORDERS (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-sidebar-border-enabled]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.sidebar-border.enabled") {
 
-  &[zen-compact-mode="true"] #titlebar {
+  :root[zen-compact-mode="true"]:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #titlebar {
     outline: none !important;
     border: 1px solid var(--squareui-border-color) !important;
   }
 
-  &[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]) #zen-sidebar-splitter {
+  :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #zen-sidebar-splitter {
     border-inline-start: 1px solid var(--squareui-border-color) !important;
   }
 
@@ -526,24 +548,28 @@
    I — TAB BORDERS (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-tab-border-enabled]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.tab-border.enabled") {
 
-  .tabbrowser-tab .tab-background {
-    margin-block: 2px !important;
-    margin-inline: 3px !important;
-  }
+  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
-  .tabbrowser-tab[selected] .tab-background {
-    border: 1px solid rgba(160, 160, 175, 0.35) !important;
-    outline: none !important;
-  }
+    .tabbrowser-tab .tab-background {
+      margin-block: 2px !important;
+      margin-inline: 3px !important;
+    }
 
-  .tabbrowser-tab:hover:not([selected]) .tab-background {
-    border: 1px solid rgba(140, 140, 155, 0.2) !important;
-  }
+    .tabbrowser-tab[selected] .tab-background {
+      border: 1px solid rgba(160, 160, 175, 0.35) !important;
+      outline: none !important;
+    }
 
-  .tabbrowser-tab:not([selected]) .tab-background {
-    border: 1px solid rgba(130, 130, 145, 0.12) !important;
+    .tabbrowser-tab:hover:not([selected]) .tab-background {
+      border: 1px solid rgba(140, 140, 155, 0.2) !important;
+    }
+
+    .tabbrowser-tab:not([selected]) .tab-background {
+      border: 1px solid rgba(130, 130, 145, 0.12) !important;
+    }
+
   }
 
 }
@@ -552,9 +578,9 @@
    J — SIDEBAR PADDING (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-sidebar-padding-enabled]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+@media (-moz-bool-pref: "mod.squareui.sidebar-padding.enabled") {
 
-  &[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]) #titlebar {
+  :root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #titlebar {
     padding: 10px !important;
     margin-inline: 12px !important;
   }
@@ -565,7 +591,7 @@
    K — CROSS-BROWSER: FLOATING STATUSBAR
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-floating-statusbar-enabled]) {
+@media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
 
   #statuspanel {
     margin: 10px !important;
@@ -584,7 +610,7 @@
    L — CROSS-BROWSER: FLOATING FINDBAR
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-floating-findbar-enabled]) {
+@media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
 
   .browserStack {
     position: relative !important;
@@ -663,9 +689,11 @@
    M — CROSS-BROWSER: DIALOG FIXES
    ═══════════════════════════════════════════════════════════════════════════ */
 
-:root:has(#theme-Square-UI[mod-squareui-dialog-fixes-enabled]) {
+@media (-moz-bool-pref: "mod.squareui.dialog-fixes.enabled") {
 
-  --zen-dialog-background: var(--squareui-arrowpanel-background) !important;
+  :root {
+    --zen-dialog-background: var(--squareui-arrowpanel-background) !important;
+  }
 
   button[part="dialog-button"] {
     padding-left: 1.2em !important;
