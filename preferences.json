@@ -2,16 +2,12 @@
   {
     "property": "mod.squareui.browser.enabled",
     "label": "Square Browser UI",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {"label": "Enabled", "value": "true"},
-      {"label": "Disabled", "value": "false"}
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "mod.squareui.content.enabled",
-    "label": "Square Website Content UI",
+    "label": "Square Website Content",
     "type": "checkbox",
     "defaultValue": true
   },
@@ -23,7 +19,7 @@
   },
   {
     "type": "text",
-    "label": "Defaults applied for Zen Browser specific configurations",
+    "label": "These options only apply to Zen Browser.",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
@@ -31,7 +27,6 @@
     "property": "zen.theme.content-element-separation",
     "label": "Content element separation",
     "type": "string",
-    "value": "number",
     "defaultValue": 0,
     "placeholder": 0
   },
@@ -48,24 +43,46 @@
     "defaultValue": true
   },
   {
-    "property": "mod.squareui.extension-tools.enabled",
-    "label": "URL-Bar Extension Tool",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {"label": "Enabled", "value": "true"},
-      {"label": "Disabled", "value": "false"}
-    ]
+    "type": "separator",
+    "label": "Zen UI Features",
+    "margin": "20px 0 20px 0",
+    "size": "18px"
   },
   {
-    "property": "mod.squareui.floating-sidebar-margin.enabled",
-    "label": "Floating Compact Sidebar Margin",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {"label": "Enabled", "value": "true"},
-      {"label": "Disabled", "value": "false"}
-    ]
+    "type": "text",
+    "label": "These options only apply to Zen Browser.",
+    "margin": "0 0 12px 0",
+    "size": "13px"
+  },
+  {
+    "property": "mod.squareui.urlbar-minimalism.enabled",
+    "label": "URL Bar Minimalism",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.extension-tools.enabled",
+    "label": "URL-Bar Extension Tool",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.sidebar-border.enabled",
+    "label": "Sidebar Border",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.tab-border.enabled",
+    "label": "Tab Borders",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.sidebar-padding.enabled",
+    "label": "Floating Compact Sidebar Padding",
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "mod.squareui.dialog-fixes.enabled",
@@ -73,38 +90,35 @@
     "type": "checkbox",
     "defaultValue": true
   },
-  
   {
     "type": "separator",
-    "label": "Cross-Browser Defaults",
+    "label": "Cross-Browser Features",
     "margin": "20px 0 20px 0",
     "size": "18px"
   },
   {
     "type": "text",
-    "label": "Defaults applied across all browsers",
+    "label": "These options apply across all supported browsers.",
     "margin": "0 0 12px 0",
     "size": "13px"
   },
   {
     "property": "mod.squareui.floating-statusbar.enabled",
     "label": "Floating Statusbar",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {"label": "Enabled", "value": "true"},
-      {"label": "Disabled", "value": "false"}
-    ]
+    "type": "checkbox",
+    "defaultValue": true
   },
   {
     "property": "mod.squareui.floating-findbar.enabled",
     "label": "Floating Findbar",
-    "type": "dropdown",
-    "defaultValue": "true",
-    "options": [
-      {"label": "Enabled", "value": "true"},
-      {"label": "Disabled", "value": "false"}
-    ]
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "type": "separator",
+    "label": "Customization",
+    "margin": "20px 0 20px 0",
+    "size": "18px"
   },
   {
     "property": "theme.squareui_uifont.default",
@@ -112,14 +126,8 @@
     "type": "dropdown",
     "defaultValue": "Default",
     "options": [
-      {
-        "label": "Default",
-        "value": "Default"
-      },
-      {
-        "label": "Custom",
-        "value": "Custom"
-      }
+      { "label": "Default", "value": "Default" },
+      { "label": "Custom", "value": "Custom" }
     ]
   },
   {
@@ -134,6 +142,12 @@
     "type": "string",
     "defaultValue": "sans-serif",
     "placeholder": "\"Aptos\", \"Segoe UI\", system-ui, sans-serif"
+  },
+  {
+    "type": "separator",
+    "label": "System",
+    "margin": "20px 0 20px 0",
+    "size": "18px"
   },
   {
     "property": "widget.prefer_windows_on_current_virtual_desktop",
