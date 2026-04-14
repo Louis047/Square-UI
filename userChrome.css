@@ -508,13 +508,11 @@
 
 @media (-moz-bool-pref: "mod.squareui.no-sidebar-scrollbar.enabled") {
 
-  #zen-tabs-wrapper,
-  #zen-browser-tabs-wrapper,
-  #tabbrowser-arrowscrollbox {
+  scrollbox:nth-child(5) {
     scrollbar-width: none !important;
   }
 
-  #navigator-toolbox {
+  #zen-tabs-wrapper {
     scrollbar-width: none !important;
   }
 
