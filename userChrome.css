@@ -270,38 +270,7 @@
       border-color: var(--zen-colors-border, rgba(255, 255, 255, 0.18)) !important;
     }
 
-    /* — Tab loading animation — */
 
-    @keyframes tabFillAnim {
-      0%   { width: 0%; opacity: 0.5; }
-      95%  { width: 100%; opacity: 0.75; }
-      100% { width: 100%; opacity: 1; }
-    }
-
-    .tabbrowser-tab[busy] .tab-stack {
-      overflow: hidden !important;
-    }
-
-    .tabbrowser-tab .tab-background {
-      position: relative !important;
-      overflow: hidden !important;
-    }
-
-    .tabbrowser-tab[busy] .tab-background {
-      background: transparent !important;
-    }
-
-    .tabbrowser-tab[busy] .tab-background::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 0%;
-      background: var(--tab-selected-bgcolor);
-      animation: tabFillAnim 1.6s linear infinite;
-      pointer-events: none;
-    }
 
     /* — Workspace name label: transparent hover — */
 
@@ -421,57 +390,53 @@
 
 @media (-moz-bool-pref: "mod.squareui.urlbar-minimalism.enabled") {
 
-  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
+  #identity-icon-box,
+  #identity-permission-box,
+  #identity-icon,
+  #permissions-granted-icon {
+    display: none !important;
+  }
 
-    #identity-icon-box,
-    #identity-permission-box,
-    #identity-icon,
-    #permissions-granted-icon {
-      display: none !important;
-    }
+  #identity-box {
+    position: relative !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+  }
 
-    #identity-box {
-      position: relative !important;
-      width: 0 !important;
-      min-width: 0 !important;
-      max-width: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: visible !important;
-      z-index: 1 !important;
-    }
+  #urlbar-search-button,
+  .urlbar-go-button,
+  #urlbar-label-box,
+  .urlbar-input-jumping-icon {
+    display: none !important;
+  }
 
-    #urlbar-search-button,
-    .urlbar-go-button,
-    #urlbar-label-box,
-    .urlbar-input-jumping-icon {
-      display: none !important;
-    }
+  #star-button-box,
+  #star-button,
+  #pocket-button,
+  #urlbar-zoom-button,
+  #pageActionSeparator,
+  #zen-copy-url-button,
+  #reader-mode-button {
+    display: none !important;
+  }
 
-    #star-button-box,
-    #star-button,
-    #pocket-button,
-    #urlbar-zoom-button,
-    #pageActionSeparator,
-    #zen-copy-url-button,
-    #reader-mode-button {
-      display: none !important;
-    }
+  #tracking-protection-icon-container {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    min-width: 0 !important;
+    max-width: 1px !important;
+    overflow: visible !important;
+  }
 
-    #tracking-protection-icon-container {
-      opacity: 0 !important;
-      pointer-events: none !important;
-      min-width: 0 !important;
-      max-width: 1px !important;
-      overflow: visible !important;
-    }
-
-    #urlbar #pageActionButton,
-    #urlbar-container .urlbar-page-action,
-    .urlbar-page-action {
-      display: none !important;
-    }
-
+  #urlbar #pageActionButton,
+  #urlbar-container .urlbar-page-action,
+  .urlbar-page-action {
+    display: none !important;
   }
 
 }
@@ -482,49 +447,39 @@
 
 @media (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
 
-  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
-
-    #identity-box {
-      width: 0 !important;
-      min-width: 0 !important;
-      max-width: 0 !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: visible !important;
-    }
-
-    #identity-box #zen-site-data-icon-button {
-      position: absolute !important;
-      inset-inline-end: -2px !important;
-      top: 50% !important;
-      transform: translateY(-50%) !important;
-      display: inline-flex !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-      background: transparent !important;
-      box-shadow: none !important;
-      transition: opacity 0.15s ease !important;
-    }
-
-    #identity-box:hover #zen-site-data-icon-button,
-    #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
-      opacity: 1 !important;
-      pointer-events: auto !important;
-      background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
-    }
-
-    #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
-      overflow: hidden !important;
-    }
-
+  #identity-box {
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
   }
 
-}
-
-@media not (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
-  :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #identity-box #zen-site-data-icon-button {
-    display: none !important;
+  #identity-box #zen-site-data-icon-button {
+    position: absolute !important;
+    inset-inline-end: -2px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: inline-flex !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: opacity 0.15s ease !important;
   }
+
+  #identity-box:hover #zen-site-data-icon-button,
+  #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
+  }
+
+  #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
+    overflow: hidden !important;
+  }
+
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -535,11 +490,11 @@
 
   :root[zen-compact-mode="true"]:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #titlebar {
     outline: none !important;
-    border: 1px solid var(--squareui-border-color) !important;
+    border: 1.5px solid light-dark(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.3)) !important;
   }
 
   :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #zen-sidebar-splitter {
-    border-inline-start: 1px solid var(--squareui-border-color) !important;
+    border-inline-start: 1.5px solid light-dark(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.3)) !important;
   }
 
 }
@@ -558,16 +513,16 @@
     }
 
     .tabbrowser-tab[selected] .tab-background {
-      border: 1px solid rgba(160, 160, 175, 0.35) !important;
+      border: 1.5px solid light-dark(rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.35)) !important;
       outline: none !important;
     }
 
     .tabbrowser-tab:hover:not([selected]) .tab-background {
-      border: 1px solid rgba(140, 140, 155, 0.2) !important;
+      border: 1.5px solid light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.22)) !important;
     }
 
     .tabbrowser-tab:not([selected]) .tab-background {
-      border: 1px solid rgba(130, 130, 145, 0.12) !important;
+      border: 1px solid light-dark(rgba(0, 0, 0, 0.18), rgba(255, 255, 255, 0.15)) !important;
     }
 
   }
@@ -582,7 +537,7 @@
 
   :root[zen-compact-mode="true"]:not([customizing]):not([inDOMFullscreen="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #titlebar {
     padding: 10px !important;
-    margin-inline: 12px !important;
+    margin: 18px 0 18px 18px !important;
   }
 
 }
