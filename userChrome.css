@@ -385,7 +385,7 @@
     opacity: 0 !important;
     pointer-events: auto !important;
     z-index: 2 !important;
-    padding: 4px 6px !important;
+    padding: 4px 0 !important;
     transition: opacity 0.15s ease, background 0.15s ease !important;
     background: transparent !important;
   }
