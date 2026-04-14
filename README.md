@@ -1,8 +1,15 @@
 # Square UI
 
-Square UI is a lightweight UI theme for Firefox-based browsers.
+![Square UI](https://github.com/Louis047/Square-UI/blob/main/assets/Square-UI.png)
+
+Square UI is a lightweight theme for Firefox-based browsers.
 
 It gives the browser a cleaner, sharper look by reducing rounded corners across the interface and page content.
+
+## Acknowledgement
+
+This mod is quite inspired from [Wireframe](https://github.com/SehajveerSingh2005/zen-wireframe-2.0). Huge thanks to @SehajveerSingh2005 for the inspiration and the mod!
+
 
 ## Highlights
 
