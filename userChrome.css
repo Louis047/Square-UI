@@ -503,6 +503,24 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   G2 — NO SIDEBAR SCROLLBAR (independent toggle)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.no-sidebar-scrollbar.enabled") {
+
+  #zen-tabs-wrapper,
+  #zen-browser-tabs-wrapper,
+  #tabbrowser-arrowscrollbox {
+    scrollbar-width: none !important;
+  }
+
+  #navigator-toolbox {
+    scrollbar-width: none !important;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    H — SIDEBAR BORDERS (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 

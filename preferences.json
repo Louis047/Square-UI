@@ -67,6 +67,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.no-sidebar-scrollbar.enabled",
+    "label": "No Sidebar Scrollbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "property": "mod.squareui.sidebar-border.enabled",
     "label": "Sidebar Border",
     "type": "checkbox",
