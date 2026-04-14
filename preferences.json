@@ -62,7 +62,7 @@
   },
   {
     "property": "mod.squareui.center-urlbar.enabled",
-    "label": "Center URL Bar Text",
+    "label": "Center URL Bar Text (works best with URL Bar Minimalism)",
     "type": "checkbox",
     "defaultValue": true
   },
@@ -169,7 +169,7 @@
   },
   {
     "property": "widget.prefer_windows_on_current_virtual_desktop",
-    "label": "Prefer windows on current virtual desktop",
+    "label": "Prefer windows on current virtual desktop (Fix for tiling window managers like GlazeWM/Komorebi)",
     "type": "checkbox",
     "defaultValue": false
   }
