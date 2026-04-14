@@ -318,11 +318,11 @@
   }
 
   #tracking-protection-icon-container {
-    opacity: 0 !important;
-    pointer-events: none !important;
-    min-width: 0 !important;
-    max-width: 0 !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
     overflow: hidden !important;
+    pointer-events: none !important;
   }
 
   #urlbar #pageActionButton,
@@ -331,65 +331,75 @@
     display: none !important;
   }
 
-  /* — collapse identity-box for extension tool hover — */
+  /* — allow tools to overflow over centered text — */
+
+  #urlbar-input-container {
+    overflow: visible !important;
+  }
+
+  /* — Extension Tools (left side): self-hover — */
 
   #identity-box {
-    position: relative !important;
-    width: 0 !important;
+    position: absolute !important;
+    inset-inline-start: 8px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 28px !important;
     min-width: 0 !important;
-    max-width: 0 !important;
+    max-width: 28px !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
     z-index: 3 !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  /* — Extension Tools: show on hover over identity area — */
-
   #identity-box #zen-site-data-icon-button {
-    position: absolute !important;
-    inset-inline-start: 2px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    display: inline-flex !important;
     opacity: 0 !important;
-    pointer-events: none !important;
+    pointer-events: auto !important;
     background: transparent !important;
     box-shadow: none !important;
     transition: opacity 0.15s ease !important;
   }
 
-  #identity-box:hover #zen-site-data-icon-button,
   #identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open]) {
     opacity: 1 !important;
-    pointer-events: auto !important;
     background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
   }
 
-  /* — Copy URL: show on hover over URL bar — */
+  /* — Copy URL (right side): self-hover — */
 
   #zen-copy-url-button {
+    position: absolute !important;
+    inset-inline-end: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     opacity: 0 !important;
-    pointer-events: none !important;
+    pointer-events: auto !important;
+    z-index: 2 !important;
     transition: opacity 0.15s ease !important;
   }
 
-  #urlbar:hover #zen-copy-url-button {
+  #zen-copy-url-button:hover {
     opacity: 1 !important;
-    pointer-events: auto !important;
   }
 
-  /* — Zoom Reset: show on hover over URL bar — */
+  /* — Zoom Reset (right side, next to copy): self-hover — */
 
   #urlbar-zoom-button {
+    position: absolute !important;
+    inset-inline-end: 36px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
     opacity: 0 !important;
-    pointer-events: none !important;
+    pointer-events: auto !important;
+    z-index: 2 !important;
     transition: opacity 0.15s ease !important;
   }
 
-  #urlbar:hover #urlbar-zoom-button {
+  #urlbar-zoom-button:hover {
     opacity: 1 !important;
-    pointer-events: auto !important;
   }
 
 }
