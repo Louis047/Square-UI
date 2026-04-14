@@ -32,10 +32,6 @@
 
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
-  :root {
-    --zen-webview-border-radius: 0px !important;
-  }
-
   :root:not([inDOMFullscreen="true"])
     #tabbrowser-tabbox
     #tabbrowser-tabpanels
@@ -151,6 +147,7 @@
 
   :root:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) {
 
+    --zen-webview-border-radius: 0px !important;
     --zen-border-radius: 0px !important;
     --zen-browser-border-radius: 0px !important;
     --tab-border-radius: 0px !important;
@@ -385,7 +382,8 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   F — URL BAR MINIMALISM (Zen only, independent toggle)
+   F — URL BAR MINIMALISM (Zen only, hides URL bar chrome + shows
+       extension tool on hover)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @media (-moz-bool-pref: "mod.squareui.urlbar-minimalism.enabled") {
@@ -439,23 +437,6 @@
     display: none !important;
   }
 
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   G — EXTENSION TOOLS (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-@media (-moz-bool-pref: "mod.squareui.extension-tools.enabled") {
-
-  #identity-box {
-    width: 0 !important;
-    min-width: 0 !important;
-    max-width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-  }
-
   #identity-box #zen-site-data-icon-button {
     position: absolute !important;
     inset-inline-end: -2px !important;
@@ -483,6 +464,45 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   G — TAB LOADING ANIMATION (independent toggle)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.tab-loading-anim.enabled") {
+
+  @keyframes squareui-tab-fill {
+    0%   { width: 0%; opacity: 0.5; }
+    95%  { width: 100%; opacity: 0.75; }
+    100% { width: 100%; opacity: 1; }
+  }
+
+  .tabbrowser-tab[busy] .tab-stack {
+    overflow: hidden !important;
+  }
+
+  .tabbrowser-tab .tab-background {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .tabbrowser-tab[busy] .tab-background {
+    background: transparent !important;
+  }
+
+  .tabbrowser-tab[busy] .tab-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--tab-selected-bgcolor);
+    animation: squareui-tab-fill 1.6s linear infinite;
+    pointer-events: none;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    H — SIDEBAR BORDERS (Zen only, independent toggle)
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -491,6 +511,7 @@
   :root[zen-compact-mode="true"]:is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #titlebar {
     outline: none !important;
     border: 1.5px solid light-dark(rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.3)) !important;
+    border-radius: var(--zen-border-radius, 8px) !important;
   }
 
   :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]):is(:has(#zen-main-app-wrapper), :has(#zen-appcontent-wrapper), :has(#zen-sidebar-panel-wrapper)) #zen-sidebar-splitter {

@@ -61,8 +61,8 @@
     "defaultValue": true
   },
   {
-    "property": "mod.squareui.extension-tools.enabled",
-    "label": "URL-Bar Extension Tool",
+    "property": "mod.squareui.tab-loading-anim.enabled",
+    "label": "Tab Loading Animation",
     "type": "checkbox",
     "defaultValue": true
   },
