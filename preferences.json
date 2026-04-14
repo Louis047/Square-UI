@@ -55,20 +55,8 @@
     "size": "13px"
   },
   {
-    "property": "mod.squareui.urlbar-copy.enabled",
-    "label": "URL Bar Copy Button",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
-    "property": "mod.squareui.urlbar-extensions.enabled",
-    "label": "URL Bar Extension Tools",
-    "type": "checkbox",
-    "defaultValue": true
-  },
-  {
-    "property": "mod.squareui.urlbar-zoom.enabled",
-    "label": "URL Bar Zoom Reset",
+    "property": "mod.squareui.urlbar-minimalism.enabled",
+    "label": "URL Bar Minimalism",
     "type": "checkbox",
     "defaultValue": true
   },

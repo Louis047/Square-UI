@@ -293,55 +293,45 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   F — URL BAR TOOLS (three independent toggles for show-on-hover behavior)
+   F — URL BAR MINIMALISM (single toggle: hides URL bar chrome,
+       reveals Copy URL / Extension Tools / Zoom Reset on hover)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* — F1: Copy URL Button — */
+@media (-moz-bool-pref: "mod.squareui.urlbar-minimalism.enabled") {
 
-@media (-moz-bool-pref: "mod.squareui.urlbar-copy.enabled") {
+  /* — hide clutter — */
 
-  #zen-copy-url-button {
-    position: absolute !important;
-    inset-inline-end: 0 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    transition: opacity 0.15s ease, width 0.15s ease !important;
-    z-index: 2 !important;
-  }
-
-  #urlbar:hover #zen-copy-url-button {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    width: auto !important;
-    min-width: max-content !important;
-    overflow: visible !important;
-  }
-
-}
-
-@media not (-moz-bool-pref: "mod.squareui.urlbar-copy.enabled") {
-  #zen-copy-url-button {
-    display: none !important;
-  }
-}
-
-/* — F2: Extension Tools Button — */
-
-@media (-moz-bool-pref: "mod.squareui.urlbar-extensions.enabled") {
-
+  #urlbar-search-button,
+  .urlbar-go-button,
+  #urlbar-label-box,
+  .urlbar-input-jumping-icon,
+  #star-button-box,
+  #star-button,
+  #pocket-button,
+  #pageActionSeparator,
+  #reader-mode-button,
   #identity-icon-box,
   #identity-permission-box,
   #identity-icon,
   #permissions-granted-icon {
     display: none !important;
   }
+
+  #tracking-protection-icon-container {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #urlbar #pageActionButton,
+  #urlbar-container .urlbar-page-action,
+  .urlbar-page-action {
+    display: none !important;
+  }
+
+  /* — collapse identity-box for extension tool hover — */
 
   #identity-box {
     position: relative !important;
@@ -353,6 +343,8 @@
     overflow: visible !important;
     z-index: 3 !important;
   }
+
+  /* — Extension Tools: show on hover over identity area — */
 
   #identity-box #zen-site-data-icon-button {
     position: absolute !important;
@@ -374,76 +366,32 @@
     background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
   }
 
-}
+  /* — Copy URL: show on hover over URL bar — */
 
-@media not (-moz-bool-pref: "mod.squareui.urlbar-extensions.enabled") {
-  #identity-box #zen-site-data-icon-button {
-    display: none !important;
-  }
-}
-
-/* — F3: Zoom Reset Button — */
-
-@media (-moz-bool-pref: "mod.squareui.urlbar-zoom.enabled") {
-
-  #urlbar-zoom-button {
-    position: absolute !important;
-    inset-inline-end: 28px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+  #zen-copy-url-button {
     opacity: 0 !important;
     pointer-events: none !important;
-    width: 0 !important;
-    min-width: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-    transition: opacity 0.15s ease, width 0.15s ease !important;
-    z-index: 2 !important;
+    transition: opacity 0.15s ease !important;
+  }
+
+  #urlbar:hover #zen-copy-url-button {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* — Zoom Reset: show on hover over URL bar — */
+
+  #urlbar-zoom-button {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.15s ease !important;
   }
 
   #urlbar:hover #urlbar-zoom-button {
     opacity: 1 !important;
     pointer-events: auto !important;
-    width: auto !important;
-    min-width: max-content !important;
-    overflow: visible !important;
   }
 
-}
-
-@media not (-moz-bool-pref: "mod.squareui.urlbar-zoom.enabled") {
-  #urlbar-zoom-button {
-    display: none !important;
-  }
-}
-
-/* — URL bar: hide remaining clutter — */
-
-#urlbar-search-button,
-.urlbar-go-button,
-#urlbar-label-box,
-.urlbar-input-jumping-icon,
-#star-button-box,
-#star-button,
-#pocket-button,
-#pageActionSeparator,
-#reader-mode-button {
-  display: none !important;
-}
-
-#tracking-protection-icon-container {
-  opacity: 0 !important;
-  pointer-events: none !important;
-  min-width: 0 !important;
-  max-width: 0 !important;
-  overflow: hidden !important;
-}
-
-#urlbar #pageActionButton,
-#urlbar-container .urlbar-page-action,
-.urlbar-page-action {
-  display: none !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
