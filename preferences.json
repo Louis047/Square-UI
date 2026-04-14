@@ -61,6 +61,18 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.center-urlbar.enabled",
+    "label": "Center URL Bar Text",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.center-space-name.enabled",
+    "label": "Center Space Name",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "property": "mod.squareui.tab-loading-anim.enabled",
     "label": "Tab Loading Animation",
     "type": "checkbox",

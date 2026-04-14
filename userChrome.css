@@ -233,95 +233,6 @@
       border-radius: 0px !important;
     }
 
-    /* — URL bar: center text — */
-
-    #urlbar-input {
-      text-align: center !important;
-    }
-
-    #urlbar:not([focused]) #urlbar-input-container {
-      justify-content: center !important;
-    }
-
-    #urlbar[focused] #urlbar-input {
-      text-align: left !important;
-    }
-
-    /* — URL bar popup: center search input — */
-
-    #urlbar[open] #urlbar-input,
-    #urlbar[open] .urlbar-input-box input,
-    #urlbar[open] moz-input-box > input {
-      text-align: center !important;
-    }
-
-    /* — URL bar border — */
-
-    #urlbar-background {
-      border: 1px solid var(--zen-colors-border, rgba(255, 255, 255, 0.1)) !important;
-      outline: none !important;
-    }
-
-    #urlbar[focused] #urlbar-background,
-    #urlbar[open] #urlbar-background {
-      border-color: var(--zen-colors-border, rgba(255, 255, 255, 0.18)) !important;
-    }
-
-
-
-    /* — Workspace name label: transparent hover — */
-
-    #zen-current-workspace-indicator-container,
-    #zen-current-workspace-indicator-container:hover,
-    #zen-current-workspace-indicator-container:is(:hover, :active, [hover], [open]) {
-      --toolbarbutton-hover-background: transparent !important;
-      --toolbarbutton-active-background: transparent !important;
-      -moz-appearance: none !important;
-      appearance: none !important;
-      background: transparent !important;
-      background-color: transparent !important;
-      box-shadow: none !important;
-    }
-
-    .zen-current-workspace-indicator,
-    .zen-current-workspace-indicator:hover,
-    .zen-current-workspace-indicator:is(:hover, :active, [hover]) {
-      --toolbarbutton-hover-background: transparent !important;
-      --toolbarbutton-active-background: transparent !important;
-      -moz-appearance: none !important;
-      appearance: none !important;
-      background: transparent !important;
-      background-color: transparent !important;
-      box-shadow: none !important;
-    }
-
-    #zen-current-workspace-indicator-container::before,
-    #zen-current-workspace-indicator-container::after,
-    .zen-current-workspace-indicator::before,
-    .zen-current-workspace-indicator::after {
-      background: transparent !important;
-      background-color: transparent !important;
-      box-shadow: none !important;
-      display: none !important;
-    }
-
-    #zen-current-workspace-indicator-container {
-      display: flex !important;
-      justify-content: center !important;
-      width: 100% !important;
-    }
-
-    .zen-current-workspace-indicator {
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      width: 100% !important;
-      text-align: center !important;
-    }
-
-    .zen-current-workspace-indicator-name {
-      text-align: center !important;
-    }
 
     /* — Workspace buttons — */
 
@@ -459,6 +370,102 @@
 
   #urlbar:has(#identity-box #zen-site-data-icon-button:is(:hover, :focus, :focus-visible, [open])) #urlbar-input-container {
     overflow: hidden !important;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   F2 — CENTER URL BAR TEXT (independent toggle)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.center-urlbar.enabled") {
+
+  #urlbar-input {
+    text-align: center !important;
+  }
+
+  #urlbar:not([focused]) #urlbar-input-container {
+    justify-content: center !important;
+  }
+
+  #urlbar[focused] #urlbar-input {
+    text-align: left !important;
+  }
+
+  #urlbar[open] #urlbar-input,
+  #urlbar[open] .urlbar-input-box input,
+  #urlbar[open] moz-input-box > input {
+    text-align: center !important;
+  }
+
+  #urlbar-background {
+    border: 1px solid var(--zen-colors-border, rgba(255, 255, 255, 0.1)) !important;
+    outline: none !important;
+  }
+
+  #urlbar[focused] #urlbar-background,
+  #urlbar[open] #urlbar-background {
+    border-color: var(--zen-colors-border, rgba(255, 255, 255, 0.18)) !important;
+  }
+
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   F3 — CENTER SPACE NAME (independent toggle)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.center-space-name.enabled") {
+
+  #zen-current-workspace-indicator-container,
+  #zen-current-workspace-indicator-container:hover,
+  #zen-current-workspace-indicator-container:is(:hover, :active, [hover], [open]) {
+    --toolbarbutton-hover-background: transparent !important;
+    --toolbarbutton-active-background: transparent !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .zen-current-workspace-indicator,
+  .zen-current-workspace-indicator:hover,
+  .zen-current-workspace-indicator:is(:hover, :active, [hover]) {
+    --toolbarbutton-hover-background: transparent !important;
+    --toolbarbutton-active-background: transparent !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  #zen-current-workspace-indicator-container::before,
+  #zen-current-workspace-indicator-container::after,
+  .zen-current-workspace-indicator::before,
+  .zen-current-workspace-indicator::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    display: none !important;
+  }
+
+  #zen-current-workspace-indicator-container {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .zen-current-workspace-indicator {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .zen-current-workspace-indicator-name {
+    text-align: center !important;
   }
 
 }
