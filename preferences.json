@@ -12,6 +12,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.content.localhost.enabled",
+    "label": "Square Localhost / 127.0.0.1 (requires Square Website Content)",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
     "type": "separator",
     "label": "Zen-Specific Defaults",
     "margin": "20px 0 20px 0",
@@ -129,6 +135,12 @@
   {
     "property": "mod.squareui.floating-findbar.enabled",
     "label": "Floating Findbar",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
+    "property": "mod.squareui.no-urlbar-icons.enabled",
+    "label": "No URL Search Icons",
     "type": "checkbox",
     "defaultValue": true
   },

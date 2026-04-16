@@ -756,3 +756,17 @@
   }
 
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   N — CROSS-BROWSER: NO URL SEARCH ICONS (hides favicons and type
+       icons inside the URL bar autocomplete/search results)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.no-urlbar-icons.enabled") {
+
+  .urlbarView-favicon,
+  .urlbarView-type-icon {
+    display: none !important;
+  }
+
+}

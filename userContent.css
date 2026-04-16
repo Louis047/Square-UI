@@ -1,11 +1,19 @@
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   WEBSITES
+   WEBSITES (excludes localhost / 127.0.0.1 by default)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-@-moz-document regexp("^(https?|ftp|file)://.*") {
+@-moz-document regexp("^(https?|ftp|file)://(?!(localhost|127\\.0\\.0\\.1)(:|/|$)).*") {
   *, *::before, *::after { border-radius: 0 !important; }
+}
+
+/* — Localhost opt-in: square localhost / 127.0.0.1 too — */
+@media (-moz-bool-pref: "mod.squareui.content.localhost.enabled") {
+  @-moz-document url-prefix("http://localhost"), url-prefix("http://127.0.0.1"),
+                  url-prefix("https://localhost"), url-prefix("https://127.0.0.1") {
+    *, *::before, *::after { border-radius: 0 !important; }
+  }
 }
 
 /* — YouTube — */
