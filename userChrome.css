@@ -770,3 +770,16 @@
   }
 
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   O — ZEN-SPECIFIC: NO TAB CLOSE BUTTON (hides the close button
+       inside tabs)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.no-tab-close.enabled") {
+
+  image.tab-close-button {
+    display: none !important;
+  }
+
+}

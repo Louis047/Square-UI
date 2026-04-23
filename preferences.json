@@ -49,6 +49,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.no-tab-close.enabled",
+    "label": "No Close Button Inside Tabs",
+    "type": "checkbox",
+    "defaultValue": true
+  },
+  {
     "type": "separator",
     "label": "Zen UI Features",
     "margin": "20px 0 20px 0",
