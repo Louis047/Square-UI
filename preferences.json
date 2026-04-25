@@ -180,6 +180,36 @@
     "placeholder": "\"Aptos\", \"Segoe UI\", system-ui, sans-serif"
   },
   {
+    "type": "text",
+    "label": "Apply custom font to specific domains:",
+    "margin": "12px 0 12px 0",
+    "size": "14px"
+  },
+  {
+    "property": "mod.squareui.customfont.google.enabled",
+    "label": "Google",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.squareui.customfont.youtube.enabled",
+    "label": "YouTube",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.squareui.customfont.aboutpages.enabled",
+    "label": "about:* pages",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "mod.squareui.customfont.github.enabled",
+    "label": "GitHub",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
     "type": "separator",
     "label": "System",
     "margin": "20px 0 20px 0",

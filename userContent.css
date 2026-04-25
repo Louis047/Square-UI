@@ -514,3 +514,38 @@
 }
 
 }
+/* ═══════════════════════════════════════════════════════════════════════════
+   CUSTOM FONT FOR SPECIFIC DOMAINS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (-moz-bool-pref: "mod.squareui.customfont.google.enabled") {
+  @-moz-document domain("google.com") {
+    body, body * {
+      font-family: var(--theme-squareui_uifont-custom, sans-serif) !important;
+    }
+  }
+}
+
+@media (-moz-bool-pref: "mod.squareui.customfont.youtube.enabled") {
+  @-moz-document domain("youtube.com") {
+    body, body * {
+      font-family: var(--theme-squareui_uifont-custom, sans-serif) !important;
+    }
+  }
+}
+
+@media (-moz-bool-pref: "mod.squareui.customfont.aboutpages.enabled") {
+  @-moz-document url-prefix("about:") {
+    body, body * {
+      font-family: var(--theme-squareui_uifont-custom, sans-serif) !important;
+    }
+  }
+}
+
+@media (-moz-bool-pref: "mod.squareui.customfont.github.enabled") {
+  @-moz-document domain("github.com") {
+    body, body * {
+      font-family: var(--theme-squareui_uifont-custom, sans-serif) !important;
+    }
+  }
+}
