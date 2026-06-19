@@ -121,6 +121,12 @@
     "defaultValue": true
   },
   {
+    "property": "mod.squareui.sidebar-transparency.enabled",
+    "label": "Floating Sidebar Transparency (Linux: requires zen.widget.linux.transparency)",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
     "type": "separator",
     "label": "Cross-Browser Features",
     "margin": "20px 0 20px 0",
@@ -157,6 +163,12 @@
     "size": "18px"
   },
   {
+    "type": "text",
+    "label": "Browser UI Font",
+    "margin": "0 0 8px 0",
+    "size": "14px"
+  },
+  {
     "property": "theme.squareui_uifont.default",
     "label": "Custom Browser UI Font",
     "type": "dropdown",
@@ -181,33 +193,53 @@
   },
   {
     "type": "text",
-    "label": "Apply custom font to specific domains:",
-    "margin": "12px 0 12px 0",
+    "label": "Website Content Font",
+    "margin": "16px 0 8px 0",
     "size": "14px"
   },
   {
-    "property": "mod.squareui.customfont.google.enabled",
-    "label": "Google",
+    "property": "mod.squareui.content-font.enabled",
+    "label": "Apply Custom Font to Website Content (replaces site system fonts, excludes code)",
     "type": "checkbox",
     "defaultValue": false
   },
   {
-    "property": "mod.squareui.customfont.youtube.enabled",
-    "label": "YouTube",
+    "property": "theme.squareui_contentfont.custom",
+    "label": "Website content font-family:",
+    "type": "string",
+    "defaultValue": "sans-serif",
+    "placeholder": "\"Inter\", \"Segoe UI\", system-ui, sans-serif"
+  },
+  {
+    "type": "text",
+    "label": "Monospaced Font for Code Elements",
+    "margin": "16px 0 8px 0",
+    "size": "14px"
+  },
+  {
+    "property": "mod.squareui.content-monofont.enabled",
+    "label": "Apply Custom Monospaced Font to Code Elements",
     "type": "checkbox",
     "defaultValue": false
   },
   {
-    "property": "mod.squareui.customfont.aboutpages.enabled",
-    "label": "about:* pages",
-    "type": "checkbox",
-    "defaultValue": false
+    "property": "theme.squareui_contentfont.mono-type",
+    "label": "Monospaced Font",
+    "type": "dropdown",
+    "defaultValue": "JetBrains",
+    "options": [
+      { "label": "JetBrains Mono (Bundled)", "value": "JetBrains" },
+      { "label": "Fira Code (Bundled)", "value": "FiraCode" },
+      { "label": "Cascadia Code (Bundled)", "value": "Cascadia" },
+      { "label": "Custom", "value": "Custom" }
+    ]
   },
   {
-    "property": "mod.squareui.customfont.github.enabled",
-    "label": "GitHub",
-    "type": "checkbox",
-    "defaultValue": false
+    "property": "theme.squareui_contentfont.mono-custom",
+    "label": "Custom monospaced font-family:",
+    "type": "string",
+    "defaultValue": "monospace",
+    "placeholder": "\"Fira Code\", \"Source Code Pro\", monospace"
   },
   {
     "type": "separator",

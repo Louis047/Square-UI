@@ -1,6 +1,6 @@
 # Square UI
 
-![Square UI](https://github.com/Louis047/Square-UI/blob/main/assets/Square-UI.png)
+![Square UI](https://raw.githubusercontent.com/Louis047/Square-UI/main/assets/Square-UI.png)
 
 Square UI is a lightweight theme for Firefox-based browsers.
 

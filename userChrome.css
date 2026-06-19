@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════════════
-   A — CSS CUSTOM PROPERTIES
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- A — CSS CUSTOM PROPERTIES --- */
 
 :root {
   --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
@@ -16,9 +14,7 @@
   --squareui-border-color: light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   B — CUSTOM FONT (dropdown type → uses Sine attribute selector)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- B — CUSTOM FONT (dropdown type → uses Sine attribute selector) --- */
 
 :root:has(#theme-Square-UI[theme-squareui_uifont-default="Custom"]) {
   *:not(.titlebar-buttonbox-container *) {
@@ -26,9 +22,7 @@
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   C — CONTENT AREA SQUARING (chrome-side webview containers)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- C — CONTENT AREA SQUARING (chrome-side webview containers) --- */
 
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
@@ -55,9 +49,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   D — GENERIC BROWSER UI SQUARING (non-Zen Firefox forks)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- D — GENERIC BROWSER UI SQUARING (non-Zen Firefox forks) --- */
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
@@ -66,8 +58,11 @@
     --tab-border-radius: 0px !important;
     --toolbarbutton-border-radius: 0px !important;
     --arrowpanel-border-radius: 0px !important;
+    --arrowpanel-menuitem-border-radius: 0px !important;
     --panel-border-radius: 0px !important;
     --urlbar-icon-border-radius: 0px !important;
+    --checkbox-border-radius: 0px !important;
+    --button-border-radius: 0px !important;
 
     #urlbar,
     #urlbar-background,
@@ -112,11 +107,67 @@
     #tabContextMenu,
     #sidebarMenu-popup,
     .autocomplete-richlistbox,
-    tooltip,
     .popup-notification-panel,
     notification,
     .notificationbox-stack,
     #notification-popup {
+      border-radius: 0px !important;
+    }
+
+    tooltip,
+    #aHTMLTooltip,
+    #bhTooltip,
+    #btTooltip {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+      border: 1px solid var(--squareui-border-color) !important;
+    }
+
+    menu,
+    menuitem,
+    menucaption,
+    .menu-iconic-left,
+    .menu-iconic-icon {
+      border-radius: 0px !important;
+    }
+
+    menuitem[type="checkbox"] .menu-iconic-left,
+    menuitem[type="radio"] .menu-iconic-left {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+    }
+
+    #unified-extensions-panel,
+    #unified-extensions-view,
+    #unified-extensions-view .panel-header,
+    .unified-extensions-item,
+    panelview,
+    panelmultiview,
+    .panel-viewstack,
+    .panel-subview-body,
+    .panel-header,
+    .subviewbutton-iconic,
+    .panel-subview-footer,
+    .webextension-popup-browser,
+    .webextension-popup-stack {
+      border-radius: 0px !important;
+    }
+
+    #downloadsPanel,
+    #editBookmarkPanel,
+    #identity-popup,
+    #protections-popup,
+    #permission-popup,
+    #confirmation-hint,
+    #PopupAutoComplete,
+    #PopupSearchAutoComplete,
+    #pageActionPanel,
+    #widget-overflow,
+    #customizationui-widget-panel,
+    .panel-arrowcontainer,
+    .panel-arrow {
       border-radius: 0px !important;
     }
 
@@ -139,9 +190,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   E — ZEN BROWSER UI SQUARING
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- E — ZEN BROWSER UI SQUARING --- */
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
@@ -153,8 +202,11 @@
     --tab-border-radius: 0px !important;
     --toolbarbutton-border-radius: 0px !important;
     --arrowpanel-border-radius: 0px !important;
+    --arrowpanel-menuitem-border-radius: 0px !important;
     --panel-border-radius: 0px !important;
     --urlbar-icon-border-radius: 0px !important;
+    --checkbox-border-radius: 0px !important;
+    --button-border-radius: 0px !important;
 
     #urlbar,
     #urlbar-background,
@@ -201,11 +253,67 @@
     #tabContextMenu,
     #sidebarMenu-popup,
     .autocomplete-richlistbox,
-    tooltip,
     .popup-notification-panel,
     notification,
     .notificationbox-stack,
     #notification-popup {
+      border-radius: 0px !important;
+    }
+
+    tooltip,
+    #aHTMLTooltip,
+    #bhTooltip,
+    #btTooltip {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+      border: 1px solid var(--squareui-border-color) !important;
+    }
+
+    menu,
+    menuitem,
+    menucaption,
+    .menu-iconic-left,
+    .menu-iconic-icon {
+      border-radius: 0px !important;
+    }
+
+    menuitem[type="checkbox"] .menu-iconic-left,
+    menuitem[type="radio"] .menu-iconic-left {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+    }
+
+    #unified-extensions-panel,
+    #unified-extensions-view,
+    #unified-extensions-view .panel-header,
+    .unified-extensions-item,
+    panelview,
+    panelmultiview,
+    .panel-viewstack,
+    .panel-subview-body,
+    .panel-header,
+    .subviewbutton-iconic,
+    .panel-subview-footer,
+    .webextension-popup-browser,
+    .webextension-popup-stack {
+      border-radius: 0px !important;
+    }
+
+    #downloadsPanel,
+    #editBookmarkPanel,
+    #identity-popup,
+    #protections-popup,
+    #permission-popup,
+    #confirmation-hint,
+    #PopupAutoComplete,
+    #PopupSearchAutoComplete,
+    #pageActionPanel,
+    #widget-overflow,
+    #customizationui-widget-panel,
+    .panel-arrowcontainer,
+    .panel-arrow {
       border-radius: 0px !important;
     }
 
@@ -398,9 +506,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   F2 — CENTER URL BAR TEXT (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- F2 — CENTER URL BAR TEXT (independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.center-urlbar.enabled") {
 
@@ -434,9 +540,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   F3 — CENTER SPACE NAME (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- F3 — CENTER SPACE NAME (independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.center-space-name.enabled") {
 
@@ -494,9 +598,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   G — TAB LOADING ANIMATION (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- G — TAB LOADING ANIMATION (independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.tab-loading-anim.enabled") {
 
@@ -533,9 +635,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   G2 — NO SIDEBAR SCROLLBAR (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- G2 — NO SIDEBAR SCROLLBAR (independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.no-sidebar-scrollbar.enabled") {
 
@@ -549,9 +649,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   H — SIDEBAR BORDERS (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- H — SIDEBAR BORDERS (Zen only, independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.sidebar-border.enabled") {
 
@@ -567,9 +665,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   I — TAB BORDERS (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- I — TAB BORDERS (Zen only, independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.tab-border.enabled") {
 
@@ -597,9 +693,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   J — SIDEBAR PADDING (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- J — SIDEBAR PADDING (Zen only, independent toggle) --- */
 
 @media (-moz-bool-pref: "mod.squareui.sidebar-padding.enabled") {
 
@@ -610,9 +704,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   K — CROSS-BROWSER: FLOATING STATUSBAR
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- K — CROSS-BROWSER: FLOATING STATUSBAR --- */
 
 @media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
 
@@ -629,9 +721,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   L — CROSS-BROWSER: FLOATING FINDBAR
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- L — CROSS-BROWSER: FLOATING FINDBAR --- */
 
 @media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
 
@@ -708,9 +798,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   M — CROSS-BROWSER: DIALOG FIXES
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- M — CROSS-BROWSER: DIALOG FIXES --- */
 
 @media (-moz-bool-pref: "mod.squareui.dialog-fixes.enabled") {
 
@@ -782,4 +870,51 @@
     display: none !important;
   }
 
+}
+
+/* --- P — ZEN-SPECIFIC: FLOATING SIDEBAR TRANSPARENCY --- */
+
+@media (-moz-bool-pref: "mod.squareui.sidebar-transparency.enabled") {
+
+  /* Expanded floating sidebar (non-compact) */
+  :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]) #navigator-toolbox {
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.72),
+      rgba(20, 20, 20, 0.65)
+    ) !important;
+    backdrop-filter: blur(16px) saturate(1.3) !important;
+  }
+
+  :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]) #navigator-toolbox::before {
+    background: transparent !important;
+  }
+
+  /* Compact mode floating sidebar */
+  :root[zen-compact-mode="true"] #titlebar {
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.72),
+      rgba(20, 20, 20, 0.65)
+    ) !important;
+    backdrop-filter: blur(16px) saturate(1.3) !important;
+  }
+
+  :root[zen-compact-mode="true"] #titlebar::before {
+    background: transparent !important;
+  }
+
+}
+
+/* --- Q — MONOSPACE FONT SELECTOR (dropdown type → Sine attribute selector) --- */
+
+:root:has(#theme-Square-UI[theme-squareui_contentfont-mono-type="JetBrains"]) {
+  --theme-squareui_contentfont-mono: 'SquareUI JetBrains', monospace;
+}
+:root:has(#theme-Square-UI[theme-squareui_contentfont-mono-type="FiraCode"]) {
+  --theme-squareui_contentfont-mono: 'SquareUI FiraCode', monospace;
+}
+:root:has(#theme-Square-UI[theme-squareui_contentfont-mono-type="Cascadia"]) {
+  --theme-squareui_contentfont-mono: 'SquareUI Cascadia', monospace;
+}
+:root:has(#theme-Square-UI[theme-squareui_contentfont-mono-type="Custom"]) {
+  --theme-squareui_contentfont-mono: var(--theme-squareui_contentfont-mono-custom, monospace);
 }
