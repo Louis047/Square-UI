@@ -171,6 +171,46 @@
       border-radius: 0px !important;
     }
 
+
+    /* Ensure tooltips disable OS appearance */
+    tooltip,
+    .tooltip,
+    .tooltip-label,
+    panel[type="tooltip"] {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+    }
+
+    /* Force context menu and scrollbox rounding to 0 */
+    menupopup,
+    panel,
+    .menupopup-arrowscrollbox,
+    arrowscrollbox {
+      --panel-border-radius: 0px !important;
+      --arrowpanel-border-radius: 0px !important;
+      border-radius: 0px !important;
+    }
+
+    /* Checkboxes */
+    checkbox,
+    .checkbox-check,
+    .checkbox-icon,
+    .checkbox-label,
+    .checkbox-label-box,
+    input[type="checkbox"] {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+    }
+
+    /* Extension tools */
+    #zen-site-data-header,
+    #zen-site-data-header toolbarbutton,
+    #zen-site-data-header .toolbarbutton-icon {
+      border-radius: 0px !important;
+    }
+
     #FindToolbar,
     .findbar-container,
     .infobar,
@@ -323,6 +363,46 @@
     #zen-tabs-wrapper,
     #zen-sidebar-top-buttons,
     #zen-workspaces-button {
+      border-radius: 0px !important;
+    }
+
+
+    /* Ensure tooltips disable OS appearance */
+    tooltip,
+    .tooltip,
+    .tooltip-label,
+    panel[type="tooltip"] {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+    }
+
+    /* Force context menu and scrollbox rounding to 0 */
+    menupopup,
+    panel,
+    .menupopup-arrowscrollbox,
+    arrowscrollbox {
+      --panel-border-radius: 0px !important;
+      --arrowpanel-border-radius: 0px !important;
+      border-radius: 0px !important;
+    }
+
+    /* Checkboxes */
+    checkbox,
+    .checkbox-check,
+    .checkbox-icon,
+    .checkbox-label,
+    .checkbox-label-box,
+    input[type="checkbox"] {
+      appearance: none !important;
+      -moz-appearance: none !important;
+      border-radius: 0px !important;
+    }
+
+    /* Extension tools */
+    #zen-site-data-header,
+    #zen-site-data-header toolbarbutton,
+    #zen-site-data-header .toolbarbutton-icon {
       border-radius: 0px !important;
     }
 
@@ -872,12 +952,12 @@
 
 }
 
-/* --- P — ZEN-SPECIFIC: FLOATING SIDEBAR TRANSPARENCY --- */
+/* --- P — ZEN-SPECIFIC: FLOATING SIDEBAR & URL BAR TRANSPARENCY --- */
 
 @media (-moz-bool-pref: "mod.squareui.sidebar-transparency.enabled") {
 
-  /* Expanded floating sidebar (non-compact) */
-  :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]) #navigator-toolbox {
+  /* Collapsed sidebar (floats on hover) */
+  :root[zen-sidebar-expanded="false"]:not([zen-compact-mode="true"]) #navigator-toolbox {
     background-color: light-dark(
       rgba(255, 255, 255, 0.72),
       rgba(20, 20, 20, 0.65)
@@ -885,11 +965,7 @@
     backdrop-filter: blur(16px) saturate(1.3) !important;
   }
 
-  :root[zen-sidebar-expanded="true"]:not([zen-compact-mode="true"]) #navigator-toolbox::before {
-    background: transparent !important;
-  }
-
-  /* Compact mode floating sidebar */
+  /* Compact mode (always floats) */
   :root[zen-compact-mode="true"] #titlebar {
     background-color: light-dark(
       rgba(255, 255, 255, 0.72),
@@ -898,8 +974,18 @@
     backdrop-filter: blur(16px) saturate(1.3) !important;
   }
 
+  :root[zen-sidebar-expanded="false"]:not([zen-compact-mode="true"]) #navigator-toolbox::before,
   :root[zen-compact-mode="true"] #titlebar::before {
     background: transparent !important;
+  }
+
+  /* Floating URL Bar */
+  #urlbar-background {
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.72),
+      rgba(20, 20, 20, 0.65)
+    ) !important;
+    backdrop-filter: blur(16px) saturate(1.3) !important;
   }
 
 }
