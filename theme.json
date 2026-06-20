@@ -3,6 +3,13 @@
   "name": "Square UI",
   "description": "Removes rounded corners across browser chrome and website content with separate Sine toggles for each area.",
   "homepage": "https://github.com/Louis047/Square-UI",
+  "scripts": {
+    "squareui-injector.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
+  },
   "style": {
     "chrome": "userChrome.css",
     "content": "userContent.css"

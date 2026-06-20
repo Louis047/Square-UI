@@ -623,10 +623,10 @@
 
 /* --- Bundled Monospaced Font for Code Elements --- */
 @media (-moz-bool-pref: "mod.squareui.content-monofont.enabled") {
-  
-  /* JetBrains Mono */
-  @media (-moz-pref("theme.squareui_contentfont.mono-type", "JetBrains")) {
-    @-moz-document regexp("^(https?|ftp|file)://.*"), url-prefix("about:") {
+  @-moz-document regexp("^(https?|ftp|file)://(?!(localhost|127\\.0\\.0\\.1)(:|/|$)).*"), url-prefix("about:") {
+    
+    /* JetBrains Mono */
+    @media (-moz-pref("theme.squareui_contentfont.mono-type", "JetBrains")) {
       code, pre, kbd, samp, tt,
       code *, pre *, kbd *, samp *,
       [class*="mono"], [class*="code"],
@@ -636,11 +636,9 @@
         font-synthesis: weight !important;
       }
     }
-  }
 
-  /* Fira Code */
-  @media (-moz-pref("theme.squareui_contentfont.mono-type", "FiraCode")) {
-    @-moz-document regexp("^(https?|ftp|file)://.*"), url-prefix("about:") {
+    /* Fira Code */
+    @media (-moz-pref("theme.squareui_contentfont.mono-type", "FiraCode")) {
       code, pre, kbd, samp, tt,
       code *, pre *, kbd *, samp *,
       [class*="mono"], [class*="code"],
@@ -650,11 +648,9 @@
         font-synthesis: weight !important;
       }
     }
-  }
 
-  /* Cascadia Code */
-  @media (-moz-pref("theme.squareui_contentfont.mono-type", "Cascadia")) {
-    @-moz-document regexp("^(https?|ftp|file)://.*"), url-prefix("about:") {
+    /* Cascadia Code */
+    @media (-moz-pref("theme.squareui_contentfont.mono-type", "Cascadia")) {
       code, pre, kbd, samp, tt,
       code *, pre *, kbd *, samp *,
       [class*="mono"], [class*="code"],
@@ -664,7 +660,7 @@
         font-synthesis: weight !important;
       }
     }
-  }
 
+  }
 }
 
