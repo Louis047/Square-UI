@@ -1044,8 +1044,8 @@
   /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
   :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.20),
-      rgba(20, 20, 20, 0.10)
+      rgba(255, 255, 255, 0.15),
+      rgba(20, 20, 20, 0.05)
     ) !important;
     backdrop-filter: blur(6px) saturate(1.2) !important;
   }
@@ -1057,8 +1057,8 @@
   /* Compact Mode Sidebar Blur Fix */
   :root[zen-compact-mode="true"] #titlebar {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.20),
-      rgba(20, 20, 20, 0.10)
+      rgba(255, 255, 255, 0.15),
+      rgba(20, 20, 20, 0.05)
     ) !important;
     backdrop-filter: blur(6px) saturate(1.2) !important;
   }
@@ -1069,17 +1069,29 @@
     opacity: 0 !important;
   }
 
+  /* Remove native popups styling, shadows, and halos */
+  menupopup, panel, tooltip, #tabContextMenu {
+    box-shadow: none !important;
+    -moz-window-shadow: none !important;
+    border: none !important;
+  }
+
   /* Tooltips and Context Menus Transparency */
-  menupopup, panel, tooltip, #aHTMLTooltip, #bhTooltip, #btTooltip, panel[type="tooltip"] {
+  menupopup, panel, tooltip, .popup-internal-box,
+  .panel-subview-body, .panel-viewstack, panelview,
+  #tabContextMenu, #contentAreaContextMenu,
+  #aHTMLTooltip, #bhTooltip, #btTooltip, panel[type="tooltip"] {
     appearance: none !important;
     -moz-appearance: none !important;
     --panel-background: transparent !important;
     --panel-background-color: transparent !important;
     --arrowpanel-background: transparent !important;
+    --zen-dialog-background: transparent !important;
     background: transparent !important;
+    background-color: transparent !important;
   }
 
-  tooltip *, .tooltip-label, menu, menuitem {
+  tooltip *, .tooltip-label, menu, menuitem, .menu-text, .menu-iconic-left {
     background-color: transparent !important;
   }
 
@@ -1091,12 +1103,14 @@
   #aHTMLTooltip,
   #bhTooltip,
   #btTooltip,
-  panel[type="tooltip"] {
+  panel[type="tooltip"],
+  .panel-subview-body,
+  #tabContextMenu {
     appearance: none !important;
     -moz-appearance: none !important;
     background-color: light-dark(
-      rgba(255, 255, 255, 0.20),
-      rgba(20, 20, 20, 0.10)
+      rgba(255, 255, 255, 0.15),
+      rgba(20, 20, 20, 0.05)
     ) !important;
   }
 
@@ -1111,8 +1125,8 @@
   .urlbarView,
   .urlbarView-body-inner {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.20),
-      rgba(20, 20, 20, 0.10)
+      rgba(255, 255, 255, 0.15),
+      rgba(20, 20, 20, 0.05)
     ) !important;
     backdrop-filter: blur(6px) saturate(1.2) !important;
     border-radius: var(--zen-border-radius, 8px) !important;
