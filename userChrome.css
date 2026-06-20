@@ -173,9 +173,20 @@
 
 
     /* Ensure tooltips disable OS appearance */
+
+    /* Brute-force override for hardcoded rounded inner elements */
+    menupopup *,
+    panel *,
+    menupopup *,
+    panel *,
+    tooltip * {
+      border-radius: 0px !important;
+    }
+
     tooltip,
     .tooltip,
     .tooltip-label,
+
     panel[type="tooltip"] {
       appearance: none !important;
       -moz-appearance: none !important;
@@ -247,6 +258,9 @@
     --urlbar-icon-border-radius: 0px !important;
     --checkbox-border-radius: 0px !important;
     --button-border-radius: 0px !important;
+    --border-radius-small: 0px !important;
+    --border-radius-medium: 0px !important;
+    --border-radius-large: 0px !important;
 
     #urlbar,
     #urlbar-background,
@@ -368,9 +382,18 @@
 
 
     /* Ensure tooltips disable OS appearance */
+
+    /* Brute-force override for hardcoded rounded inner elements */
+    menupopup *,
+    panel *,
+    tooltip * {
+      border-radius: 0px !important;
+    }
+
     tooltip,
     .tooltip,
     .tooltip-label,
+
     panel[type="tooltip"] {
       appearance: none !important;
       -moz-appearance: none !important;
@@ -956,8 +979,8 @@
 
 @media (-moz-bool-pref: "mod.squareui.sidebar-transparency.enabled") {
 
-  /* Collapsed sidebar (floats on hover) */
-  :root[zen-sidebar-expanded="false"]:not([zen-compact-mode="true"]) #navigator-toolbox {
+  /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
+  :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
     background-color: light-dark(
       rgba(255, 255, 255, 0.72),
       rgba(20, 20, 20, 0.65)
@@ -965,27 +988,23 @@
     backdrop-filter: blur(16px) saturate(1.3) !important;
   }
 
-  /* Compact mode (always floats) */
-  :root[zen-compact-mode="true"] #titlebar {
-    background-color: light-dark(
-      rgba(255, 255, 255, 0.72),
-      rgba(20, 20, 20, 0.65)
-    ) !important;
-    backdrop-filter: blur(16px) saturate(1.3) !important;
-  }
-
-  :root[zen-sidebar-expanded="false"]:not([zen-compact-mode="true"]) #navigator-toolbox::before,
-  :root[zen-compact-mode="true"] #titlebar::before {
+  :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox::before {
     background: transparent !important;
   }
 
-  /* Floating URL Bar */
-  #urlbar-background {
+  /* Floating URL Bar (Applies in Compact Mode) */
+  #urlbar[zen-floating-urlbar="true"] {
+    backdrop-filter: blur(16px) saturate(1.3) !important;
+    background-color: transparent !important;
+  }
+  
+  #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
+  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background {
     background-color: light-dark(
       rgba(255, 255, 255, 0.72),
       rgba(20, 20, 20, 0.65)
     ) !important;
-    backdrop-filter: blur(16px) saturate(1.3) !important;
+    box-shadow: none !important;
   }
 
 }

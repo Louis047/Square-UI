@@ -564,40 +564,51 @@
   font-style: normal;
 }
 
-/* --- Custom Content Font (excludes code elements) --- */
-@media (-moz-bool-pref: "mod.squareui.content-font.enabled") {
-  @-moz-document regexp("^(https?|ftp|file)://(?!(localhost|127\\.0\\.0\\.1)(:|/|$)).*") {
-    body,
-    body *:not(code):not(pre):not(kbd):not(samp):not(tt):not(code *):not(pre *):not(kbd *):not(samp *) {
-      font-family: var(--theme-squareui_contentfont-custom, sans-serif) !important;
-    }
-  }
-  @-moz-document url-prefix("about:") {
-    body,
-    body *:not(code):not(pre):not(kbd):not(samp):not(tt):not(code *):not(pre *):not(kbd *):not(samp *) {
-      font-family: var(--theme-squareui_contentfont-custom, sans-serif) !important;
-    }
-  }
-}
 
-/* --- Custom Monospaced Font for Code Elements --- */
+/* --- Bundled Monospaced Font for Code Elements --- */
 @media (-moz-bool-pref: "mod.squareui.content-monofont.enabled") {
-  @-moz-document regexp("^(https?|ftp|file)://.*") {
-    code, pre, kbd, samp, tt,
-    code *, pre *, kbd *, samp *,
-    [class*="mono"], [class*="code"],
-    .CodeMirror, .CodeMirror *,
-    .ace_editor, .ace_editor * {
-      font-family: var(--theme-squareui_contentfont-mono) !important;
-      font-synthesis: weight !important;
+  
+  /* JetBrains Mono */
+  @media (-moz-pref("theme.squareui_contentfont.mono-type", "JetBrains")) {
+    @-moz-document regexp("^(https?|ftp|file)://.*"), url-prefix("about:") {
+      code, pre, kbd, samp, tt,
+      code *, pre *, kbd *, samp *,
+      [class*="mono"], [class*="code"],
+      .CodeMirror, .CodeMirror *,
+      .ace_editor, .ace_editor * {
+        font-family: 'SquareUI JetBrains', monospace !important;
+        font-synthesis: weight !important;
+      }
     }
   }
-  @-moz-document url-prefix("about:") {
-    code, pre, kbd, samp, tt,
-    code *, pre *, kbd *, samp * {
-      font-family: var(--theme-squareui_contentfont-mono) !important;
-      font-synthesis: weight !important;
+
+  /* Fira Code */
+  @media (-moz-pref("theme.squareui_contentfont.mono-type", "FiraCode")) {
+    @-moz-document regexp("^(https?|ftp|file)://.*"), url-prefix("about:") {
+      code, pre, kbd, samp, tt,
+      code *, pre *, kbd *, samp *,
+      [class*="mono"], [class*="code"],
+      .CodeMirror, .CodeMirror *,
+      .ace_editor, .ace_editor * {
+        font-family: 'SquareUI FiraCode', monospace !important;
+        font-synthesis: weight !important;
+      }
     }
   }
+
+  /* Cascadia Code */
+  @media (-moz-pref("theme.squareui_contentfont.mono-type", "Cascadia")) {
+    @-moz-document regexp("^(https?|ftp|file)://.*"), url-prefix("about:") {
+      code, pre, kbd, samp, tt,
+      code *, pre *, kbd *, samp *,
+      [class*="mono"], [class*="code"],
+      .CodeMirror, .CodeMirror *,
+      .ace_editor, .ace_editor * {
+        font-family: 'SquareUI Cascadia', monospace !important;
+        font-synthesis: weight !important;
+      }
+    }
+  }
+
 }
 

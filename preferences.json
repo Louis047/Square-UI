@@ -174,8 +174,14 @@
     "type": "dropdown",
     "defaultValue": "Default",
     "options": [
-      { "label": "Default", "value": "Default" },
-      { "label": "Custom", "value": "Custom" }
+      {
+        "label": "Default",
+        "value": "Default"
+      },
+      {
+        "label": "Custom",
+        "value": "Custom"
+      }
     ]
   },
   {
@@ -190,25 +196,6 @@
     "type": "string",
     "defaultValue": "sans-serif",
     "placeholder": "\"Aptos\", \"Segoe UI\", system-ui, sans-serif"
-  },
-  {
-    "type": "text",
-    "label": "Website Content Font",
-    "margin": "16px 0 8px 0",
-    "size": "14px"
-  },
-  {
-    "property": "mod.squareui.content-font.enabled",
-    "label": "Apply Custom Font to Website Content (replaces site system fonts, excludes code)",
-    "type": "checkbox",
-    "defaultValue": false
-  },
-  {
-    "property": "theme.squareui_contentfont.custom",
-    "label": "Website content font-family:",
-    "type": "string",
-    "defaultValue": "sans-serif",
-    "placeholder": "\"Inter\", \"Segoe UI\", system-ui, sans-serif"
   },
   {
     "type": "text",
@@ -228,18 +215,19 @@
     "type": "dropdown",
     "defaultValue": "JetBrains",
     "options": [
-      { "label": "JetBrains Mono (Bundled)", "value": "JetBrains" },
-      { "label": "Fira Code (Bundled)", "value": "FiraCode" },
-      { "label": "Cascadia Code (Bundled)", "value": "Cascadia" },
-      { "label": "Custom", "value": "Custom" }
+      {
+        "label": "JetBrains Mono (Bundled)",
+        "value": "JetBrains"
+      },
+      {
+        "label": "Fira Code (Bundled)",
+        "value": "FiraCode"
+      },
+      {
+        "label": "Cascadia Code (Bundled)",
+        "value": "Cascadia"
+      }
     ]
-  },
-  {
-    "property": "theme.squareui_contentfont.mono-custom",
-    "label": "Custom monospaced font-family:",
-    "type": "string",
-    "defaultValue": "monospace",
-    "placeholder": "\"Fira Code\", \"Source Code Pro\", monospace"
   },
   {
     "type": "separator",
