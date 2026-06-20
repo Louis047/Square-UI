@@ -1,3 +1,12 @@
+/* --- Custom Content Font (excludes code elements and custom website fonts) --- */
+@media (-moz-bool-pref: "mod.squareui.content-font.enabled") {
+  @-moz-document regexp("^(https?|ftp|file)://(?!(localhost|127\\.0\\.0\\.1)(:|/|$)).*"), url-prefix("about:") {
+    body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
+      font-family: var(--theme-squareui_contentfont-custom, sans-serif), system-ui, sans-serif;
+    }
+  }
+}
+
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -544,23 +553,46 @@
 
 }
 
-/* --- Bundled Monospaced Fonts (Remote Fetch) --- */
+/* --- Bundled Monospaced Fonts (Local) --- */
+/* JetBrains Mono */
 @font-face {
   font-family: 'SquareUI JetBrains';
-  src: url("https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/fonts/webfonts/JetBrainsMono-Regular.woff2") format("woff2");
+  src: url("fonts/JetBrainsMono.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SquareUI JetBrains';
+  src: url("fonts/JetBrainsMono.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Fira Code */
+@font-face {
+  font-family: 'SquareUI FiraCode';
+  src: url("fonts/FiraCode.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI FiraCode';
-  src: url("https://raw.githubusercontent.com/tonsky/FiraCode/master/distr/woff2/FiraCode-Regular.woff2") format("woff2");
+  src: url("fonts/FiraCode.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Cascadia Code */
+@font-face {
+  font-family: 'SquareUI Cascadia';
+  src: url("fonts/CascadiaCode.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI Cascadia';
-  src: url("https://raw.githubusercontent.com/microsoft/cascadia-code/main/woff2/static/CascadiaCode-Regular.woff2") format("woff2");
-  font-weight: 400;
+  src: url("fonts/CascadiaCode.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
 }
 

@@ -199,6 +199,25 @@
   },
   {
     "type": "text",
+    "label": "Website Content Font",
+    "margin": "16px 0 8px 0",
+    "size": "14px"
+  },
+  {
+    "property": "mod.squareui.content-font.enabled",
+    "label": "Apply Custom Font to Website Content (replaces site system fonts, excludes code)",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
+    "property": "theme.squareui_contentfont.custom",
+    "label": "Website content font-family:",
+    "type": "string",
+    "defaultValue": "sans-serif",
+    "placeholder": "\"Inter\", \"Segoe UI\", system-ui, sans-serif"
+  },
+  {
+    "type": "text",
     "label": "Monospaced Font for Code Elements",
     "margin": "16px 0 8px 0",
     "size": "14px"
