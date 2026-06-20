@@ -1,9 +1,33 @@
 /* --- Custom Content Font (excludes code elements and custom website fonts) --- */
 @media (-moz-bool-pref: "mod.squareui.content-font.enabled") {
   @-moz-document regexp("^(https?|ftp|file)://(?!(localhost|127\\.0\\.0\\.1)(:|/|$)).*"), url-prefix("about:") {
-    body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
-      font-family: var(--theme-squareui_contentfont-custom, sans-serif), system-ui, sans-serif;
+    
+    @media (-moz-pref("theme.squareui_contentfont.type", "SystemUI")) {
+      body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
+        font-family: system-ui, sans-serif;
+      }
     }
+    @media (-moz-pref("theme.squareui_contentfont.type", "Inter")) {
+      body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
+        font-family: "Inter", system-ui, sans-serif;
+      }
+    }
+    @media (-moz-pref("theme.squareui_contentfont.type", "Roboto")) {
+      body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
+        font-family: "Roboto", system-ui, sans-serif;
+      }
+    }
+    @media (-moz-pref("theme.squareui_contentfont.type", "SFPro")) {
+      body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
+        font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", sans-serif;
+      }
+    }
+    @media (-moz-pref("theme.squareui_contentfont.type", "SegoeUI")) {
+      body, p, div, span, h1, h2, h3, h4, h5, h6, a, td, th {
+        font-family: "Segoe UI", system-ui, sans-serif;
+      }
+    }
+
   }
 }
 
@@ -557,13 +581,13 @@
 /* JetBrains Mono */
 @font-face {
   font-family: 'SquareUI JetBrains';
-  src: url("fonts/JetBrainsMono.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/JetBrainsMono.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI JetBrains';
-  src: url("fonts/JetBrainsMono.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/JetBrainsMono.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -571,13 +595,13 @@
 /* Fira Code */
 @font-face {
   font-family: 'SquareUI FiraCode';
-  src: url("fonts/FiraCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/FiraCode.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI FiraCode';
-  src: url("fonts/FiraCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/FiraCode.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -585,13 +609,13 @@
 /* Cascadia Code */
 @font-face {
   font-family: 'SquareUI Cascadia';
-  src: url("fonts/CascadiaCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/CascadiaCode.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI Cascadia';
-  src: url("fonts/CascadiaCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/CascadiaCode.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

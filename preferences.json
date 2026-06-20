@@ -210,11 +210,32 @@
     "defaultValue": false
   },
   {
-    "property": "theme.squareui_contentfont.custom",
-    "label": "Website content font-family:",
-    "type": "string",
-    "defaultValue": "sans-serif",
-    "placeholder": "\"Inter\", \"Segoe UI\", system-ui, sans-serif"
+    "property": "theme.squareui_contentfont.type",
+    "label": "Website Content Font-Family",
+    "type": "dropdown",
+    "defaultValue": "SystemUI",
+    "options": [
+      {
+        "label": "System Default (system-ui)",
+        "value": "SystemUI"
+      },
+      {
+        "label": "Inter",
+        "value": "Inter"
+      },
+      {
+        "label": "Roboto",
+        "value": "Roboto"
+      },
+      {
+        "label": "San Francisco / Apple System",
+        "value": "SFPro"
+      },
+      {
+        "label": "Segoe UI",
+        "value": "SegoeUI"
+      }
+    ]
   },
   {
     "type": "text",

@@ -12,19 +12,25 @@
   --squareui-brand-light: var(--zen-branding-paper, #fafafa) !important;
   --squareui-brand-dark: var(--zen-branding-dark, #111) !important;
   --squareui-border-color: light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
+
+  /* Overrides for Firefox's native hardcoded variables */
+  --arrowpanel-border-radius: 0px !important;
+  --panel-border-radius: 0px !important;
+  --tab-border-radius: 0px !important;
+  --toolbarbutton-border-radius: 0px !important;
 }
 
 /* --- Bundled Monospaced Fonts (Local) --- */
 /* JetBrains Mono */
 @font-face {
   font-family: 'SquareUI JetBrains';
-  src: url("fonts/JetBrainsMono.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/JetBrainsMono.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI JetBrains';
-  src: url("fonts/JetBrainsMono.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/JetBrainsMono.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -32,13 +38,13 @@
 /* Fira Code */
 @font-face {
   font-family: 'SquareUI FiraCode';
-  src: url("fonts/FiraCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/FiraCode.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI FiraCode';
-  src: url("fonts/FiraCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/FiraCode.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -46,13 +52,13 @@
 /* Cascadia Code */
 @font-face {
   font-family: 'SquareUI Cascadia';
-  src: url("fonts/CascadiaCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/CascadiaCode.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'SquareUI Cascadia';
-  src: url("fonts/CascadiaCode.ttf") format("truetype");
+  src: url("https://raw.githubusercontent.com/Louis047/Square-UI/main/fonts/CascadiaCode.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -224,15 +230,19 @@
       border-radius: 0px !important;
     }
 
-    /* Shadow DOM piercing for tooltips and checkboxes */
-    tooltip::part(content) {
+    /* Shadow DOM piercing and hardcoded inner classes */
+    tooltip::part(content),
+    .menupopup-arrowscrollbox {
       border-radius: 0px !important;
     }
     
     menuitem[type="checkbox"] > .menu-iconic-left > .menu-iconic-icon,
-    menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon {
+    menuitem[type="radio"] > .menu-iconic-left > .menu-iconic-icon,
+    .checkbox-check,
+    .radio-check {
       border-radius: 0px !important;
       appearance: none !important;
+      -moz-appearance: none !important;
     }
 
     tooltip,
@@ -1044,6 +1054,20 @@
     background: transparent !important;
   }
 
+  /* Compact Mode Sidebar Blur Fix */
+  :root[zen-compact-mode="true"] #titlebar::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    pointer-events: none;
+    backdrop-filter: blur(16px) saturate(1.3) !important;
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.72),
+      rgba(20, 20, 20, 0.65)
+    ) !important;
+    z-index: -1;
+  }
+
   /* Reveal blur through compact mode floating sidebar internal backgrounds */
   :root[zen-compact-mode="true"] .zen-toolbar-background {
     background: transparent !important;
@@ -1052,6 +1076,14 @@
 
   /* Tooltips and Context Menus Transparency */
   menupopup, panel, tooltip {
+    --panel-background: transparent !important;
+    --panel-background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  menupopup::part(content), 
+  panel::part(content), 
+  tooltip::part(content) {
     background-color: light-dark(
       rgba(255, 255, 255, 0.72),
       rgba(20, 20, 20, 0.65)
