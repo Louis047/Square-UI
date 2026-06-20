@@ -1047,7 +1047,7 @@
       rgba(255, 255, 255, 0.25),
       rgba(20, 20, 20, 0.15)
     ) !important;
-    backdrop-filter: blur(28px) saturate(1.5) !important;
+    backdrop-filter: blur(8px) saturate(1.2) !important;
   }
 
   :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox::before {
@@ -1055,17 +1055,12 @@
   }
 
   /* Compact Mode Sidebar Blur Fix */
-  :root[zen-compact-mode="true"] #titlebar::before {
-    content: "";
-    inset: 0;
-    position: absolute;
-    pointer-events: none;
-    backdrop-filter: blur(28px) saturate(1.5) !important;
+  :root[zen-compact-mode="true"] #titlebar {
     background-color: light-dark(
       rgba(255, 255, 255, 0.25),
       rgba(20, 20, 20, 0.15)
     ) !important;
-    z-index: -1;
+    backdrop-filter: blur(8px) saturate(1.2) !important;
   }
 
   /* Reveal blur through compact mode floating sidebar internal backgrounds */
@@ -1075,25 +1070,31 @@
   }
 
   /* Tooltips and Context Menus Transparency */
-  menupopup, panel, tooltip {
+  menupopup, panel, tooltip, #aHTMLTooltip, #bhTooltip, #btTooltip, panel[type="tooltip"] {
     --panel-background: transparent !important;
     --panel-background-color: transparent !important;
+    --arrowpanel-background: transparent !important;
     background: transparent !important;
+  }
+
+  tooltip *, .tooltip-label {
+    background-color: transparent !important;
   }
 
   menupopup::part(content), 
   panel::part(content), 
-  tooltip::part(content),
+  .menupopup-arrowscrollbox,
   tooltip,
   .tooltip,
   #aHTMLTooltip,
   #bhTooltip,
-  #btTooltip {
+  #btTooltip,
+  panel[type="tooltip"] {
     background-color: light-dark(
       rgba(255, 255, 255, 0.25),
       rgba(20, 20, 20, 0.15)
     ) !important;
-    backdrop-filter: blur(28px) saturate(1.5) !important;
+    backdrop-filter: blur(8px) saturate(1.2) !important;
   }
 
   /* Floating URL Bar (Applies in Compact Mode) */
@@ -1103,11 +1104,15 @@
   }
   
   #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
-  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background {
+  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background,
+  .urlbarView,
+  .urlbarView-body-inner {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.72),
-      rgba(20, 20, 20, 0.65)
+      rgba(255, 255, 255, 0.25),
+      rgba(20, 20, 20, 0.15)
     ) !important;
+    backdrop-filter: blur(8px) saturate(1.2) !important;
+    border-radius: var(--zen-border-radius, 8px) !important;
     box-shadow: none !important;
   }
 
