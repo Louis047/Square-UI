@@ -1111,8 +1111,8 @@
   #urlbar#urlbar#urlbar[open] > #urlbar-background,
   #urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.40),
-      rgba(20, 20, 20, 0.30)
+      rgba(255, 255, 255, 0.35),
+      rgba(20, 20, 20, 0.25)
     ) !important;
     border-radius: var(--zen-border-radius, 8px) !important;
     box-shadow: none !important;
