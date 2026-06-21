@@ -121,8 +121,8 @@
     "defaultValue": true
   },
   {
-    "property": "mod.squareui.sidebar-transparency.enabled",
-    "label": "Floating Sidebar Transparency (Linux: requires zen.widget.linux.transparency)",
+    "property": "mod.squareui.zen-transparency.enabled",
+    "label": "Enable Transparency in Zen Elements (Linux: requires zen.widget.linux.transparency)",
     "type": "checkbox",
     "defaultValue": false
   },

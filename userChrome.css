@@ -1039,7 +1039,28 @@
 
 /* --- P — ZEN-SPECIFIC: FLOATING SIDEBAR & URL BAR TRANSPARENCY --- */
 
-@media (-moz-bool-pref: "mod.squareui.sidebar-transparency.enabled") {
+/* Default Solid (Opaque) Base Styles for Sidebar and URL Bar (Active when transparency is off) */
+
+/* 1. Sidebar Opaque Base */
+:root:not([zen-sidebar-expanded="true"]) #navigator-toolbox,
+:root[zen-compact-mode="true"] #titlebar {
+  background-color: var(--zen-colors-background) !important;
+  backdrop-filter: none !important;
+}
+
+/* 2. URL Bar Opaque Base */
+#urlbar[zen-floating-urlbar="true"] > .urlbar-background,
+#urlbar[zen-floating-urlbar="true"] > #urlbar-background,
+#urlbar#urlbar#urlbar[open] > .urlbar-background,
+#urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
+#urlbar#urlbar#urlbar[open] > #urlbar-background,
+#urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
+  background-color: var(--zen-colors-tertiary) !important;
+  backdrop-filter: none !important;
+}
+
+
+@media (-moz-bool-pref: "mod.squareui.zen-transparency.enabled") {
   @media (-moz-bool-pref: "zen.widget.linux.transparency") {
 
     /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
