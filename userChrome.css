@@ -1044,10 +1044,10 @@
   /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
   :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.25),
-      rgba(20, 20, 20, 0.15)
+      rgba(255, 255, 255, 0.40),
+      rgba(20, 20, 20, 0.30)
     ) !important;
-    backdrop-filter: blur(6px) saturate(1.2) !important;
+    backdrop-filter: blur(12px) saturate(1.2) !important;
   }
 
   :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox::before {
@@ -1057,10 +1057,10 @@
   /* Compact Mode Sidebar Blur Fix */
   :root[zen-compact-mode="true"] #titlebar {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.25),
-      rgba(20, 20, 20, 0.15)
+      rgba(255, 255, 255, 0.40),
+      rgba(20, 20, 20, 0.30)
     ) !important;
-    backdrop-filter: blur(6px) saturate(1.2) !important;
+    backdrop-filter: blur(12px) saturate(1.2) !important;
   }
 
   /* Reveal blur through compact mode floating sidebar internal backgrounds */
@@ -1079,26 +1079,27 @@
 
 
   /* Force URL bar sub-containers transparent to fix solid block */
-  #urlbar-input-container, .urlbar-input-box {
+  #urlbar-input-container, .urlbar-input-box,
+  #urlbar-results, #urlbar-background, .urlbar-background,
+  .urlbarView-body-inner, .urlbarView-results {
     background: transparent !important;
     background-color: transparent !important;
   }
 
   /* Floating URL Bar (Applies in Compact Mode) */
   #urlbar[zen-floating-urlbar="true"] {
-    backdrop-filter: blur(6px) saturate(1.2) !important;
+    backdrop-filter: blur(12px) saturate(1.2) !important;
     background-color: transparent !important;
   }
   
   #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
   #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background,
-  .urlbarView,
-  .urlbarView-body-inner {
+  .urlbarView {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.25),
-      rgba(20, 20, 20, 0.15)
+      rgba(255, 255, 255, 0.40),
+      rgba(20, 20, 20, 0.30)
     ) !important;
-    backdrop-filter: blur(6px) saturate(1.2) !important;
+    backdrop-filter: blur(12px) saturate(1.2) !important;
     border-radius: var(--zen-border-radius, 8px) !important;
     box-shadow: none !important;
   }
