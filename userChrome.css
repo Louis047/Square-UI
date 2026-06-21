@@ -1039,117 +1039,85 @@
 
 /* --- P — ZEN-SPECIFIC: FLOATING SIDEBAR & URL BAR TRANSPARENCY --- */
 
-/* Default Solid (Opaque) Base Styles for Sidebar and URL Bar (Active when transparency is off) */
+@media (-moz-bool-pref: "mod.squareui.sidebar-transparency.enabled") {
 
-/* 1. Sidebar Opaque Base */
-:root:not([zen-sidebar-expanded="true"]) #navigator-toolbox,
-:root[zen-compact-mode="true"] #titlebar {
-  background-color: var(--zen-colors-background) !important;
-  backdrop-filter: none !important;
-}
-
-/* 2. URL Bar Opaque Base */
-#urlbar[zen-floating-urlbar="true"],
-#urlbar#urlbar#urlbar[open],
-#urlbar#urlbar#urlbar[breakout-extend="true"] {
-  background-color: var(--zen-colors-tertiary) !important;
-  backdrop-filter: none !important;
-}
-#urlbar[zen-floating-urlbar="true"] > .urlbar-background,
-#urlbar[zen-floating-urlbar="true"] > #urlbar-background,
-#urlbar#urlbar#urlbar[open] > .urlbar-background,
-#urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
-#urlbar#urlbar#urlbar[open] > #urlbar-background,
-#urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
-  background-color: transparent !important;
-  backdrop-filter: none !important;
-}
-
-
-@media (-moz-bool-pref: "mod.squareui.zen-transparency.enabled") {
-  @media (-moz-bool-pref: "zen.widget.linux.transparency") {
-
-    /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
-    :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
-      background-color: light-dark(
-        rgba(255, 255, 255, 0.875),
-        rgba(20, 20, 20, 0.8)
-      ) !important;
-      backdrop-filter: blur(12px) !important;
-    }
-
-    :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox::before {
-      background: transparent !important;
-    }
-
-    /* Compact Mode Sidebar Blur Fix */
-    :root[zen-compact-mode="true"] #titlebar {
-      background-color: light-dark(
-        rgba(255, 255, 255, 0.875),
-        rgba(20, 20, 20, 0.8)
-      ) !important;
-      backdrop-filter: blur(12px) !important;
-    }
-
-    /* Reveal blur through compact mode floating sidebar internal backgrounds */
-    :root[zen-compact-mode="true"] .zen-toolbar-background {
-      background: transparent !important;
-      opacity: 0 !important;
-    }
-
-    /* Remove native popups styling, shadows, and halos */
-    menupopup, panel, tooltip, #tabContextMenu {
-      box-shadow: none !important;
-      -moz-window-shadow: none !important;
-      border: none !important;
-    }
-
-
-
-    /* Ultimate Specificity Overrides to crush Zen's solid backgrounds */
-    #urlbar#urlbar#urlbar[open],
-    #urlbar#urlbar#urlbar[breakout-extend="true"] {
-      background-color: light-dark(
-        rgba(255, 255, 255, 0.3),
-        rgba(20, 20, 20, 0.22)
-      ) !important;
-      --zen-colors-tertiary: transparent !important;
-      --urlbar-box-bgcolor: transparent !important;
-      --zen-urlbar-background: transparent !important;
-    }
-
-    /* Nuke ALL known and hidden wrappers, including .urlbarView-body-outer */
-    #urlbar#urlbar#urlbar .urlbarView,
-    #urlbar#urlbar#urlbar .urlbarView-body-outer,
-    #urlbar#urlbar#urlbar .urlbarView-body-inner,
-    #urlbar#urlbar#urlbar .urlbarView-results,
-    #urlbar#urlbar#urlbar #urlbar-results,
-    #urlbar#urlbar#urlbar #urlbar-input-container,
-    #urlbar#urlbar#urlbar .urlbar-input-box {
-      background: transparent !important;
-      background-color: transparent !important;
-    }
-
-    /* Floating URL Bar (Applies in Compact Mode) */
-    #urlbar[zen-floating-urlbar="true"] {
-      background-color: light-dark(
-        rgba(255, 255, 255, 0.3),
-        rgba(20, 20, 20, 0.22)
-      ) !important;
-    }
-
-    #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
-    #urlbar[zen-floating-urlbar="true"] > #urlbar-background,
-    #urlbar#urlbar#urlbar[open] > .urlbar-background,
-    #urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
-    #urlbar#urlbar#urlbar[open] > #urlbar-background,
-    #urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
-      background-color: transparent !important;
-      border-radius: var(--zen-border-radius, 8px) !important;
-      box-shadow: none !important;
-    }
-
+  /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
+  :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.875),
+      rgba(20, 20, 20, 0.8)
+    ) !important;
+    backdrop-filter: blur(12px) !important;
   }
+
+  :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox::before {
+    background: transparent !important;
+  }
+
+  /* Compact Mode Sidebar Blur Fix */
+  :root[zen-compact-mode="true"] #titlebar {
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.875),
+      rgba(20, 20, 20, 0.8)
+    ) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Reveal blur through compact mode floating sidebar internal backgrounds */
+  :root[zen-compact-mode="true"] .zen-toolbar-background {
+    background: transparent !important;
+    opacity: 0 !important;
+  }
+
+  /* Remove native popups styling, shadows, and halos */
+  menupopup, panel, tooltip, #tabContextMenu {
+    box-shadow: none !important;
+    -moz-window-shadow: none !important;
+    border: none !important;
+  }
+
+
+
+  /* Ultimate Specificity Overrides to crush Zen's solid backgrounds */
+  #urlbar#urlbar#urlbar[open],
+  #urlbar#urlbar#urlbar[breakout-extend="true"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    --zen-colors-tertiary: transparent !important;
+    --urlbar-box-bgcolor: transparent !important;
+    --zen-urlbar-background: transparent !important;
+  }
+
+  /* Nuke ALL known and hidden wrappers, including .urlbarView-body-outer */
+  #urlbar#urlbar#urlbar .urlbarView,
+  #urlbar#urlbar#urlbar .urlbarView-body-outer,
+  #urlbar#urlbar#urlbar .urlbarView-body-inner,
+  #urlbar#urlbar#urlbar .urlbarView-results,
+  #urlbar#urlbar#urlbar #urlbar-results,
+  #urlbar#urlbar#urlbar #urlbar-input-container,
+  #urlbar#urlbar#urlbar .urlbar-input-box {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+
+  /* Floating URL Bar (Applies in Compact Mode) */
+  #urlbar[zen-floating-urlbar="true"] {
+    background-color: transparent !important;
+  }
+  
+  /* Apply semi-transparent background only (NO BACKDROP FILTER to prevent WebRender solid fallback bug) */
+  #urlbar#urlbar#urlbar[open] > .urlbar-background,
+  #urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
+  #urlbar#urlbar#urlbar[open] > #urlbar-background,
+  #urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
+    background-color: light-dark(
+      rgba(255, 255, 255, 0.3),
+      rgba(20, 20, 20, 0.2)
+    ) !important;
+    border-radius: var(--zen-border-radius, 8px) !important;
+    box-shadow: none !important;
+  }
+
 }
 
 /* --- Q — MONOSPACE FONT SELECTOR (dropdown type → Sine attribute selector) --- */
