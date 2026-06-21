@@ -1126,6 +1126,14 @@
     #urlbar[zen-floating-urlbar="true"] {
       background-color: transparent !important;
     }
+
+    #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
+    #urlbar[zen-floating-urlbar="true"] > #urlbar-background {
+      background-color: light-dark(
+        rgba(255, 255, 255, 0.3),
+        rgba(20, 20, 20, 0.22)
+      ) !important;
+    }
     
     /* Apply semi-transparent background only (NO BACKDROP FILTER to prevent WebRender solid fallback bug) */
     #urlbar#urlbar#urlbar[open] > .urlbar-background,
@@ -1134,7 +1142,7 @@
     #urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
       background-color: light-dark(
         rgba(255, 255, 255, 0.3),
-        rgba(20, 20, 20, 0.2)
+        rgba(20, 20, 20, 0.22)
       ) !important;
       border-radius: var(--zen-border-radius, 8px) !important;
       box-shadow: none !important;
