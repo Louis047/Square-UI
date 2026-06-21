@@ -1049,13 +1049,19 @@
 }
 
 /* 2. URL Bar Opaque Base */
+#urlbar[zen-floating-urlbar="true"],
+#urlbar#urlbar#urlbar[open],
+#urlbar#urlbar#urlbar[breakout-extend="true"] {
+  background-color: var(--zen-colors-tertiary) !important;
+  backdrop-filter: none !important;
+}
 #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
 #urlbar[zen-floating-urlbar="true"] > #urlbar-background,
 #urlbar#urlbar#urlbar[open] > .urlbar-background,
 #urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
 #urlbar#urlbar#urlbar[open] > #urlbar-background,
 #urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
-  background-color: var(--zen-colors-tertiary) !important;
+  background-color: transparent !important;
   backdrop-filter: none !important;
 }
 
@@ -1103,8 +1109,10 @@
     /* Ultimate Specificity Overrides to crush Zen's solid backgrounds */
     #urlbar#urlbar#urlbar[open],
     #urlbar#urlbar#urlbar[breakout-extend="true"] {
-      background: transparent !important;
-      background-color: transparent !important;
+      background-color: light-dark(
+        rgba(255, 255, 255, 0.3),
+        rgba(20, 20, 20, 0.22)
+      ) !important;
       --zen-colors-tertiary: transparent !important;
       --urlbar-box-bgcolor: transparent !important;
       --zen-urlbar-background: transparent !important;
@@ -1124,26 +1132,19 @@
 
     /* Floating URL Bar (Applies in Compact Mode) */
     #urlbar[zen-floating-urlbar="true"] {
-      background-color: transparent !important;
-    }
-
-    #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
-    #urlbar[zen-floating-urlbar="true"] > #urlbar-background {
       background-color: light-dark(
         rgba(255, 255, 255, 0.3),
         rgba(20, 20, 20, 0.22)
       ) !important;
     }
-    
-    /* Apply semi-transparent background only (NO BACKDROP FILTER to prevent WebRender solid fallback bug) */
+
+    #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
+    #urlbar[zen-floating-urlbar="true"] > #urlbar-background,
     #urlbar#urlbar#urlbar[open] > .urlbar-background,
     #urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
     #urlbar#urlbar#urlbar[open] > #urlbar-background,
     #urlbar#urlbar#urlbar[breakout-extend="true"] > #urlbar-background {
-      background-color: light-dark(
-        rgba(255, 255, 255, 0.3),
-        rgba(20, 20, 20, 0.22)
-      ) !important;
+      background-color: transparent !important;
       border-radius: var(--zen-border-radius, 8px) !important;
       box-shadow: none !important;
     }
