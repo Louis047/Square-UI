@@ -1102,11 +1102,10 @@
 
   /* Floating URL Bar (Applies in Compact Mode) */
   #urlbar[zen-floating-urlbar="true"] {
-    backdrop-filter: blur(12px) saturate(1.2) !important;
     background-color: transparent !important;
   }
   
-  /* Apply the frosted glass to the background layer only */
+  /* Apply semi-transparent background only (NO BACKDROP FILTER to prevent WebRender solid fallback bug) */
   #urlbar#urlbar#urlbar[open] > .urlbar-background,
   #urlbar#urlbar#urlbar[breakout-extend="true"] > .urlbar-background,
   #urlbar#urlbar#urlbar[open] > #urlbar-background,
@@ -1115,7 +1114,6 @@
       rgba(255, 255, 255, 0.40),
       rgba(20, 20, 20, 0.30)
     ) !important;
-    backdrop-filter: blur(12px) saturate(1.2) !important;
     border-radius: var(--zen-border-radius, 8px) !important;
     box-shadow: none !important;
   }
