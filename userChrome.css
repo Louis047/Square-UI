@@ -1081,9 +1081,20 @@
   /* Force URL bar sub-containers transparent to fix solid block */
   #urlbar-input-container, .urlbar-input-box,
   #urlbar-results, #urlbar-background, .urlbar-background,
-  .urlbarView-body-inner, .urlbarView-results {
+  .urlbarView, .urlbarView-body-inner, .urlbarView-results {
     background: transparent !important;
     background-color: transparent !important;
+  }
+
+  /* Specific override for Zen's solid dark theme on open states */
+  #urlbar[open], 
+  #urlbar[breakout-extend="true"],
+  #urlbar[zen-floating-urlbar="true"][open],
+  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    --zen-colors-tertiary: transparent !important;
+    --urlbar-box-bgcolor: transparent !important;
   }
 
   /* Floating URL Bar (Applies in Compact Mode) */
@@ -1092,9 +1103,9 @@
     background-color: transparent !important;
   }
   
+  /* Apply frosted glass ONLY to the expanding .urlbar-background layer */
   #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
-  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background,
-  .urlbarView {
+  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background {
     background-color: light-dark(
       rgba(255, 255, 255, 0.40),
       rgba(20, 20, 20, 0.30)
