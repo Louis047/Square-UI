@@ -1104,8 +1104,8 @@
   }
   
   /* Apply frosted glass ONLY to the expanding .urlbar-background layer */
-  #urlbar[zen-floating-urlbar="true"] > .urlbar-background,
-  #urlbar[zen-floating-urlbar="true"][breakout-extend="true"] > .urlbar-background {
+  #urlbar[breakout-extend="true"] > .urlbar-background,
+  #urlbar[open] > .urlbar-background {
     background-color: light-dark(
       rgba(255, 255, 255, 0.40),
       rgba(20, 20, 20, 0.30)
