@@ -1044,8 +1044,8 @@
   /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
   :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.75),
-      rgba(20, 20, 20, 0.6)
+      rgba(255, 255, 255, 0.825),
+      rgba(20, 20, 20, 0.7)
     ) !important;
     backdrop-filter: blur(12px) !important;
   }
@@ -1057,8 +1057,8 @@
   /* Compact Mode Sidebar Blur Fix */
   :root[zen-compact-mode="true"] #titlebar {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.75),
-      rgba(20, 20, 20, 0.6)
+      rgba(255, 255, 255, 0.825),
+      rgba(20, 20, 20, 0.7)
     ) !important;
     backdrop-filter: blur(12px) !important;
   }
