@@ -1044,8 +1044,8 @@
   /* Floating Sidebar (Hovered when collapsed, in both normal and compact modes) */
   :root:not([zen-sidebar-expanded="true"]) #navigator-toolbox {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.15),
-      rgba(20, 20, 20, 0.05)
+      rgba(255, 255, 255, 0.25),
+      rgba(20, 20, 20, 0.15)
     ) !important;
     backdrop-filter: blur(6px) saturate(1.2) !important;
   }
@@ -1057,8 +1057,8 @@
   /* Compact Mode Sidebar Blur Fix */
   :root[zen-compact-mode="true"] #titlebar {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.15),
-      rgba(20, 20, 20, 0.05)
+      rgba(255, 255, 255, 0.25),
+      rgba(20, 20, 20, 0.15)
     ) !important;
     backdrop-filter: blur(6px) saturate(1.2) !important;
   }
@@ -1076,42 +1076,12 @@
     border: none !important;
   }
 
-  /* Tooltips and Context Menus Transparency */
-  menupopup, panel, tooltip, .popup-internal-box,
-  .panel-subview-body, .panel-viewstack, panelview,
-  #tabContextMenu, #contentAreaContextMenu,
-  #aHTMLTooltip, #bhTooltip, #btTooltip, panel[type="tooltip"] {
-    appearance: none !important;
-    -moz-appearance: none !important;
-    --panel-background: transparent !important;
-    --panel-background-color: transparent !important;
-    --arrowpanel-background: transparent !important;
-    --zen-dialog-background: transparent !important;
+
+
+  /* Force URL bar sub-containers transparent to fix solid block */
+  #urlbar-input-container, .urlbar-input-box {
     background: transparent !important;
     background-color: transparent !important;
-  }
-
-  tooltip *, .tooltip-label, menu, menuitem, .menu-text, .menu-iconic-left {
-    background-color: transparent !important;
-  }
-
-  menupopup::part(content), 
-  panel::part(content), 
-  .menupopup-arrowscrollbox,
-  tooltip,
-  .tooltip,
-  #aHTMLTooltip,
-  #bhTooltip,
-  #btTooltip,
-  panel[type="tooltip"],
-  .panel-subview-body,
-  #tabContextMenu {
-    appearance: none !important;
-    -moz-appearance: none !important;
-    background-color: light-dark(
-      rgba(255, 255, 255, 0.15),
-      rgba(20, 20, 20, 0.05)
-    ) !important;
   }
 
   /* Floating URL Bar (Applies in Compact Mode) */
@@ -1125,8 +1095,8 @@
   .urlbarView,
   .urlbarView-body-inner {
     background-color: light-dark(
-      rgba(255, 255, 255, 0.15),
-      rgba(20, 20, 20, 0.05)
+      rgba(255, 255, 255, 0.25),
+      rgba(20, 20, 20, 0.15)
     ) !important;
     backdrop-filter: blur(6px) saturate(1.2) !important;
     border-radius: var(--zen-border-radius, 8px) !important;
