@@ -59,6 +59,7 @@
     --toolbarbutton-border-radius: 0px !important;
     --button-border-radius: 0px !important;
     --arrowpanel-border-radius: 0px !important;
+    --panel-border-color: light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.18)) !important;
     --arrowpanel-menuitem-border-radius: 0px !important;
     --menuitem-border-radius: 0px !important;
     --menu-border-radius: 0px !important;
@@ -98,14 +99,10 @@
     menupopup menuitem,
     menupopup menugroup,
     #PanelUI-button,
-    body #zen-site-data-header > toolbarbutton,
-    body #zen-site-data-header > toolbarbutton > .toolbarbutton-icon,
-    body #zen-site-data-header > toolbarbutton > image,
+    :root #zen-site-data-header > toolbarbutton,
     #unified-extensions-view .unified-extensions-item,
     #unified-extensions-view .unified-extensions-item-action-button,
     #unified-extensions-view .unified-extensions-item-menu-button,
-    #unified-extensions-view .unified-extensions-item-icon,
-    #unified-extensions-view .unified-extensions-item-contents,
     #nav-bar toolbarbutton {
       border-radius: 0px !important;
     }
@@ -142,11 +139,7 @@
     }
 
     tooltip,
-    #notification-popup,
-    .popup-internal-box,
-    menupopup::part(content),
-    .menupopup-arrowscrollbox,
-    .panel-arrowcontent {
+    #notification-popup {
       border: 1px solid light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.18)) !important;
     }
 
