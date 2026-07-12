@@ -57,6 +57,7 @@
 
     --tab-border-radius: 0px !important;
     --toolbarbutton-border-radius: 0px !important;
+    --button-border-radius: 0px !important;
     --arrowpanel-border-radius: 0px !important;
     --arrowpanel-menuitem-border-radius: 0px !important;
     --menuitem-border-radius: 0px !important;
@@ -97,10 +98,10 @@
     menupopup menuitem,
     menupopup menugroup,
     #PanelUI-button,
-    #zen-site-data-header toolbarbutton,
-    .unified-extensions-item,
-    .unified-extensions-item-action-button,
-    .unified-extensions-item-menu-button,
+    body #zen-site-data-header > toolbarbutton,
+    #unified-extensions-view .unified-extensions-item,
+    #unified-extensions-view .unified-extensions-item-action-button,
+    #unified-extensions-view .unified-extensions-item-menu-button,
     #nav-bar toolbarbutton {
       border-radius: 0px !important;
     }
@@ -136,13 +137,13 @@
       --zen-dialog-border-radius: 0px !important;
     }
 
-    panel,
-    menupopup,
     tooltip,
-    #notification-popup {
+    #notification-popup,
+    .popup-internal-box,
+    menupopup::part(content),
+    .panel-subview-body,
+    .panel-arrowcontent {
       border: 1px solid light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.18)) !important;
-      padding: 0px !important;
-      margin: 0px !important;
     }
 
     #FindToolbar,
