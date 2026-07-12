@@ -101,7 +101,9 @@
       border-radius: 0px !important;
     }
 
+    panel,
     menupopup,
+    menupopup > *,
     menupopup::part(content),
     menupopup::part(arrowscrollbox),
     menupopup::part(scrollbox),
@@ -124,6 +126,17 @@
       border-radius: 0px !important;
       -moz-appearance: none !important;
       appearance: none !important;
+      --panel-border-radius: 0px !important;
+      --menu-border-radius: 0px !important;
+      --arrowpanel-border-radius: 0px !important;
+      --zen-dialog-border-radius: 0px !important;
+    }
+
+    panel,
+    menupopup,
+    tooltip,
+    #notification-popup {
+      border: 1px solid light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.18)) !important;
     }
 
     #FindToolbar,
