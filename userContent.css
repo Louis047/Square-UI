@@ -1,14 +1,12 @@
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   WEBSITES (excludes localhost / 127.0.0.1 by default)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- WEBSITES --- */
 
 @-moz-document regexp("^(https?|ftp|file)://(?!(localhost|127\\.0\\.0\\.1)(:|/|$)).*") {
   *, *::before, *::after { border-radius: 0 !important; }
 }
 
-/* — Localhost opt-in: square localhost / 127.0.0.1 too — */
+/* Localhost opt-in */
 @media (-moz-bool-pref: "mod.squareui.content.localhost.enabled") {
   @-moz-document url-prefix("http://localhost"), url-prefix("http://127.0.0.1"),
                   url-prefix("https://localhost"), url-prefix("https://127.0.0.1") {
@@ -16,7 +14,7 @@
   }
 }
 
-/* — YouTube — */
+/* YouTube */
 @-moz-document domain("youtube.com") {
   ytd-rich-grid-media #avatar yt-img-shadow,
   ytd-rich-grid-media #avatar yt-img-shadow img,
@@ -85,7 +83,7 @@
   }
 }
 
-/* — Claude.ai — */
+/* Claude.ai */
 @-moz-document domain("claude.ai") {
   [class*="animate-spin"],
   [class*="animate-spin"]::before,
@@ -97,7 +95,7 @@
   }
 }
 
-/* — Reddit — */
+/* Reddit */
 @-moz-document domain("reddit.com") {
   :root,
   html body recent-posts,
@@ -187,7 +185,7 @@
   }
 }
 
-/* — GitHub — */
+/* GitHub */
 @-moz-document domain("github.com") {
   [class~="rounded"],
   .rounded-1, .rounded-2, .rounded-3,
@@ -241,7 +239,7 @@
   }
 }
 
-/* — Google — */
+/* Google */
 @-moz-document domain("google.com") {
   *, *::before, *::after { clip-path: none !important; }
   .RveJvd, .RveJvd::before, .RveJvd::after {
@@ -272,7 +270,7 @@
   }
 }
 
-/* — Google Accounts — */
+/* Google Accounts */
 @-moz-document domain("accounts.google.com") {
   *, *::before, *::after { clip-path: none !important; }
   .RveJvd, .RveJvd::before, .RveJvd::after {
@@ -281,7 +279,7 @@
   }
 }
 
-/* — Twitter / X — */
+/* Twitter / X */
 @-moz-document domain("twitter.com"), domain("x.com") {
   [data-testid*="UserAvatar"] img,
   img[src*="profile_images"],
@@ -299,7 +297,7 @@
   }
 }
 
-/* — Instagram — */
+/* Instagram */
 @-moz-document domain("instagram.com") {
   img[alt*="profile picture" i],
   ._aadp img,
@@ -309,7 +307,7 @@
   }
 }
 
-/* — Facebook — */
+/* Facebook */
 @-moz-document domain("facebook.com") {
   img[data-imgperflogname*="profilePhoto"],
   div[data-type="profile_photo"] img,
@@ -318,7 +316,7 @@
   }
 }
 
-/* — TikTok — */
+/* TikTok */
 @-moz-document domain("tiktok.com") {
   img[class*="avatar" i],
   [class*="AvatarWrapper"] img,
@@ -327,7 +325,7 @@
   }
 }
 
-/* — Discord — */
+/* Discord */
 @-moz-document domain("discord.com") {
   img[class*="avatar" i],
   [class*="avatarWrapperNormal"] img,
@@ -339,7 +337,7 @@
   }
 }
 
-/* — LinkedIn — */
+/* LinkedIn */
 @-moz-document domain("linkedin.com") {
   img.EntityPhoto-circle-1,
   img.EntityPhoto-circle-2,
@@ -353,27 +351,25 @@
   }
 }
 
-/* — ChatGPT — */
+/* ChatGPT */
 @-moz-document domain("chatgpt.com") {
   [class*="rounded"] { border-radius: 0 !important; }
   #email, :has(> #email) { border-radius: 0 !important; }
 }
 
-/* — Firefox Add-ons — */
+/* Firefox Add-ons */
 @-moz-document domain("addons.mozilla.org") {
   * { border-radius: 0 !important; }
 }
 
-/* — PiP toggle — */
+/* PiP toggle */
 .pip-wrapper,
 .pip-wrapper > *,
 .pip-wrapper > * > * {
   border-radius: 0 !important;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   FIREFOX INTERNAL PAGES
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- FIREFOX INTERNAL PAGES --- */
 
 @-moz-document url-prefix("about:"), url-prefix("chrome://browser/content/preferences/"), url-prefix("chrome://global/content/") {
   *, *::before, *::after { border-radius: 0 !important; }
@@ -465,7 +461,7 @@
   }
 }
 
-/* — about:preferences subdialog — */
+/* about:preferences subdialog */
 @-moz-document url-prefix("about:preferences") {
   #dialogBox, .dialogBox {
     background: var(--arrowpanel-background) !important;
@@ -474,7 +470,7 @@
   }
 }
 
-/* — Preferences subdialog buttons — */
+/* Preferences subdialog buttons */
 @-moz-document url-prefix("chrome://browser/content/preferences/") {
   button:default,
   button.primary,

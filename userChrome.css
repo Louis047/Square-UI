@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════════════════
-   A — CSS CUSTOM PROPERTIES
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- A: CSS CUSTOM PROPERTIES --- */
 
 :root {
   --squareui-arrowpanel-background: var(--arrowpanel-background, var(--in-content-page-background, Canvas)) !important;
@@ -16,9 +14,7 @@
   --squareui-border-color: light-dark(rgba(0, 0, 0, 0.15), rgba(255, 255, 255, 0.15));
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   B — CUSTOM FONT (dropdown type → uses Sine attribute selector)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- B: CUSTOM FONT --- */
 
 :root:has(#theme-Square-UI[theme-squareui_uifont-default="Custom"]) {
   *:not(.titlebar-buttonbox-container *) {
@@ -26,9 +22,7 @@
   }
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   C — CONTENT AREA SQUARING (chrome-side webview containers)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- C: CONTENT AREA SQUARING --- */
 
 @media (-moz-bool-pref: "mod.squareui.content.enabled") {
 
@@ -55,9 +49,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   D — BROWSER UI SQUARING (Shared Cross-Browser Rules)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- D: BROWSER UI SQUARING --- */
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
@@ -139,9 +131,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   E — ZEN BROWSER UI SQUARING (Zen-Specific Rules)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- E: ZEN BROWSER UI SQUARING --- */
 
 @media (-moz-bool-pref: "mod.squareui.browser.enabled") {
 
@@ -166,7 +156,7 @@
     }
 
 
-    /* — Workspace buttons — */
+    /* Workspace buttons */
 
     #zen-workspaces-button toolbarbutton:hover,
     #zen-workspaces-button toolbarbutton:hover:not([active="true"]),
@@ -192,7 +182,7 @@
       filter: saturate(100%) brightness(100%) !important;
     }
 
-    /* — Zen folders: transparent hover — */
+    /* Zen folders: transparent hover */
 
     zen-folder .tab-group-label-container,
     zen-folder .tab-group-label-container:hover,
@@ -214,7 +204,7 @@
       display: none !important;
     }
 
-    /* — Pinned tab separator — */
+    /* Pinned tab separator */
 
     .pinned-tabs-container-separator {
       display: none !important;
@@ -224,14 +214,11 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   F — URL BAR MINIMALISM (single toggle: hides URL bar chrome,
-       reveals Copy URL / Extension Tools / Zoom Reset on hover)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- F: URL BAR MINIMALISM --- */
 
 @media (-moz-bool-pref: "mod.squareui.urlbar-minimalism.enabled") {
 
-  /* — hide clutter — */
+  /* Hide clutter */
 
   #urlbar-search-button,
   .urlbar-go-button,
@@ -263,19 +250,19 @@
     display: none !important;
   }
 
-  /* — allow tools to overflow over centered text — */
+  /* Allow tools to overflow */
 
   #urlbar-input-container {
     overflow: visible !important;
   }
 
-  /* — Copy URL: permanently hidden — */
+  /* Copy URL: permanently hidden */
 
   #zen-copy-url-button {
     display: none !important;
   }
 
-  /* — Extension Tools (right edge): self-hover with background mask — */
+  /* Extension Tools */
 
   #identity-box {
     position: absolute !important;
@@ -307,7 +294,7 @@
     background: var(--toolbar-field-background-color, var(--zen-toolbar-element-bg, var(--toolbar-bgcolor))) !important;
   }
 
-  /* — Zoom Reset (left edge): self-hover with background mask — */
+  /* Zoom Reset */
 
   #urlbar-zoom-button {
     position: absolute !important;
@@ -330,9 +317,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   F2 — CENTER URL BAR TEXT (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- F2: CENTER URL BAR TEXT --- */
 
 @media (-moz-bool-pref: "mod.squareui.center-urlbar.enabled") {
 
@@ -366,9 +351,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   F3 — CENTER SPACE NAME (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- F3: CENTER SPACE NAME --- */
 
 @media (-moz-bool-pref: "mod.squareui.center-space-name.enabled") {
 
@@ -417,9 +400,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   G — TAB LOADING ANIMATION (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- G: TAB LOADING ANIMATION --- */
 
 @media (-moz-bool-pref: "mod.squareui.tab-loading-anim.enabled") {
 
@@ -456,9 +437,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   G2 — NO SIDEBAR SCROLLBAR (independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- G2: NO SIDEBAR SCROLLBAR --- */
 
 @media (-moz-bool-pref: "mod.squareui.no-sidebar-scrollbar.enabled") {
 
@@ -472,9 +451,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   H — SIDEBAR BORDERS (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- H: SIDEBAR BORDERS --- */
 
 @media (-moz-bool-pref: "mod.squareui.sidebar-border.enabled") {
 
@@ -490,9 +467,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   I — TAB BORDERS (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- I: TAB BORDERS --- */
 
 @media (-moz-bool-pref: "mod.squareui.tab-border.enabled") {
 
@@ -520,9 +495,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   J — SIDEBAR PADDING (Zen only, independent toggle)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- J: SIDEBAR PADDING --- */
 
 @media (-moz-bool-pref: "mod.squareui.sidebar-padding.enabled") {
 
@@ -533,9 +506,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   K — CROSS-BROWSER: FLOATING STATUSBAR
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- K: FLOATING STATUSBAR --- */
 
 @media (-moz-bool-pref: "mod.squareui.floating-statusbar.enabled") {
 
@@ -552,9 +523,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   L — CROSS-BROWSER: FLOATING FINDBAR
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- L: FLOATING FINDBAR --- */
 
 @media (-moz-bool-pref: "mod.squareui.floating-findbar.enabled") {
 
@@ -631,9 +600,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   M — CROSS-BROWSER: DIALOG FIXES
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- M: DIALOG FIXES --- */
 
 @media (-moz-bool-pref: "mod.squareui.dialog-fixes.enabled") {
 
@@ -680,10 +647,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   N — CROSS-BROWSER: NO URL SEARCH ICONS (hides favicons and type
-       icons inside the URL bar autocomplete/search results)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- N: NO URL SEARCH ICONS --- */
 
 @media (-moz-bool-pref: "mod.squareui.no-urlbar-icons.enabled") {
 
@@ -694,10 +658,7 @@
 
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   O — ZEN-SPECIFIC: NO TAB CLOSE BUTTON (hides the close button
-       inside tabs)
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* --- O: NO TAB CLOSE BUTTON --- */
 
 @media (-moz-bool-pref: "mod.squareui.no-tab-close.enabled") {
 
