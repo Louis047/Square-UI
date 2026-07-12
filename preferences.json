@@ -18,17 +18,10 @@
     "size": "13px"
   },
   {
-    "property": "mod.squareui.hide.nav.enabled",
-    "label": "Hide Navigation Buttons",
+    "property": "mod.squareui.remove.nav.enabled",
+    "label": "Remove Navigation Buttons",
     "type": "checkbox",
-    "defaultValue": false
-  },
-  {
-    "property": "zen.theme.content-element-separation",
-    "label": "Content element separation",
-    "type": "string",
-    "defaultValue": 0,
-    "placeholder": 0
+    "defaultValue": true
   },
   {
     "property": "zen.theme.essentials-favicon-bg",

@@ -101,10 +101,12 @@
       border-radius: 0px !important;
     }
 
-    panel,
     menupopup,
     menupopup::part(content),
     menupopup::part(arrowscrollbox),
+    menupopup::part(scrollbox),
+    arrowscrollbox,
+    scrollbox,
     .menupopup-arrowscrollbox,
     .popup-internal-box,
     .panel-arrowcontent,
@@ -120,6 +122,8 @@
     .notificationbox-stack,
     #notification-popup {
       border-radius: 0px !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
     }
 
     #FindToolbar,
@@ -680,11 +684,19 @@
 
 /* --- P: HIDING NAVIGATION BUTTONS --- */
 
-@media (-moz-bool-pref: "mod.squareui.hide.nav.enabled") {
+@media (-moz-bool-pref: "mod.squareui.remove.nav.enabled") {
 
   #back-button,
-  #forward-button {
+  #forward-button,
+  .titlebar-spacer[type="pre-tabs"],
+  .titlebar-spacer[type="post-tabs"] {
     display: none !important;
+    width: 0px !important;
+    min-width: 0px !important;
+    max-width: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    visibility: collapse !important;
   }
 
 }
