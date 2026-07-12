@@ -58,6 +58,9 @@
     --tab-border-radius: 0px !important;
     --toolbarbutton-border-radius: 0px !important;
     --arrowpanel-border-radius: 0px !important;
+    --arrowpanel-menuitem-border-radius: 0px !important;
+    --menuitem-border-radius: 0px !important;
+    --menu-border-radius: 0px !important;
     --panel-border-radius: 0px !important;
     --urlbar-icon-border-radius: 0px !important;
 
@@ -90,6 +93,9 @@
     toolbarbutton,
     .toolbarbutton-1,
     .subviewbutton,
+    menupopup menu,
+    menupopup menuitem,
+    menupopup menugroup,
     #PanelUI-button,
     #nav-bar toolbarbutton {
       border-radius: 0px !important;
@@ -97,6 +103,9 @@
 
     panel,
     menupopup,
+    menupopup::part(content),
+    menupopup::part(arrowscrollbox),
+    .popup-internal-box,
     .panel-arrowcontent,
     .arrowpanel-inner-box,
     #appMenu-popup,
