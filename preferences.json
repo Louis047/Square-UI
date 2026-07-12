@@ -18,6 +18,12 @@
     "size": "13px"
   },
   {
+    "property": "mod.squareui.hide.nav.enabled",
+    "label": "Hide Navigation Buttons",
+    "type": "checkbox",
+    "defaultValue": false
+  },
+  {
     "property": "zen.theme.content-element-separation",
     "label": "Content element separation",
     "type": "string",

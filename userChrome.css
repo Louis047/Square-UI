@@ -105,6 +105,7 @@
     menupopup,
     menupopup::part(content),
     menupopup::part(arrowscrollbox),
+    .menupopup-arrowscrollbox,
     .popup-internal-box,
     .panel-arrowcontent,
     .arrowpanel-inner-box,
@@ -672,6 +673,17 @@
 @media (-moz-bool-pref: "mod.squareui.no-tab-close.enabled") {
 
   image.tab-close-button {
+    display: none !important;
+  }
+
+}
+
+/* --- P: HIDING NAVIGATION BUTTONS --- */
+
+@media (-moz-bool-pref: "mod.squareui.hide.nav.enabled") {
+
+  #back-button,
+  #forward-button {
     display: none !important;
   }
 
